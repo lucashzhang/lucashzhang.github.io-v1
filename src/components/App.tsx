@@ -7,22 +7,38 @@ interface Prop {
 }
 
 interface State {
-  myAppointments: any[];
-  lastIndex: number
-  orderBy: string,
-  orderDir: string,
-  queryText: string,
-  formDisplay: boolean
 
+}
+
+interface RepoInfo {
+  name: string
+  description?: string
 }
 
 class App extends Component<Prop, State> {
 
   async componentDidMount() {
     let username: string = 'lucashzhang';
-    let response: any = await fetch('https://api.github.com/users/' + username + '/repos');
-    let json: JSON = await response.json();
-    console.log(json)
+    let corsAnywhere: string = 'https://cors-anywhere.herokuapp.com/';
+    let response: any;
+    let repoJson: any[];
+
+    try {
+      response = await fetch(corsAnywhere + 'https://api.github.com/users/' + username + '/repos');
+      repoJson = await response.json() as any[];
+    } catch (error) {
+      console.log(error);
+      return;
+    }
+
+    let repoList: RepoInfo[] = repoJson.map((item: any) => ({ name: item['name'] }));
+    console.log(repoList);
+
+    for (let repoNum in repoList) {
+      response = await fetch(corsAnywhere + 'https://api.github.com/repos/' + username + '/' + repoList[repoNum].name);
+      let contentJson: any = await response.json() as any[];
+      repoList[repoNum].description = contentJson['description'];
+    }
   }
 
   render() {
