@@ -40,7 +40,6 @@ export async function getGenAPI() {
             contents: item['contents_url'],
             homepage: item['homepage']
         }));
-        console.log(repoList);
     } catch (error) {
         console.log(error);
         console.log("The list of repositories failed to build, \nthis was most likely caused by too many API calls")

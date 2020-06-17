@@ -18,12 +18,12 @@ export function assignColors(repoList: RepoInfo[]) {
 
 function getUniqLang(repoList: RepoInfo[]) {
     let langList: string[] = repoList.map((repo: RepoInfo) => (repo.language));
-    let uniqLang: string[] = langList.filter(function (v, i) { return i == langList.lastIndexOf(v); });
+    let uniqLang: string[] = langList.filter(function (v, i) { return i === langList.lastIndexOf(v); });
 
     return uniqLang;
 }
 
 function selectColors(colorNum: any, colors: any) {
     if (colors < 1) colors = 1; // defaults to one color - avoid divide by zero
-    return "hsl(" + (colorNum * (360 / colors) % 360) + ",80%,50%)";
+    return "hsl(" + (colorNum * (360 / colors) % 360) + ",60%,50%)";
 }
