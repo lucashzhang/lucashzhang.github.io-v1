@@ -1,3 +1,12 @@
 .App {
   background-color: lightgray;
 }
+
+.Tabs {
+  background-color: darkcyan;
+}
+
+.Tab {
+  text-decoration: none;
+  color: azure;
+}
