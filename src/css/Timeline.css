@@ -5,3 +5,8 @@
 .TimelineBody {
     color: gray;
 }
+
+.SnapImg {
+    object-fit: contain;
+    width: 100%;
+}

@@ -3,6 +3,7 @@ import { RepoInfo } from '../utilities/handleAPI';
 import { getDevIcon } from '../utilities/generalUtil';
 import { IconContext } from 'react-icons';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import WebpageSnap from './WebpageSnap'
 import 'react-vertical-timeline-component/style.min.css';
 import '../css/Timeline.css'
 
@@ -36,6 +37,7 @@ class Timeline extends Component<Prop, State> {
                             key={repo.id}
                         >
                             <div className="TimelineBody">
+                                <WebpageSnap url={repo.homepage}/>
                                 <h3>{repo.name}</h3>
                                 <h4>Primary Language: {repo.language}</h4>
                                 <p>{repo.description}</p>
