@@ -45,7 +45,7 @@ class App extends Component<Prop, State> {
   render() {
     return (
       <div className="App">
-        <AppBar position="sticky" color="default">
+        <AppBar position="sticky" color="primary">
           <Tabs value={this.state.tabNum} onChange={this.handleTabChange} indicatorColor="secondary" variant="fullWidth">
             <Tab label="Home" {...this.tabProps(1)} />
             <Tab label="Programming" {...this.tabProps(2)} />
