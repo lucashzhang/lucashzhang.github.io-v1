@@ -51,7 +51,6 @@ class App extends Component<Prop, State> {
           </Tabs>
         </AppBar>
         <SwipeableViews
-          // axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.tabNum}
           onChangeIndex={this.handleIndexChange}
           animateHeight
