@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import { TabGroup, Tab } from 'react-material-tabs';
+import { Tabs, Tab, AppBar } from '@material-ui/core';
+import SwipeableViews from 'react-swipeable-views'
 import TimelinePage from './TimelinePage';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 
 interface Prop {
 
 }
 
 interface State {
-  tabNum: number
+  tabNum: any
 }
 
 class App extends Component<Prop, State> {
@@ -26,36 +21,46 @@ class App extends Component<Prop, State> {
     }
   }
 
+  tabProps(index: number) {
+    return {
+      id: `full-width-tab-${index}`,
+      'aria-controls': `full-width-tabpanel-${index}`,
+    };
+  }
+
+  handleChange = (e: any, newNum: number) => {
+    this.setState({
+      tabNum: newNum
+    })
+  }
+
+  handleIndexChange = (newNum: number) => {
+    this.setState({
+      tabNum: newNum
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <Router>
-          <div className="Tabs">
-            <TabGroup style={{ indicator: { color: '#FF5722' } }}>
-              <Link className="Tab" to="/">
-                <Tab>Home</Tab>
-              </Link>
-              <Link className="Tab" to="/repositories">
-                <Tab>Repositories</Tab>
-              </Link>
-              <Link className="Tab" to="/designs">
-                <Tab>Designs</Tab>
-              </Link>
-            </TabGroup>
-          </div>
-          <Switch>
-            <Route path="/repositories">
-              <TimelinePage></TimelinePage>
-            </Route>
-            <Route path="/designs">
-              <div>Designs</div>
-            </Route>
-            <Route path="/">
-              <div>Home</div>
-            </Route>
-          </Switch>
+        <AppBar position="static" color="primary">
+          <Tabs value={this.state.tabNum} onChange={this.handleChange} indicatorColor="secondary" variant="fullWidth">
+            <Tab label="Home" {...this.tabProps(1)} />
+            <Tab label="Programming" {...this.tabProps(2)} />
+            <Tab label="Design" {...this.tabProps(3)} />
+          </Tabs>
+        </AppBar>
+        <SwipeableViews
+          // axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={this.state.tabNum}
+          onChangeIndex={this.handleIndexChange}
+          animateHeight
+          enableMouseEvents>
+            <div>Home</div>
+            <TimelinePage></TimelinePage>
+            <div>Designs</div>
+        </SwipeableViews>
 
-        </Router>
       </div>
     );
   }
