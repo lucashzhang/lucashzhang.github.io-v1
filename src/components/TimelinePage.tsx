@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { RepoInfo, getGenAPI } from '../utilities/handleAPI';
 import { assignColors } from '../utilities/handleColors';
 import Timeline from './Timeline'
+import PropTypes from 'prop-types';
 
 export interface Prop {
 }
@@ -21,7 +22,17 @@ class TimelinePage extends Component<Prop, State> {
         }
     }
 
+    static contextTypes = {
+        swipeableViews: PropTypes.object.isRequired,
+    };
+
+    resize = () => {
+        this.context.swipeableViews.slideUpdateHeight();
+    }
+
     componentDidMount = async () => {
+        window.addEventListener("resize", this.resize);
+
         let repoList = await getGenAPI();
 
         if (repoList != null) {
@@ -34,7 +45,7 @@ class TimelinePage extends Component<Prop, State> {
     }
 
     render = () => {
-        return <Timeline repos={this.state.repos} langColors={this.state.langColors}/>
+        return <Timeline repos={this.state.repos} langColors={this.state.langColors} />
     }
 }
 

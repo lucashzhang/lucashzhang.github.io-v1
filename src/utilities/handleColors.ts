@@ -1,5 +1,5 @@
 import { RepoInfo } from './handleAPI';
-import { shuffle } from './generalUtil';
+import { shuffle, getUniqLang } from './generalUtil';
 
 export function assignColors(repoList: RepoInfo[]) {
     let colorDict: { [index: string]: any; } = {};
@@ -14,13 +14,6 @@ export function assignColors(repoList: RepoInfo[]) {
     }
 
     return colorDict;
-}
-
-function getUniqLang(repoList: RepoInfo[]) {
-    let langList: string[] = repoList.map((repo: RepoInfo) => (repo.language));
-    let uniqLang: string[] = langList.filter(function (v, i) { return i === langList.lastIndexOf(v); });
-
-    return uniqLang;
 }
 
 function selectColors(colorNum: any, colors: any) {

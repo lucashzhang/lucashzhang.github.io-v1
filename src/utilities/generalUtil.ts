@@ -1,4 +1,5 @@
 import * as devIcon from 'react-icons/di';
+import { RepoInfo } from './handleAPI';
 
 export function shuffle(array: any[]) {
     for (let i: number = array.length - 1; i > 0; i--) {
@@ -54,5 +55,46 @@ function correctLangName(name: string) {
     }
 
     return newName;
+}
+
+export function getUniqLang(repoList: RepoInfo[]) {
+    let langList: string[] = repoList.map((repo: RepoInfo) => (repo.language));
+    langList = langList.concat(getFromDesc(repoList))
+    let uniqLang: string[] = langList.filter(function (v, i) { return i === langList.lastIndexOf(v); });
+
+    console.log(uniqLang)
+
+    return uniqLang;
+}
+
+function getFromDesc(repoList: RepoInfo[]) {
+    // These are all of the languages and frameworks that I currently know
+    // Unfortunately, these will have to be manually updated over time
+    let knownLang = [
+        'C',
+        'React',
+        'Angular',
+        'Java',
+        'Java Swing',
+        'JavaScript',
+        'TypeScript',
+        'Python',
+        'Flutter',
+        'Dart',
+        'HTML',
+        'CSS',
+    ]
+
+    let langList: string[] = []; 
+    for (let lang of knownLang) {
+        for (let repo of repoList) {
+            if (repo.description != null && repo.description.toLowerCase().indexOf(lang.toLowerCase()) >= 0) {
+                langList.push(lang);
+                break;
+            }
+        }
+    }
+
+    return langList;
 }
 

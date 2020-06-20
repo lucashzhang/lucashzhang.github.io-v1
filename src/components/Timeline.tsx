@@ -28,7 +28,7 @@ class Timeline extends Component<Prop, State> {
 
                         return <VerticalTimelineElement
                             className="vertical-timeline-element--work"
-                            contentStyle={{ background: '#fff', color: '#efefef' }}
+                            contentStyle={{ background: '#fffff', color: '#efefef' }}
                             contentArrowStyle={{ borderRight: `7px solid  ${this.props.langColors[repo.language]}` }}
                             date={`Created: ${repo.created}`}
                             dateClassName="TimelineDate"

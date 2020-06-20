@@ -28,23 +28,25 @@ class App extends Component<Prop, State> {
     };
   }
 
-  handleChange = (e: any, newNum: number) => {
+  handleTabChange = (e: any, newNum: number) => {
+    this.setState({
+      tabNum: newNum
+    })
+    console.log(newNum)
+  }
+
+  handleSwipeChange = (newNum: number) => {
     this.setState({
       tabNum: newNum
     })
   }
 
-  handleIndexChange = (newNum: number) => {
-    this.setState({
-      tabNum: newNum
-    })
-  }
 
   render() {
     return (
       <div className="App">
-        <AppBar position="static" color="primary">
-          <Tabs value={this.state.tabNum} onChange={this.handleChange} indicatorColor="secondary" variant="fullWidth">
+        <AppBar position="sticky" color="primary">
+          <Tabs value={this.state.tabNum} onChange={this.handleTabChange} indicatorColor="secondary" variant="fullWidth">
             <Tab label="Home" {...this.tabProps(1)} />
             <Tab label="Programming" {...this.tabProps(2)} />
             <Tab label="Design" {...this.tabProps(3)} />
@@ -52,12 +54,12 @@ class App extends Component<Prop, State> {
         </AppBar>
         <SwipeableViews
           index={this.state.tabNum}
-          onChangeIndex={this.handleIndexChange}
-          animateHeight
+          onChangeIndex={this.handleSwipeChange}
+          animateHeight={true}
           enableMouseEvents>
-            <div>Home</div>
-            <TimelinePage></TimelinePage>
-            <div>Designs</div>
+          <div>Home</div>
+          <TimelinePage></TimelinePage>
+          <div>Designs</div>
         </SwipeableViews>
 
       </div>
