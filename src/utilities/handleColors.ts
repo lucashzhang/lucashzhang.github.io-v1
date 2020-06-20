@@ -1,4 +1,3 @@
-import { RepoInfo } from './handleAPI';
 import { shuffle } from './generalUtil';
 
 export function assignColors(uniqLang: string[]) {

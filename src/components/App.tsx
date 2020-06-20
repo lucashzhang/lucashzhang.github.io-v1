@@ -3,6 +3,7 @@ import '../css/App.css';
 import { Tabs, Tab, AppBar } from '@material-ui/core';
 import SwipeableViews from 'react-swipeable-views'
 import TimelinePage from './TimelinePage';
+import DesignPage from './DesignPage';
 
 interface Prop {
 
@@ -45,7 +46,7 @@ class App extends Component<Prop, State> {
   render() {
     return (
       <div className="App">
-        <AppBar position="sticky" color="primary">
+        <AppBar position="sticky" color="default">
           <Tabs value={this.state.tabNum} onChange={this.handleTabChange} indicatorColor="secondary" variant="fullWidth">
             <Tab label="Home" {...this.tabProps(1)} />
             <Tab label="Programming" {...this.tabProps(2)} />
@@ -59,7 +60,7 @@ class App extends Component<Prop, State> {
           enableMouseEvents>
           <div>Home</div>
           <TimelinePage></TimelinePage>
-          <div>Designs</div>
+          <DesignPage></DesignPage>
         </SwipeableViews>
 
       </div>
