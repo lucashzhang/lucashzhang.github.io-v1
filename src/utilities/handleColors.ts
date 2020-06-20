@@ -1,10 +1,8 @@
 import { RepoInfo } from './handleAPI';
-import { shuffle, getUniqLang } from './generalUtil';
+import { shuffle } from './generalUtil';
 
-export function assignColors(repoList: RepoInfo[]) {
+export function assignColors(uniqLang: string[]) {
     let colorDict: { [index: string]: any; } = {};
-
-    let uniqLang: string[] = getUniqLang(repoList);
 
     uniqLang = shuffle(uniqLang);
 
