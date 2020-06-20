@@ -88,7 +88,7 @@ function getFromDesc(repoList: RepoInfo[]) {
     let langList: string[] = []; 
     for (let lang of knownLang) {
         for (let repo of repoList) {
-            if (repo.description != null && repo.description.toLowerCase().indexOf(lang.toLowerCase()) >= 0) {
+            if (repo.description != null && repo.description.toLowerCase().includes(lang.toLowerCase())) {
                 langList.push(lang);
                 break;
             }

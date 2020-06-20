@@ -46,7 +46,7 @@ class App extends Component<Prop, State> {
   render() {
     return (
       <div className="App">
-        <AppBar position="sticky" color="default">
+        <AppBar className="content" position="sticky" color="default">
           <Tabs value={this.state.tabNum} onChange={this.handleTabChange} indicatorColor="secondary" variant="fullWidth">
             <Tab label="Home" {...this.tabProps(1)} />
             <Tab label="Programming" {...this.tabProps(2)} />
@@ -54,6 +54,7 @@ class App extends Component<Prop, State> {
           </Tabs>
         </AppBar>
         <SwipeableViews
+          className="content"
           index={this.state.tabNum}
           onChangeIndex={this.handleSwipeChange}
           animateHeight={true}
@@ -62,7 +63,7 @@ class App extends Component<Prop, State> {
           <TimelinePage></TimelinePage>
           <DesignPage></DesignPage>
         </SwipeableViews>
-
+        <div id="background"></div>
       </div>
     );
   }

@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { RepoInfo, getGenAPI } from '../utilities/handleAPI';
 import { assignColors } from '../utilities/handleColors';
 import { getUniqLang } from '../utilities/generalUtil';
-import Timeline from './Timeline'
+import Timeline from './Timeline';
+import TimelineFilter from './TimelineFilter';
 import PropTypes from 'prop-types';
+import '../css/TimelinePage.css'
 
 export interface Prop {
 }
@@ -12,6 +14,7 @@ export interface State {
     repos: RepoInfo[]
     langs: string[]
     langColors: { [index: string]: any; }
+    filterString: string
 }
 
 class TimelinePage extends Component<Prop, State> {
@@ -21,7 +24,8 @@ class TimelinePage extends Component<Prop, State> {
         this.state = {
             repos: [],
             langs: [],
-            langColors: {}
+            langColors: {},
+            filterString: ""
         }
     }
 
@@ -31,6 +35,10 @@ class TimelinePage extends Component<Prop, State> {
 
     resize = () => {
         this.context.swipeableViews.slideUpdateHeight();
+    }
+
+    componentDidUpdate = () => {
+        this.resize();
     }
 
     componentDidMount = async () => {
@@ -49,8 +57,22 @@ class TimelinePage extends Component<Prop, State> {
         }
     }
 
+    handleFieldChange = (query: string) => {
+        this.setState({
+            filterString: query.toLowerCase()
+        })
+    }
+
     render = () => {
-        return <Timeline repos={this.state.repos} langColors={this.state.langColors} />
+        let filteredRepos = this.state.repos.filter((repo: RepoInfo) => {
+            return (repo.language.toLowerCase().includes(this.state.filterString)
+            || repo.name.toLowerCase().includes(this.state.filterString)
+            || (repo.description != null && repo.description.toLowerCase().includes(this.state.filterString)))
+        })
+        return <div className="Page">
+            <TimelineFilter langList={this.state.langs} langColors={this.state.langColors} handleChange={this.handleFieldChange}></TimelineFilter>
+            <Timeline repos={filteredRepos} langColors={this.state.langColors} />
+        </div>
     }
 }
 
