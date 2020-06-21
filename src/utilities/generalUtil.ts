@@ -58,12 +58,10 @@ function correctLangName(name: string) {
 }
 
 export function getUniqLang(repoList: RepoInfo[]) {
-    let langList: string[] = repoList.map((repo: RepoInfo) => (repo.language));
+    let langList: string[] = repoList.map((repo: RepoInfo) => (`${repo.language}`));
     langList = langList.concat(getFromDesc(repoList))
-    let uniqLang: string[] = langList.filter(function (v, i) { return i === langList.lastIndexOf(v); });
-
-    console.log(uniqLang)
-
+    let uniqLang: string[] = langList.filter((v, i) => { return i === langList.lastIndexOf(v); });
+    
     return uniqLang;
 }
 
@@ -71,10 +69,10 @@ function getFromDesc(repoList: RepoInfo[]) {
     // These are all of the languages and frameworks that I currently know
     // Unfortunately, these will have to be manually updated over time
     let knownLang = [
-        'C ',
-        'React',
+        'C',
+        'ReactJS',
         'Angular',
-        'Java ',
+        'Java',
         'Java Swing',
         'JavaScript ',
         'TypeScript ',
@@ -88,8 +86,8 @@ function getFromDesc(repoList: RepoInfo[]) {
     let langList: string[] = []; 
     for (let lang of knownLang) {
         for (let repo of repoList) {
-            if (repo.description != null && repo.description.toLowerCase().includes(lang.toLowerCase())) {
-                langList.push(lang);
+            if (repo.description != null && repo.description.includes(`${lang} `)) {
+                langList.push(`${lang}`);
                 break;
             }
         }
@@ -97,4 +95,3 @@ function getFromDesc(repoList: RepoInfo[]) {
 
     return langList;
 }
-

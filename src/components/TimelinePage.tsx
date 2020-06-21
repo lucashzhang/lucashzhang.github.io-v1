@@ -11,7 +11,8 @@ export interface Prop {
 }
 
 export interface State {
-    repos: RepoInfo[]
+    repoList: RepoInfo[]
+    includedRepo: RepoInfo[]
     langs: string[]
     langColors: { [index: string]: any; }
     filterString: string
@@ -22,10 +23,11 @@ class TimelinePage extends Component<Prop, State> {
     constructor(props: Prop) {
         super(props);
         this.state = {
-            repos: [],
+            repoList: [],
+            includedRepo: [],
             langs: [],
             langColors: {},
-            filterString: ""
+            filterString: "",
         }
     }
 
@@ -49,10 +51,12 @@ class TimelinePage extends Component<Prop, State> {
         if (repoList != null) {
             let newLangs = getUniqLang(repoList);
             let newColors = assignColors(newLangs);
+            newLangs = newLangs.sort()
             this.setState({
-                repos: repoList,
+                repoList: repoList,
+                includedRepo: repoList,
                 langs: newLangs,
-                langColors: newColors
+                langColors: newColors,
             });
         }
     }
@@ -63,18 +67,41 @@ class TimelinePage extends Component<Prop, State> {
         })
     }
 
-    getFilteredRepos = () => {
-        return this.state.repos.filter((repo: RepoInfo) => {
-            return (repo.language.toLowerCase().includes(this.state.filterString)
-            || repo.name.toLowerCase().includes(this.state.filterString)
-            || (repo.description != null && repo.description.toLowerCase().includes(this.state.filterString)))
+    handleIncludeChange = (included: string[]) => {
+        let tempRepos: RepoInfo[] = this.state.repoList;
+
+        for (let lang of included) {
+            tempRepos = this.handleRemoveRepos(tempRepos, lang);
+        }
+
+        this.setState({
+            includedRepo: tempRepos
+        })
+    }
+
+    getFilteredRepos = (repoList: RepoInfo[], filterString: string) => {
+
+        return repoList.filter((repo: RepoInfo) => {
+            return (repo.language.toLowerCase().includes(filterString.toLowerCase())
+                || repo.name.toLowerCase().includes(filterString.toLowerCase())
+                || (repo.description != null && repo.description.toLowerCase().includes(filterString.toLowerCase())))
+        })
+    }
+
+    handleRemoveRepos = (repoList: RepoInfo[], filterString: string) => {
+        return repoList.filter((repo: RepoInfo) => {
+            return !(repo.language.toLowerCase().includes(filterString.toLowerCase())
+                || repo.name.toLowerCase().includes(filterString.toLowerCase())
+                || (repo.description != null && repo.description.toLowerCase().includes(` ${filterString.toLowerCase()} `)))
         })
     }
 
     render = () => {
-        let filteredRepos = this.getFilteredRepos();
+        let filteredRepos = this.getFilteredRepos(this.state.includedRepo, this.state.filterString);
         return <div className="Page">
-            <TimelineFilter langList={this.state.langs} langColors={this.state.langColors} handleChange={this.handleFieldChange}></TimelineFilter>
+            {this.state.langs.length > 0 && this.state.langColors ?
+                <TimelineFilter langList={this.state.langs} langColors={this.state.langColors} handleFieldChange={this.handleFieldChange} handleIncludeChange={this.handleIncludeChange}></TimelineFilter>
+                : null}
             <Timeline repos={filteredRepos} langColors={this.state.langColors} />
         </div>
     }

@@ -47,7 +47,7 @@ class App extends Component<Prop, State> {
     return (
       <div className="App">
         <AppBar className="content" position="sticky" color="default">
-          <Tabs value={this.state.tabNum} onChange={this.handleTabChange} indicatorColor="secondary" variant="fullWidth">
+          <Tabs value={this.state.tabNum} onChange={this.handleTabChange} textColor="secondary" indicatorColor="secondary" variant="fullWidth">
             <Tab label="Home" {...this.tabProps(1)} />
             <Tab label="Programming" {...this.tabProps(2)} />
             <Tab label="Design" {...this.tabProps(3)} />
@@ -58,7 +58,8 @@ class App extends Component<Prop, State> {
           index={this.state.tabNum}
           onChangeIndex={this.handleSwipeChange}
           animateHeight={true}
-          enableMouseEvents>
+          // enableMouseEvents
+        >
           <div>Home</div>
           <TimelinePage></TimelinePage>
           <DesignPage></DesignPage>

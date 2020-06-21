@@ -3,9 +3,9 @@ import { shuffle } from './generalUtil';
 export function assignColors(uniqLang: string[]) {
     let colorDict: { [index: string]: any; } = {};
 
-    uniqLang = shuffle(uniqLang);
+    let langs = shuffle(uniqLang);
 
-    for (let lang in uniqLang) {
+    for (let lang in langs) {
         let currLang: string = uniqLang[lang];
         colorDict[currLang] = selectColors(lang, uniqLang.length);
     }
