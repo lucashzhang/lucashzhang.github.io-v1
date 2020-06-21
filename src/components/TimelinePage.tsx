@@ -63,12 +63,16 @@ class TimelinePage extends Component<Prop, State> {
         })
     }
 
-    render = () => {
-        let filteredRepos = this.state.repos.filter((repo: RepoInfo) => {
+    getFilteredRepos = () => {
+        return this.state.repos.filter((repo: RepoInfo) => {
             return (repo.language.toLowerCase().includes(this.state.filterString)
             || repo.name.toLowerCase().includes(this.state.filterString)
             || (repo.description != null && repo.description.toLowerCase().includes(this.state.filterString)))
         })
+    }
+
+    render = () => {
+        let filteredRepos = this.getFilteredRepos();
         return <div className="Page">
             <TimelineFilter langList={this.state.langs} langColors={this.state.langColors} handleChange={this.handleFieldChange}></TimelineFilter>
             <Timeline repos={filteredRepos} langColors={this.state.langColors} />

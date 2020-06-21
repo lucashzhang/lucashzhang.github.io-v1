@@ -2,15 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 1%;
 }
 
 .Filter {
-    position: relative;
     width: 1170px;
-    top: 12px;
 }
 
 @media only screen and (max-width: 1240px) {
+    .Page {
+        padding-top: 3%;
+    }
     .Filter {
         width: 95%;
     }

@@ -71,13 +71,13 @@ function getFromDesc(repoList: RepoInfo[]) {
     // These are all of the languages and frameworks that I currently know
     // Unfortunately, these will have to be manually updated over time
     let knownLang = [
-        'C',
+        'C ',
         'React',
         'Angular',
-        'Java',
+        'Java ',
         'Java Swing',
-        'JavaScript',
-        'TypeScript',
+        'JavaScript ',
+        'TypeScript ',
         'Python',
         'Flutter',
         'Dart',

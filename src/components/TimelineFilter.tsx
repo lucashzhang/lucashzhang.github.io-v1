@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardContent, TextField } from '@material-ui/core';
+import { Card, CardContent, TextField, Checkbox, FormControl, FormControlLabel, FormGroup } from '@material-ui/core';
 import '../css/TimelineFilter.css'
 
 export interface Prop {
@@ -14,18 +14,24 @@ export interface State {
 
 class TimelineFilter extends Component<Prop, State> {
 
-    onChange = (e: any) => {
-        const target = e.target;
-        const value = target.value;
+    onFieldChange = (e: any) => {
 
-        this.props.handleChange(value)
+        this.props.handleChange(e.target.value)
     }
 
-    render() {
+    render = () => {
+
         return (
             <Card className="Filter">
                 <CardContent>
-                    <TextField id="outlined-basic" label="Search" variant="outlined" onChange={this.onChange}/>
+                    <TextField fullWidth id="outlined-basic" label="Search" variant="outlined" onChange={this.onFieldChange} />
+                    <FormControl fullWidth>
+                        <FormGroup row>
+                            {this.props.langList.map((lang: string) => (
+                                <FormControlLabel control={<Checkbox name={lang} />} label={lang} />
+                            ))}
+                        </FormGroup>
+                    </FormControl>
                 </CardContent>
             </Card>
         );
