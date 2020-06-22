@@ -12,6 +12,12 @@ export interface State {
 
 class NavBar extends Component<Prop> {
 
+    componentDidUpdate(prevProps: any) {
+        if (this.props.location !== prevProps.location) {
+            window.scrollTo(0, 0)
+        }
+    }
+
     render() {
 
         return (
