@@ -57,20 +57,20 @@ class TimelineFilter extends Component<Prop, State> {
     render = () => {
 
         return (
-            <Card className="Filter">
+            <Card className="Filter center-column">
                 <CardContent>
                     <TextField fullWidth id="outlined-basic" label="Search" variant="outlined" onChange={this.onFieldChange} />
                     <FormControl fullWidth component="fieldset">
                         {Object.keys(this.state.checkBox).length > 0 ? <Grid container alignItems="center" justify="center">
                             <FormGroup row>
                                 {this.props.langList.map((lang: string) => (
-                                    <Grid item key = {lang} >
+                                    <Grid item key={lang} >
                                         <FormControlLabel labelPlacement="top" control={
-                                            <Checkbox style ={{
+                                            <Checkbox style={{
                                                 color: this.props.langColors[lang],
-                                              }} checked = {this.state.checkBox[lang]} 
-                                              name={lang}
-                                              onChange={this.onCheckChange}
+                                            }} checked={this.state.checkBox[lang]}
+                                                name={lang}
+                                                onChange={this.onCheckChange}
                                             />
                                         } label={lang} />
                                     </Grid>
