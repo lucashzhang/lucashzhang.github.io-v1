@@ -4,7 +4,7 @@ export interface RepoInfo {
     description: string
     created: Date
     language: string
-    contents: string
+    url: string
     homepage: string
 }
 
@@ -37,7 +37,7 @@ export async function getGenAPI() {
             description: item['description'],
             created: new Date(item['created_at']),
             language: item['language'],
-            contents: item['contents_url'],
+            url: item['html_url'],
             homepage: item['homepage']
         }));
     } catch (error) {

@@ -1,11 +1,3 @@
-.App {
-  display: grid;
-}
-
-.content {
-  z-index: 1;
-}
-
 #background {
   position: fixed;
   height: 100vh;
@@ -14,4 +6,33 @@
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
+}
+
+.App {
+  display: grid;
+  /* height: 100vh; */
+}
+
+.swipeable-content {
+  z-index: 1;
+}
+
+.swipeable-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-column {
+  width: 95%;
+}
+
+.column-half {
+  width: 50%;
+}
+
+@media only screen and (min-width: 1240px) {
+  .center-column {
+    width: 1170px;
+  } 
 }

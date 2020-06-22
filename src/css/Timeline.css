@@ -1,12 +1,28 @@
-.TimelineDate {
+.timeline-date {
     color: gray;
 }
 
-.TimelineBody {
+.timeline-text {
     color: gray;
+    padding-left: 3%;
+}
+
+.timeline-text h3 {
+    color: rgb(69, 69, 69);
 }
 
 .SnapImg {
     object-fit: contain;
     width: 100%;
+}
+
+@media only screen and (min-width: 1240px) {
+    .timeline-body {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .timeline-half {
+        width: 50%;
+    }
 }

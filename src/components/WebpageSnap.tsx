@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/WebpageSnap.css'
+import placeholder from '../assets/Code-Placeholder.png'
 
 interface Prop {
     url: string
@@ -18,7 +19,7 @@ class WebpageSnap extends Component<Prop, State> {
         if (this.props.url != null && this.props.url.length > 0) {
             return <img src={snapImgURL} alt="" />
         } else {
-            return null;
+            return <img src={placeholder} alt="" />;
         }
     }
 }

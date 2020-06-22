@@ -27,7 +27,7 @@ class DesignPage extends Component<Prop, State> {
     }
 
     render = () => {
-        return <div className="Page">
+        return <div className="swipeable-page">
             <div className="BigText"><h3>Welcome To My Page</h3></div>
             <div className="Introductions">
                 <div className="Half">

@@ -1,0 +1,21 @@
+.timeline-button-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.timeline-button-container .MuiFab-root {
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+}
+
+@media only screen and (min-width: 1240px) {
+    .timeline-button-container {
+        flex-direction: row;
+        width: 45%;
+        position: absolute;
+        bottom: 0px;
+    }
+}

@@ -102,7 +102,7 @@ class TimelinePage extends Component<Prop, State> {
     render = () => {
         let filteredRepos = this.getFilteredRepos(this.state.includedRepo, this.state.filterString);
 
-        return <div className="Page">
+        return <div className="swipeable-page timeline-page">
             {this.state.langs.length > 0 && this.state.langColors ?
                 <TimelineFilter langList={this.state.langs} langColors={this.state.langColors} handleFieldChange={this.handleFieldChange} handleIncludeChange={this.handleIncludeChange}></TimelineFilter>
                 : null}

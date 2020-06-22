@@ -4,6 +4,7 @@ import { getDevIcon } from '../utilities/generalUtil';
 import { IconContext } from 'react-icons';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import WebpageSnap from './WebpageSnap'
+import TimelineButtons from './TimelineButtons'
 import 'react-vertical-timeline-component/style.min.css';
 import '../css/Timeline.css'
 
@@ -32,16 +33,27 @@ class Timeline extends Component<Prop, State> {
                             contentStyle={{ background: '#fffff', color: '#efefef' }}
                             contentArrowStyle={{ borderRight: `7px solid  ${this.props.langColors[repo.language]}` }}
                             date={`Created: ${repo.created}`}
-                            dateClassName="TimelineDate"
+                            dateClassName="timeline-date"
                             icon={<LangIcon />}
                             iconStyle={{ background: `${this.props.langColors[repo.language]}`, color: '#efefef' }}
                             key={repo.id}
                         >
-                            <div className="TimelineBody">
-                                <WebpageSnap url={repo.homepage} />
-                                <h3>{repo.name}</h3>
-                                <h4>Primary Language: {repo.language}</h4>
-                                <p>{repo.description}</p>
+                            <div className="timeline-body">
+                                <div className="timeline-half">
+                                    <WebpageSnap url={repo.homepage} />
+                                </div>
+                                <div className="timeline-text timeline-half">
+                                    <div>
+                                        <h3>{repo.name}</h3>
+                                        <h4>Primary Language: {repo.language}</h4>
+                                        <p>{repo.description}</p>
+                                    </div>
+                                    <TimelineButtons
+                                        color={this.props.langColors[repo.language]}
+                                        url={repo.url}
+                                        website={repo.homepage}>                                        
+                                    </TimelineButtons>
+                                </div>
                             </div>
                         </VerticalTimelineElement>
                     })}
