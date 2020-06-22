@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { IconButton, Tooltip, Fab } from '@material-ui/core';
+import { Tooltip, Fab } from '@material-ui/core';
 import { FaGithub, FaLink } from 'react-icons/fa'
 import '../css/TimelineButtons.css'
 

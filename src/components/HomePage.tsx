@@ -13,18 +13,18 @@ export interface State {
 
 class DesignPage extends Component<Prop, State> {
 
-    static contextTypes = {
-        swipeableViews: PropTypes.object.isRequired,
-    };
+    // static contextTypes = {
+    //     swipeableViews: PropTypes.object.isRequired,
+    // };
 
-    resize = () => {
-        this.context.swipeableViews.slideUpdateHeight();
-    }
+    // resize = () => {
+    //     this.context.swipeableViews.slideUpdateHeight();
+    // }
 
-    componentDidMount = () => {
-        window.addEventListener("resize", this.resize);
-        this.resize();
-    }
+    // componentDidMount = () => {
+    //     window.addEventListener("resize", this.resize);
+    //     this.resize();
+    // }
 
     render = () => {
         return <div className="swipeable-page">

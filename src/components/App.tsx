@@ -6,6 +6,13 @@ import HomePage from './HomePage';
 import TimelinePage from './TimelinePage';
 import DesignPage from './DesignPage';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 interface Prop {
 
 }
@@ -34,38 +41,45 @@ class App extends Component<Prop, State> {
     this.setState({
       tabNum: newNum
     })
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   handleSwipeChange = (newNum: number) => {
     this.setState({
       tabNum: newNum
     })
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  componentDidMount = () => {
+    console.log('mounting')
   }
 
 
   render() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     return (
       <div className="App">
-        <AppBar position="sticky" color="default">
-          <Tabs value={this.state.tabNum} onChange={this.handleTabChange} textColor="secondary" indicatorColor="secondary" variant="fullWidth">
-            <Tab label="Home" {...this.tabProps(1)} />
-            <Tab label="Programming" {...this.tabProps(2)} />
-            <Tab label="Design" {...this.tabProps(3)} />
-          </Tabs>
-        </AppBar>
-        <SwipeableViews
-          className="swipeable-content"
-          index={this.state.tabNum}
-          onChangeIndex={this.handleSwipeChange}
-          animateHeight={true}
-        >
-          <HomePage buttonClick={this.handleSwipeChange}></HomePage>
-          <TimelinePage></TimelinePage>
-          <DesignPage></DesignPage>
-        </SwipeableViews>
-        <div id="background"></div>
+        <Router>
+          <AppBar position="sticky" color="default">
+            <Tabs value={this.state.tabNum} onChange={this.handleTabChange} textColor="secondary" indicatorColor="secondary" variant="fullWidth">
+              <Link to="/"><Tab label="Home" {...this.tabProps(1)} /></Link>
+              <Link to="/programming"><Tab label="Programming" {...this.tabProps(2)} /></Link>
+              <Link to="/design"><Tab label="Design" {...this.tabProps(3)} /></Link>
+            </Tabs>
+          </AppBar>
+          <Switch>
+            <Route path="/programming">
+              <TimelinePage></TimelinePage>
+            </Route>
+            <Route path="/design">
+              <DesignPage></DesignPage>
+            </Route>
+            <Route path="/">
+              <HomePage buttonClick={this.handleSwipeChange}></HomePage>
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }

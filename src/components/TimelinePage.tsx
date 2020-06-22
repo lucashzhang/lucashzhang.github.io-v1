@@ -33,20 +33,20 @@ class TimelinePage extends Component<Prop, State> {
         }
     }
 
-    static contextTypes = {
-        swipeableViews: PropTypes.object.isRequired,
-    };
+    // static contextTypes = {
+    //     swipeableViews: PropTypes.object.isRequired,
+    // };
 
-    resize = () => {
-        this.context.swipeableViews.slideUpdateHeight();
-    }
+    // resize = () => {
+    //     this.context.swipeableViews.slideUpdateHeight();
+    // }
 
-    componentDidUpdate = () => {
-        this.resize();
-    }
+    // componentDidUpdate = () => {
+    //     this.resize();
+    // }
 
     componentDidMount = async () => {
-        window.addEventListener("resize", this.resize);
+        // window.addEventListener("resize", this.resize);
 
         let repoList = await getGenAPI();
 
