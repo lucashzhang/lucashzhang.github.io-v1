@@ -63,9 +63,9 @@ class App extends Component<Prop, State> {
         <Router>
           <AppBar position="sticky" color="default">
             <Tabs value={this.state.tabNum} onChange={this.handleTabChange} textColor="secondary" indicatorColor="secondary" variant="fullWidth">
-              <Link to="/"><Tab label="Home" {...this.tabProps(1)} /></Link>
-              <Link to="/programming"><Tab label="Programming" {...this.tabProps(2)} /></Link>
-              <Link to="/design"><Tab label="Design" {...this.tabProps(3)} /></Link>
+              <Tab label="Home" component={Link} to="/" />
+              <Tab label="Programming" component={Link} to="/programming" />
+              <Tab label="Design" component={Link} to="/design" />
             </Tabs>
           </AppBar>
           <Switch>
@@ -80,6 +80,7 @@ class App extends Component<Prop, State> {
             </Route>
           </Switch>
         </Router>
+        <div id="background"></div>
       </div>
     );
   }

@@ -10,7 +10,6 @@
 
 .App {
   display: grid;
-  /* height: 100vh; */
 }
 
 .swipeable-content {
@@ -21,6 +20,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 }
 
 .center-column {
