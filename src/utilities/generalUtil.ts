@@ -68,7 +68,7 @@ export function getUniqLang(repoList: RepoInfo[]) {
 function getFromDesc(repoList: RepoInfo[]) {
     // These are all of the languages and frameworks that I currently know
     // Unfortunately, these will have to be manually updated over time
-    let knownLang = [
+    let known = [
         'C',
         'ReactJS',
         'Angular',
@@ -84,7 +84,7 @@ function getFromDesc(repoList: RepoInfo[]) {
     ]
 
     let langList: string[] = []; 
-    for (let lang of knownLang) {
+    for (let lang of known) {
         for (let repo of repoList) {
             if (repo.description != null && repo.description.includes(`${lang} `)) {
                 langList.push(`${lang}`);

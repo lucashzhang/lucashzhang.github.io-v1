@@ -11,6 +11,8 @@ export interface Prop {
 }
 
 export interface State {
+    // Keeps a state of both the complete repo list and the one filtered by the checkboxes
+    // This allows for less repeated processesing
     repoList: RepoInfo[]
     includedRepo: RepoInfo[]
     langs: string[]
@@ -67,10 +69,10 @@ class TimelinePage extends Component<Prop, State> {
         })
     }
 
-    handleIncludeChange = (included: string[]) => {
+    handleIncludeChange = (toRemove: string[]) => {
         let tempRepos: RepoInfo[] = this.state.repoList;
-
-        for (let lang of included) {
+        // For each language to remove, filter out the repos that include the language
+        for (let lang of toRemove) {
             tempRepos = this.handleRemoveRepos(tempRepos, lang);
         }
 
@@ -80,7 +82,7 @@ class TimelinePage extends Component<Prop, State> {
     }
 
     getFilteredRepos = (repoList: RepoInfo[], filterString: string) => {
-
+        // Returns a list of repositories that include the string
         return repoList.filter((repo: RepoInfo) => {
             return (repo.language.toLowerCase().includes(filterString.toLowerCase())
                 || repo.name.toLowerCase().includes(filterString.toLowerCase())
@@ -89,6 +91,7 @@ class TimelinePage extends Component<Prop, State> {
     }
 
     handleRemoveRepos = (repoList: RepoInfo[], filterString: string) => {
+        // Returns a list of repositories that don't include the string
         return repoList.filter((repo: RepoInfo) => {
             return !(repo.language.toLowerCase().includes(filterString.toLowerCase())
                 || repo.name.toLowerCase().includes(filterString.toLowerCase())
@@ -98,6 +101,7 @@ class TimelinePage extends Component<Prop, State> {
 
     render = () => {
         let filteredRepos = this.getFilteredRepos(this.state.includedRepo, this.state.filterString);
+
         return <div className="Page">
             {this.state.langs.length > 0 && this.state.langColors ?
                 <TimelineFilter langList={this.state.langs} langColors={this.state.langColors} handleFieldChange={this.handleFieldChange} handleIncludeChange={this.handleIncludeChange}></TimelineFilter>

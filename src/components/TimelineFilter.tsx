@@ -37,14 +37,13 @@ class TimelineFilter extends Component<Prop, State> {
 
     onCheckChange = (e: any) => {
 
-        let checkBoxes = this.state.checkBox;
+        let checkBoxes: { [index: string]: boolean; } = this.state.checkBox;
         checkBoxes[e.target.name] = e.target.checked;
         this.setState({
             checkBox: checkBoxes
         })
-
-        let toRemove = Object.keys(checkBoxes);
-        toRemove = toRemove.filter((include: string) => {
+        // gives list of which check boxes are unchecked
+        let toRemove: string[] = Object.keys(checkBoxes).filter((include: string) => {
             return !checkBoxes[include]
         })
         this.props.handleIncludeChange(toRemove);

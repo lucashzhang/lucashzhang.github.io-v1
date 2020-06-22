@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import { Tabs, Tab, AppBar } from '@material-ui/core';
 import SwipeableViews from 'react-swipeable-views'
+import HomePage from './HomePage';
 import TimelinePage from './TimelinePage';
 import DesignPage from './DesignPage';
 
@@ -58,9 +59,8 @@ class App extends Component<Prop, State> {
           index={this.state.tabNum}
           onChangeIndex={this.handleSwipeChange}
           animateHeight={true}
-          // enableMouseEvents
         >
-          <div>Home</div>
+          <HomePage buttonClick={this.handleSwipeChange}></HomePage>
           <TimelinePage></TimelinePage>
           <DesignPage></DesignPage>
         </SwipeableViews>

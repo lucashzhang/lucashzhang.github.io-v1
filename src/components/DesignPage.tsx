@@ -9,10 +9,6 @@ export interface State {
 
 class DesignPage extends Component<Prop, State> {
 
-    constructor(props: Prop) {
-        super(props);
-    }
-
     static contextTypes = {
         swipeableViews: PropTypes.object.isRequired,
     };
