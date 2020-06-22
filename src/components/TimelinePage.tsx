@@ -4,7 +4,6 @@ import { assignColors } from '../utilities/handleColors';
 import { getUniqLang } from '../utilities/generalUtil';
 import Timeline from './Timeline';
 import TimelineFilter from './TimelineFilter';
-import PropTypes from 'prop-types';
 import '../css/TimelinePage.css'
 
 export interface Prop {
@@ -89,7 +88,7 @@ class TimelinePage extends Component<Prop, State> {
     render = () => {
         let filteredRepos = this.getFilteredRepos(this.state.includedRepo, this.state.filterString);
 
-        return <div className="swipeable-page timeline-page">
+        return <div className="lucas-page timeline-page">
             {this.state.langs.length > 0 && this.state.langColors ?
                 <TimelineFilter langList={this.state.langs} langColors={this.state.langColors} handleFieldChange={this.handleFieldChange} handleIncludeChange={this.handleIncludeChange}></TimelineFilter>
                 : null}

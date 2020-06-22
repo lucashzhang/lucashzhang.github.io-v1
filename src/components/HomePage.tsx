@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Card, CardContent, Button } from '@material-ui/core'
-import PropTypes from 'prop-types';
 import '../css/HomePage.css'
 import PersonalPortrait from '../assets/PersonalPortrait.jpg'
 
@@ -14,7 +13,7 @@ export interface State {
 class DesignPage extends Component<Prop, State> {
 
     render = () => {
-        return <div className="swipeable-page">
+        return <div className="lucas-page">
             <div className="BigText"><h3>Welcome To My Page</h3></div>
             <div className="Introductions">
                 <div className="Half">

@@ -12,11 +12,11 @@
   display: grid;
 }
 
-.swipeable-content {
+.lucas-content {
   z-index: 1;
 }
 
-.swipeable-page {
+.lucas-page {
   display: flex;
   flex-direction: column;
   align-items: center;

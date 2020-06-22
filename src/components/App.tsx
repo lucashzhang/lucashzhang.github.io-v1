@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
+import { HashRouter, Switch, Route } from "react-router-dom";
 import '../css/App.css';
-import { Tabs, Tab, AppBar } from '@material-ui/core';
 import HomePage from './HomePage';
 import TimelinePage from './TimelinePage';
 import DesignPage from './DesignPage';
+import NavBar from './NavBar'
 
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 
 interface Prop {
 
@@ -29,56 +24,17 @@ class App extends Component<Prop, State> {
     }
   }
 
-  tabProps(index: number) {
-    return {
-      id: `full-width-tab-${index}`,
-      'aria-controls': `full-width-tabpanel-${index}`,
-    };
-  }
-
-  handleTabChange = (e: any, newNum: number) => {
-    this.setState({
-      tabNum: newNum
-    })
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  handleSwipeChange = (newNum: number) => {
-    this.setState({
-      tabNum: newNum
-    })
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  componentDidMount = () => {
-    console.log('mounting')
-  }
-
-
   render() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     return (
       <div className="App">
-        <Router>
-          <AppBar position="sticky" color="default">
-            <Tabs value={this.state.tabNum} onChange={this.handleTabChange} textColor="secondary" indicatorColor="secondary" variant="fullWidth">
-              <Tab label="Home" component={Link} to="/" />
-              <Tab label="Programming" component={Link} to="/programming" />
-              <Tab label="Design" component={Link} to="/design" />
-            </Tabs>
-          </AppBar>
+        <HashRouter>
+          <Route component={NavBar} />
           <Switch>
-            <Route path="/programming">
-              <TimelinePage></TimelinePage>
-            </Route>
-            <Route path="/design">
-              <DesignPage></DesignPage>
-            </Route>
-            <Route path="/">
-              <HomePage buttonClick={this.handleSwipeChange}></HomePage>
-            </Route>
+            <Route path="/programming" component={TimelinePage} />
+            <Route path="/design" componenet={DesignPage} />
+            <Route path="/" component={HomePage} />
           </Switch>
-        </Router>
+        </HashRouter>
         <div id="background"></div>
       </div>
     );
