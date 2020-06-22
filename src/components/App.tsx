@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import { Tabs, Tab, AppBar } from '@material-ui/core';
-import SwipeableViews from 'react-swipeable-views'
 import HomePage from './HomePage';
 import TimelinePage from './TimelinePage';
 import DesignPage from './DesignPage';
