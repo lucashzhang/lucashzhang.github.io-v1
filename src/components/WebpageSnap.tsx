@@ -28,7 +28,7 @@ class WebpageSnap extends Component<Prop, State> {
             }
             return <img className="timeline-visual" src={snapImgURL} alt="Screenshot of Project Webpage" />
         } else {
-            return <img className="timeline-visual" src={placeholder} alt="Placeholder Image of Code" />;
+            return <img className="timeline-visual" src={placeholder} alt="Placeholder screenshot of timeline code" />;
         }
     }
 }
