@@ -5,6 +5,10 @@
     padding: 0
 }
 
+.lucas-page .MuiCardContent-root:last-child {
+    padding-bottom: 16px;
+}
+
 .big-text {
     height: 97vh;
     width: 95%;
@@ -20,36 +24,63 @@
     color: white;
 }
 
-#introductions {
+.homepage-content {
+    margin: 2%;
+}
+
+.homepage-content img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.homepage-sectiontitle {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: 12vw;
+    text-align: center;
+    color: white;
+}
+
+.homepage-subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: xx-large;
+    text-align: center;
+    color: white;
+}
+
+.homepage-divider {
+    color: white;
+    width: 95%;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.homepage-section {
     width: 95%;
 }
 
-.homepage-card {
-    margin: 2%;
-}
-
-.lucas-page .MuiButtonBase-root {
-    margin: 2%;
-}
-
 @media only screen and (min-width: 1240px) {
-
-    .big-text {
-        width: 1170px;
-    }
 
     .big-text h3 {
         position: static;
         font-size: 15vh;
     }
 
-    #introductions {
-        width: 1170px;
-        display: flex;
-        flex-direction: row;
+    .homepage-half {
+        width: 50%;
+        position: relative;
     }
 
-    .homepage-half {
-        width: 50%
+    .homepage-divider {
+        width: 1170px
+    }
+
+    .homepage-sectiontitle {
+        font-size: 12vh;
+    }
+
+    .homepage-section {
+        width: 1170px;
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Tooltip, Fab } from '@material-ui/core';
-import { FaGithub, FaLink } from 'react-icons/fa'
-import '../css/TimelineButtons.css'
+import { FaGithub, FaLink } from 'react-icons/fa';
+import '../css/TimelineButtons.css';
 
 export interface Prop {
     color: string

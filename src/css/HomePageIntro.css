@@ -1,0 +1,34 @@
+
+
+.homepage-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.homepage-nav .MuiFab-root {
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    min-height: 45px;
+    margin-left: 16px;
+    box-shadow: none;
+}
+
+.homepage-nav .MuiCardContent-root {
+    margin-left: 2%;
+}
+
+@media only screen and (min-width: 1240px) {
+
+    #introductions {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .homepage-nav-group {
+        position: absolute;
+        bottom: 0px;
+    }
+}
