@@ -21,14 +21,14 @@ class WebpageSnap extends Component<Prop, State> {
         if (this.props.url != null && this.props.url.length > 0) {
             if (this.props.url.includes(userContent)) {
                 if (!this.props.url.includes('.mp4')) {
-                    return <img className="timeline-visual" src={this.props.url} alt="" />;
+                    return <img className="timeline-visual" src={this.props.url} alt="Screenshot from project" />;
                 } else {
                     return <video className="timeline-visual" src={this.props.url} controls></video>
                 }
             }
-            return <img className="timeline-visual" src={snapImgURL} alt="" />
+            return <img className="timeline-visual" src={snapImgURL} alt="Screenshot of Project Webpage" />
         } else {
-            return <img className="timeline-visual" src={placeholder} alt="" />;
+            return <img className="timeline-visual" src={placeholder} alt="Placeholder Image of Code" />;
         }
     }
 }
