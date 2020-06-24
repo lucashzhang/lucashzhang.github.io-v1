@@ -5,7 +5,7 @@ import '../css/TimelineButtons.css'
 
 export interface Prop {
     color: string
-    url: string
+    github: string
     website: string
 }
 
@@ -21,11 +21,11 @@ class TimelineButtons extends Component<Prop, State> {
         }
         return <div className="timeline-button-container">
             <Tooltip title="Github Repository">
-                <Fab color="primary" href={this.props.url} target="repoGithub">
+                <Fab color="primary" href={this.props.github} target="repoGithub">
                     <FaGithub></FaGithub>
                 </Fab>
             </Tooltip>
-            {this.props.website.length > 0 ? <Tooltip title="Website Link">
+            {website.length > 0 ? <Tooltip title="Website Link">
                 <Fab color="primary" href={website} target="repoWebpage">
                     <FaLink></FaLink>
                 </Fab>

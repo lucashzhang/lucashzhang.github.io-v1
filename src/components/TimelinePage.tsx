@@ -79,9 +79,9 @@ class TimelinePage extends Component<Prop, State> {
     handleRemoveRepos = (repoList: RepoInfo[], filterString: string) => {
         // Returns a list of repositories that don't include the string
         return repoList.filter((repo: RepoInfo) => {
-            return !(repo.language.toLowerCase().includes(filterString.toLowerCase())
-                || repo.name.toLowerCase().includes(filterString.toLowerCase())
-                || (repo.description != null && repo.description.toLowerCase().includes(` ${filterString.toLowerCase()} `)))
+            return !(repo.language.toLowerCase().includes(`${filterString.toLowerCase()} ` || `${filterString.toLowerCase()}.`)
+                || repo.name.toLowerCase().includes(`${filterString.toLowerCase()} ` || `${filterString.toLowerCase()}.`)
+                || (repo.description != null && repo.description.toLowerCase().includes(`${filterString.toLowerCase()} ` || `${filterString.toLowerCase()}.`)))
         })
     }
 

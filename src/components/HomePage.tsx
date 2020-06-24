@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Card, CardContent, Button } from '@material-ui/core'
-import '../css/HomePage.css'
-import PersonalPortrait from '../assets/PersonalPortrait.jpg'
+import { Card, CardContent, Button } from '@material-ui/core';
+import { Link } from "react-router-dom";
+import '../css/HomePage.css';
+import PersonalPortrait from '../assets/PersonalPortrait.jpg';
 
 export interface Prop {
     buttonClick: Function
@@ -14,15 +15,19 @@ class DesignPage extends Component<Prop, State> {
 
     render = () => {
         return <div className="lucas-page">
-            <div className="BigText"><h3>Welcome To My Page</h3></div>
-            <div className="Introductions">
-                <div className="Half">
-                    <Card className="Card" id="Image">
-                        <CardContent><img id="PersonalPortrait" src={PersonalPortrait} alt=""/></CardContent>
+            <div className="big-text"><h3>Welcome To My Page!</h3></div>
+            <div id="introductions">
+                <div className="homepage-half">
+                    <Card className="homepage-card" id="Image">
+                        <CardContent>
+                            <p>
+                                This is a placeholder for the image that's gonna be here
+                            </p>
+                        </CardContent>
                     </Card>
                 </div>
-                <div className="Half">
-                    <Card className="Card" id="Intro">
+                <div className="homepage-half">
+                    <Card className="homepage-card" id="Intro">
                         <CardContent>
                             <p>
                                 Hello, my Name is Lucas Zhang, and welcome to my personal website!
@@ -33,10 +38,10 @@ class DesignPage extends Component<Prop, State> {
                         </CardContent>
                     </Card>
                     <div id="ButtonContainer">
-                        <Button className="NavButton" variant="contained" color="secondary" onClick={() => this.props.buttonClick(1)}>
+                        <Button className="homepage-navbutton" variant="contained" color="secondary" component={Link} to="/programming">
                             Go To Programming
                         </Button>
-                        <Button className="NavButton" variant="contained" color="secondary" onClick={() => this.props.buttonClick(2)}>
+                        <Button className="homepage-navbutton" variant="contained" color="secondary" component={Link} to="/design">
                             Go To Design
                         </Button>
                     </div>

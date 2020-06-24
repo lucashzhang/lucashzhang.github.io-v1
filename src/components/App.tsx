@@ -17,13 +17,6 @@ interface State {
 
 class App extends Component<Prop, State> {
 
-  constructor(prop: Prop) {
-    super(prop);
-    this.state = {
-      tabNum: 0
-    }
-  }
-
   render() {
     return (
       <div className="App">

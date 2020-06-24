@@ -50,7 +50,7 @@ class Timeline extends Component<Prop, State> {
                                     </div>
                                     <TimelineButtons
                                         color={this.props.langColors[repo.language]}
-                                        url={repo.url}
+                                        github={repo.url}
                                         website={repo.homepage}>                                        
                                     </TimelineButtons>
                                 </div>
