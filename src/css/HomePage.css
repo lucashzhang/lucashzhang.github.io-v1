@@ -9,12 +9,11 @@
     padding-bottom: 16px;
 }
 
-.big-text {
+.homepage-home {
     height: 97vh;
-    width: 95%;
 }
 
-.big-text h3 {
+.homepage-big-text {
     position: relative;
     top: 12vh;
     font-size: 15vw;
@@ -33,7 +32,7 @@
     object-fit: cover;
 }
 
-.homepage-sectiontitle {
+.homepage-section-title {
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
     font-size: 12vw;
@@ -62,7 +61,7 @@
 
 @media only screen and (min-width: 1240px) {
 
-    .big-text h3 {
+    .homepage-big-text {
         position: static;
         font-size: 15vh;
     }
@@ -76,11 +75,16 @@
         width: 1170px
     }
 
-    .homepage-sectiontitle {
-        font-size: 12vh;
+    .homepage-section-title {
+        font-size: 10vh;
     }
 
     .homepage-section {
         width: 1170px;
+    }
+
+    .homepage-section-body {
+        display: flex;
+        flex-direction: row;
     }
 }

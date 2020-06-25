@@ -1,4 +1,6 @@
-
+#introductions {
+    flex-direction: column;
+}
 
 .homepage-nav {
     display: flex;
@@ -21,14 +23,9 @@
 }
 
 @media only screen and (min-width: 1240px) {
-
-    #introductions {
+    .homepage-nav-group {
         display: flex;
         flex-direction: row;
-    }
-
-    .homepage-nav-group {
-        position: absolute;
-        bottom: 0px;
+        width: 100%;
     }
 }
