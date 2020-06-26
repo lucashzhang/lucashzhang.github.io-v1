@@ -1,0 +1,21 @@
+#contact {
+    margin-bottom: 10vh;
+}
+
+.homepage-contact-fabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.homepage-contact-fabs .MuiFab-root {
+    font-size: 5vh;
+    width: 10vh;
+    height: 10vh;
+    min-width: 45px;
+    min-height: 45px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    box-shadow: none;
+}

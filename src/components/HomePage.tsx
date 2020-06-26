@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HomePageIntro from './HomePageIntro';
 import HomePageAbout from './HomePageAbout';
+import HomePageContact from './HomePageContact';
 import '../css/HomePage.css';
 
 export interface Prop {
@@ -20,6 +21,9 @@ class DesignPage extends Component<Prop, State> {
             <HomePageIntro></HomePageIntro>
             <hr className="homepage-divider"/>
             <HomePageAbout></HomePageAbout>
+            <hr className="homepage-divider"/>
+            <HomePageContact></HomePageContact>
+            
         </div>
     }
 }
