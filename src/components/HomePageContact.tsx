@@ -13,7 +13,7 @@ class HomepageContact extends Component<Prop, State> {
 
     render = () => {
         return <div className="homepage-section" id="contact">
-            <h3 className="homepage-section-title">Contact</h3>
+            <h3 className="homepage-section-title">Contact Me</h3>
             <div className="homepage-section-body homepage-contact-fabs">
                 <Tooltip title="My Linkedin">
                     <Fab color="primary" href="https://www.linkedin.com/in/lucashzhang" target="_blank">

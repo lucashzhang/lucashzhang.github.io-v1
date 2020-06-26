@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardContent } from '@material-ui/core';
+import { Card, CardContent, Button } from '@material-ui/core';
 import PersonalPortrait from '../assets/Headshot1.jpg';
 import '../css/HomePageAbout.css';
 
@@ -24,18 +24,18 @@ class HomePageAbout extends Component<Prop, State> {
                 </div>
                 <div className="homepage-half">
                     <div className="homepage-about">
-                        <h3 className="homepage-content homepage-subtitle">College</h3>
                         <Card className="homepage-content">
                             <CardContent>
+                                <h3>College</h3>
                                 <p>
                                     Currently, I'm a Computer Science Major at the University of North Carolina Chapel Hill.
                                     I'm also pursuing two minors in Statistics and Studio Art, respectively.
                                 </p>
                             </CardContent>
                         </Card>
-                        <h3 className="homepage-content homepage-subtitle">Interests</h3>
                         <Card className="homepage-content">
                             <CardContent>
+                                <h3>Interests</h3>
                                 <p>
                                     Some of my favorite things to do involve Digital Media.
                                     I really enjoy working in programs like Adobe Illustrator and Photoshop.
@@ -43,18 +43,24 @@ class HomePageAbout extends Component<Prop, State> {
                                 </p>
                             </CardContent>
                         </Card>
-                        <h3 className="homepage-content homepage-subtitle">Clubs</h3>
                         <Card className="homepage-content">
                             <CardContent>
+                                <h3>Activities</h3>
                                 <p>
-                                    Right now, I'm the design executive chair/director of the Carolina Analytics and Data Science Club and Carolina Data Challenge.
-                                    These organizations helped me meet many peers who share my interests.
+                                    Right now, I'm the design executive chair/design director of the Carolina Analytics and Data Science Club and Carolina Data Challenge hackathon.
+                                    These organizations helped me meet many peers and friends who share my interests.
                                 </p>
                             </CardContent>
                         </Card>
                     </div>
                 </div>
             </div>
+            {/* <div className="homepage-section-body" id="about-resume">
+                <h3 className="homepage-content homepage-subtitle">My Resume</h3>
+                <Button variant="contained" color="secondary" href='../assets/Resume_Lucas.pdf'>
+                    See my resume
+                </Button>
+            </div> */}
         </div>
     }
 }

@@ -1,4 +1,7 @@
-
+#about-resume {
+    flex-direction: column;
+    align-items: center;
+}
 
 .homepage-about-icons {
     font-size: 1.5rem;
