@@ -16,7 +16,7 @@
 .homepage-big-text {
     position: relative;
     top: 12vh;
-    font-size: 15vw;
+    font-size: 14vw;
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
     text-align: center;
@@ -63,7 +63,7 @@
 
     .homepage-big-text {
         position: static;
-        font-size: 15vh;
+        font-size: 14vh;
     }
 
     .homepage-half {

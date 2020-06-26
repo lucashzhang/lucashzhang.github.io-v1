@@ -16,7 +16,7 @@ class DesignPage extends Component<Prop, State> {
     render = () => {
         return <div className="lucas-page">
             <div className="homepage-home homepage-section">
-                <h3 className="homepage-big-text">Hello, I'm Lucas Zhang</h3>
+                <h3 className="homepage-big-text">Hi, I'm Lucas Zhang</h3>
             </div>
             <HomePageIntro></HomePageIntro>
             <hr className="homepage-divider"/>
