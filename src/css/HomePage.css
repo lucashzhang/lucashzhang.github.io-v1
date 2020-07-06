@@ -11,6 +11,8 @@
 
 .homepage-home {
     height: 88vh;
+    display: flex;
+    justify-content: center;
 }
 
 .homepage-big-text {
@@ -23,10 +25,15 @@
     color: white;
 }
 
-#homepage-logo {
+#homepage-logo-horz {
+    display: none;
+}
+
+#homepage-logo-vert {
     object-fit: contain;
     position: relative;
-    bottom: 10vh;
+    width: 60%;
+    height: auto;
 }
 
 .homepage-content {
@@ -70,6 +77,17 @@
     .homepage-big-text {
         position: static;
         font-size: 14vh;
+    }
+
+    #homepage-logo-horz {
+        display: block;
+        object-fit: contain;
+        position: relative;
+        bottom: 10vh;
+    }
+
+    #homepage-logo-vert {
+        display: none;
     }
 
     .homepage-half {
