@@ -4,12 +4,8 @@ export function assignColors(uniqLang: string[]) {
     //Goes through every other one in order so colors that are too similar aren't next to each other
 
 
-    for (let lang = 0; lang < uniqLang.length; lang+=2) {
-        colorDict[uniqLang[lang]] = selectColors(lang / 2, uniqLang.length);
-    }
-
-    for (let lang = 1; lang < uniqLang.length; lang+=2) {
-        colorDict[uniqLang[lang]] = selectColors(uniqLang.length - Math.floor(lang / 2), uniqLang.length);
+    for (let lang = 0; lang < uniqLang.length; lang+=1) {
+        colorDict[uniqLang[lang]] = selectColor(lang);
     }
 
     console.log(colorDict);
@@ -17,7 +13,9 @@ export function assignColors(uniqLang: string[]) {
     return colorDict;
 }
 
-function selectColors(colorNum: number, colors: number) {
-    if (colors < 1) colors = 1; // defaults to one color - avoid divide by zero
-    return "hsl(" + (colorNum * (360 / colors) % 360) + ",60%,45%)";
+function selectColor(number: number) {
+    const hue: number = (number * 137.508) % 360; // use golden angle approximation
+    const saturation: string = number % 2 == 0 ? "65%" : "50%";
+    const value: string = number % 2 == 0 ? "40%" : "55%";
+    return `hsl(${hue},${saturation},${value})`;
 }

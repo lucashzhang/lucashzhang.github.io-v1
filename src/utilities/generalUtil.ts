@@ -61,6 +61,8 @@ export function getUniqLang(repoList: RepoInfo[]) {
     let langList: string[] = repoList.map((repo: RepoInfo) => (`${repo.language}`));
     langList = langList.concat(getFromDesc(repoList))
     let uniqLang: string[] = langList.filter((v, i) => { return i === langList.lastIndexOf(v); });
+
+    uniqLang.sort();
     
     return uniqLang;
 }

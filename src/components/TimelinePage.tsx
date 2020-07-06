@@ -39,7 +39,6 @@ class TimelinePage extends Component<Prop, State> {
         if (repoList != null) {
             let newLangs = getUniqLang(repoList);
             let newColors = assignColors(newLangs);
-            newLangs = newLangs.sort()
             this.setState({
                 repoList: repoList,
                 includedRepo: repoList,
