@@ -10,7 +10,7 @@
 }
 
 .homepage-home {
-    height: 97vh;
+    height: 88vh;
 }
 
 .homepage-big-text {
@@ -21,6 +21,12 @@
     font-weight: 200;
     text-align: center;
     color: white;
+}
+
+#homepage-logo {
+    object-fit: contain;
+    position: relative;
+    bottom: 10vh;
 }
 
 .homepage-content {
