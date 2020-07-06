@@ -73,9 +73,8 @@ function getFromDesc(repoList: RepoInfo[]) {
         'ReactJS',
         'Angular',
         'Java',
-        'Java Swing',
-        'JavaScript ',
-        'TypeScript ',
+        'JavaScript',
+        'TypeScript',
         'Python',
         'Flutter',
         'Dart',
@@ -86,7 +85,7 @@ function getFromDesc(repoList: RepoInfo[]) {
     let langList: string[] = []; 
     for (let lang of known) {
         for (let repo of repoList) {
-            if (repo.description != null && repo.description.toLowerCase().includes(`${lang.toLowerCase()} ` || `${lang.toLowerCase()}.`)) {
+            if (repo.description != null && RegExp('\\b'+ lang.toLowerCase() +'\\b').test(repo.description.toLowerCase())) {
                 langList.push(`${lang}`);
                 break;
             }
