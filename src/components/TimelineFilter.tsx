@@ -44,10 +44,14 @@ class TimelineFilter extends Component<Prop, State> {
             checkBox: checkBoxes
         })
         // gives list of which check boxes are unchecked
+        let toInclude: string[] = Object.keys(checkBoxes).filter((include: string) => {
+            return checkBoxes[include]
+        })
         let toRemove: string[] = Object.keys(checkBoxes).filter((include: string) => {
             return !checkBoxes[include]
         })
-        this.props.handleIncludeChange(toRemove);
+        
+        this.props.handleIncludeChange(toRemove, toInclude);
     }
 
     onFieldChange = (e: any) => {

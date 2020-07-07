@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Tooltip, Fab } from '@material-ui/core';
-import { FaGithub, FaLink } from 'react-icons/fa';
+import { FaGithubAlt, FaLink } from 'react-icons/fa';
 import '../css/TimelineButtons.css';
 
 export interface Prop {
@@ -16,13 +16,13 @@ class TimelineButtons extends Component<Prop, State> {
 
     render = () => {
         let website: string = ""
-        if (this.props.website != null && !this.props.website.includes('raw.githubusercontent.com')) {
+        if (this.props.website != null && !this.props.website.includes('githubusercontent.com')) {
             website = this.props.website;
         }
         return <div className="timeline-button-container">
             <Tooltip title="Github Repository">
                 <Fab color="primary" href={this.props.github} target="repoGithub">
-                    <FaGithub></FaGithub>
+                    <FaGithubAlt></FaGithubAlt>
                 </Fab>
             </Tooltip>
             {website.length > 0 ? <Tooltip title="Website Link">
