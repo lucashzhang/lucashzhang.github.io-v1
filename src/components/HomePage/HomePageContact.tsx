@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Tooltip, Fab } from '@material-ui/core';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import '../css/HomePageContact.css';
+import '../../css/HomePage/HomePageContact.css';
 
 export interface Prop {
 }

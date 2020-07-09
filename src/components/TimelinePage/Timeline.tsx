@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { RepoInfo } from '../utilities/handleAPI';
-import { getDevIcon } from '../utilities/generalUtil';
+import { RepoInfo } from '../../utilities/handleAPI';
+import { getDevIcon } from '../../utilities/generalUtil';
 import { IconContext } from 'react-icons';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import WebpageSnap from './WebpageSnap'
 import TimelineButtons from './TimelineButtons'
 import 'react-vertical-timeline-component/style.min.css';
-import '../css/Timeline.css'
+import '../../css/TimelinePage/Timeline.css'
 
 export interface Prop {
     repos: RepoInfo[]

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import HomePageIntro from './HomePageIntro';
 import HomePageAbout from './HomePageAbout';
 import HomePageContact from './HomePageContact';
-import LogoHorz from '../assets/Logo20.png';
-import LogoVert from '../assets/Logo20_vert.png'
-import '../css/HomePage.css';
+import LogoHorz from '../../assets/Logo20.png';
+import LogoVert from '../../assets/Logo20_vert.png'
+import '../../css/HomePage/HomePage.css';
 
 export interface Prop {
     buttonClick: Function

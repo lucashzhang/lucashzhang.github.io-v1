@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardContent } from '@material-ui/core';
-import PersonalPortrait from '../assets/Headshot1.jpg';
-import '../css/HomePageAbout.css';
+import PersonalPortrait from '../../assets/Headshot1.jpg';
+import '../../css/HomePage/HomePageAbout.css';
 
 export interface Prop {
 }

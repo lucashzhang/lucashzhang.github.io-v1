@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardContent, Tooltip, Fab } from '@material-ui/core';
 import { Link } from "react-router-dom";
 import { FaLaptopCode, FaSmileBeam } from 'react-icons/fa';
-import '../css/HomePageIntro.css';
+import '../../css/HomePage/HomePageIntro.css';
 
 export interface Prop {
 }

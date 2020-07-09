@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../css/WebpageSnap.css'
-import placeholder from '../assets/Code-Placeholder.png'
+import placeholder from '../../assets/Code-Placeholder.png'
+import '../../css/TimelinePage/WebpageSnap.css'
 
 interface Prop {
     url: string

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { RepoInfo, getGenAPI } from '../utilities/handleAPI';
-import { assignColors } from '../utilities/handleColors';
-import { getUniqLang } from '../utilities/generalUtil';
+import { RepoInfo, getGenAPI } from '../../utilities/handleAPI';
+import { assignColors } from '../../utilities/handleColors';
+import { getUniqLang } from '../../utilities/generalUtil';
 import Timeline from './Timeline';
 import TimelineFilter from './TimelineFilter';
-import '../css/TimelinePage.css'
+import '../../css/TimelinePage/TimelinePage.css'
 
 export interface Prop {
 }

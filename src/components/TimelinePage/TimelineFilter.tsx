@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Card, CardContent, TextField, Checkbox, FormControl, FormControlLabel, FormGroup } from '@material-ui/core';
-import '../css/TimelineFilter.css'
+import '../../css/TimelinePage/TimelineFilter.css'
 
 export interface Prop {
     langList: string[]

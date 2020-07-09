@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { HashRouter, Switch, Route } from "react-router-dom";
 import '../css/App.css';
-import HomePage from './HomePage';
-import TimelinePage from './TimelinePage';
-import FunPage from './FunPage';
+import HomePage from './HomePage/HomePage';
+import TimelinePage from './TimelinePage/TimelinePage';
+import FunPage from './FunPage/FunPage';
 import NavBar from './NavBar'
 
 
