@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardContent } from '@material-ui/core';
+import { FaHardHat } from 'react-icons/fa';
 import '../../css/FunPage/FunPage.css'
 
 export interface Prop {
@@ -14,7 +15,7 @@ class FunPage extends Component<Prop, State> {
         return <div className="lucas-page fun-page">
             <Card className="fun-page-section">
                 <CardContent>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum distinctio veniam maiores saepe sapiente omnis ex facilis optio similique aliquid vitae quas et illum, deserunt soluta totam! Aperiam, eius dignissimos!</p>
+                    <p><span><FaHardHat></FaHardHat></span>   Sorry, this page is still under construction Please check again later!</p>
                 </CardContent>
             </Card>
         </div>
