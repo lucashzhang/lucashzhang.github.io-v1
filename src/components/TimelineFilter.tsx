@@ -74,6 +74,7 @@ class TimelineFilter extends Component<Prop, State> {
                                             <Checkbox style={{
                                                 color: this.props.langColors[lang],
                                             }} checked={this.state.checkBox[lang]}
+                                                color="default"
                                                 name={lang}
                                                 onChange={this.onCheckChange}
                                             />
