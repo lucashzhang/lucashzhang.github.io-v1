@@ -16,9 +16,9 @@ class HomePageAbout extends Component<Prop, State> {
             <h3 className="homepage-section-title">About Me</h3>
             <div className="homepage-section-body">
                 <div className="homepage-half">
-                    <Card className="homepage-content" id="portrait">
+                    <Card className="homepage-content">
                         <CardContent>
-                            <img src={PersonalPortrait} alt="A Portrait of Me!" />
+                            <img id="portrait" src={PersonalPortrait} alt="A Portrait of Me!" />
                         </CardContent>
                     </Card>
                 </div>

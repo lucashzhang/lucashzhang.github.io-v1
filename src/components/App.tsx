@@ -3,7 +3,7 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 import '../css/App.css';
 import HomePage from './HomePage';
 import TimelinePage from './TimelinePage';
-import DesignPage from './DesignPage';
+import FunPage from './FunPage';
 import NavBar from './NavBar'
 
 
@@ -24,7 +24,7 @@ class App extends Component<Prop, State> {
           <Route component={NavBar} />
           <Switch>
             <Route path="/programming" component={TimelinePage} />
-            <Route path="/design" componenet={DesignPage} />
+            <Route path="/fun" component={FunPage} />
             <Route path="/" component={HomePage} />
           </Switch>
         </HashRouter>

@@ -13,10 +13,10 @@ export interface Prop {
 export interface State {
 }
 
-class DesignPage extends Component<Prop, State> {
+class HomePage extends Component<Prop, State> {
 
     render = () => {
-        return <div className="lucas-page">
+        return <div className="lucas-page home-page">
             {/* <div className="homepage-home homepage-section">
                 <h3 className="homepage-big-text">Hi, I'm Lucas Zhang</h3>
             </div> */}
@@ -29,9 +29,8 @@ class DesignPage extends Component<Prop, State> {
             <HomePageAbout></HomePageAbout>
             <hr className="homepage-divider" />
             <HomePageContact></HomePageContact>
-
         </div>
     }
 }
 
-export default DesignPage;
+export default HomePage;

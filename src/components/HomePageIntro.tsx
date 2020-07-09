@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardContent, Tooltip, Fab } from '@material-ui/core';
 import { Link } from "react-router-dom";
-import { FaLaptopCode, FaPalette } from 'react-icons/fa';
+import { FaLaptopCode, FaSmileBeam } from 'react-icons/fa';
 import '../css/HomePageIntro.css';
 
 export interface Prop {
@@ -46,15 +46,15 @@ class HomePageIntro extends Component<Prop, State> {
 
                 <Card className="homepage-content homepage-nav homepage-half">
                     <Tooltip title="To the Design Page">
-                        <Fab color="secondary" component={Link} to="/design">
-                            <FaPalette></FaPalette>
+                        <Fab color="secondary" component={Link} to="/fun">
+                            <FaSmileBeam></FaSmileBeam>
                         </Fab>
                     </Tooltip>
                     <CardContent>
-                        <h3>Design</h3>
+                        <h3>Fun Stuff</h3>
                         <p>
-                            This is page is still a work in progress. It's even questionable whether this
-                            page will be solely reserved for design.
+                            I do a lot of things in my free time! 
+                            This page includes many examples of the interesting and fun activities that I've done.
                         </p>
                     </CardContent>
                 </Card>

@@ -25,7 +25,7 @@ class NavBar extends Component<Prop> {
                 <Tabs value={this.props.location.pathname} textColor="secondary" indicatorColor="secondary" variant="fullWidth">
                     <Tab label="Home" value="/" component={Link} to="/" />
                     <Tab label="Programming" value="/programming" component={Link} to="/programming" />
-                    <Tab label="Design" value="/design" component={Link} to="/design" />
+                    <Tab label="Fun Stuff" value="/fun" component={Link} to="/fun" />
                 </Tabs>
             </AppBar>
         )

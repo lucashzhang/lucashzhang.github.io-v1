@@ -10,12 +10,13 @@
 
 .homepage-nav .MuiFab-root {
     font-size: 1.5rem;
-    width: 45px;
-    height: 45px;
-    min-width: 45px;
-    min-height: 45px;
+    width: 3rem;
+    height: 3rem;
+    min-width: 3rem;
+    min-height: 3rem;
     margin-left: 16px;
     box-shadow: none;
+    
 }
 
 .homepage-nav .MuiCardContent-root {
