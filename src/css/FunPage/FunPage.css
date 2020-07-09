@@ -1,0 +1,18 @@
+.fun-page {
+    padding-top: 3%;
+}
+
+.fun-page-section {
+    width: 95%;
+}
+
+@media only screen and (min-width: 1240px) {
+
+    .fun-page {
+        padding-top: 1%;
+    }
+    
+    .fun-page-section {
+        width: 1170px;
+    }
+}

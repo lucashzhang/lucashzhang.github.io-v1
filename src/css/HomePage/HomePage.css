@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;700&display=swap');
 
-.lucas-page {
-    width: 100%;
-    padding: 0
-}
-
-.lucas-page .MuiCardContent-root:last-child {
-    padding-bottom: 16px;
-}
-
 .homepage-home {
     height: 88vh;
     display: flex;

@@ -23,8 +23,8 @@ class App extends Component<Prop, State> {
         <HashRouter>
           <Route component={NavBar} />
           <Switch>
-            <Route path="/programming" component={TimelinePage} />
             <Route path="/fun" component={FunPage} />
+            <Route path="/programming" component={TimelinePage} />
             <Route path="/" component={HomePage} />
           </Switch>
         </HashRouter>
