@@ -12,19 +12,19 @@ export interface State {
 class HomePageAbout extends Component<Prop, State> {
 
     render = () => {
-        return <div className="homepage-section" id="about">
-            <h3 className="homepage-section-title">About Me</h3>
+        return <div className="lucas-section" id="about">
+            <h3 className="lucas-section-title">About Me</h3>
             <div className="homepage-section-body">
-                <div className="homepage-half">
-                    <Card className="homepage-content">
+                <div className="column-half">
+                    <Card className="lucas-content">
                         <CardContent>
                             <img id="portrait" src={PersonalPortrait} alt="A Portrait of Me!" />
                         </CardContent>
                     </Card>
                 </div>
-                <div className="homepage-half">
+                <div className="column-half">
                     <div className="homepage-about">
-                        <Card className="homepage-content">
+                        <Card className="lucas-content">
                             <CardContent>
                                 <h3>College</h3>
                                 <p>
@@ -33,7 +33,7 @@ class HomePageAbout extends Component<Prop, State> {
                                 </p>
                             </CardContent>
                         </Card>
-                        <Card className="homepage-content">
+                        <Card className="lucas-content">
                             <CardContent>
                                 <h3>Interests</h3>
                                 <p>
@@ -43,7 +43,7 @@ class HomePageAbout extends Component<Prop, State> {
                                 </p>
                             </CardContent>
                         </Card>
-                        <Card className="homepage-content">
+                        <Card className="lucas-content">
                             <CardContent>
                                 <h3>Activities</h3>
                                 <p>

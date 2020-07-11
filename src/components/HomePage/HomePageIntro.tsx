@@ -15,8 +15,8 @@ class HomePageIntro extends Component<Prop, State> {
     render = () => {
         return <div className="homepage-section homepage-section-body" id="introductions">
             <div className="homepage-introduction">
-                <h3 className="homepage-section-title">Welcome to My Page!</h3>
-                <Card className="homepage-content">
+                <h3 className="lucas-section-title">Welcome to My Page!</h3>
+                <Card className="lucas-content">
                     <CardContent>
                         <p>
                             Hello, my name is Lucas Zhang, and thank you for coming to my personal website!
@@ -27,9 +27,9 @@ class HomePageIntro extends Component<Prop, State> {
                     </CardContent>
                 </Card>
             </div>
-            <h3 className="homepage-content homepage-subtitle">Navigating my site</h3>
+            <h3 className="luacs-content lucas-subtitle">Navigating my site</h3>
             <div className="homepage-nav-group">
-                <Card className="homepage-content homepage-nav homepage-half">
+                <Card className="lucas-content homepage-nav column-half">
                     <Tooltip title="To the Programming Page">
                         <Fab color="primary" component={Link} to="/programming">
                             <FaLaptopCode></FaLaptopCode>
@@ -44,7 +44,7 @@ class HomePageIntro extends Component<Prop, State> {
                     </CardContent>
                 </Card>
 
-                <Card className="homepage-content homepage-nav homepage-half">
+                <Card className="lucas-content homepage-nav column-half">
                     <Tooltip title="To the Design Page">
                         <Fab color="secondary" component={Link} to="/fun">
                             <FaSmileBeam></FaSmileBeam>
@@ -53,7 +53,7 @@ class HomePageIntro extends Component<Prop, State> {
                     <CardContent>
                         <h3>Fun Stuff</h3>
                         <p>
-                            I do a lot of things in my free time! 
+                            I do a lot of things in my free time!
                             This page includes many examples of the interesting and fun activities that I've done.
                         </p>
                     </CardContent>

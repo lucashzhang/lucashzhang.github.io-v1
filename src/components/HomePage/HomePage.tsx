@@ -21,13 +21,13 @@ class HomePage extends Component<Prop, State> {
                 <h3 className="homepage-big-text">Hi, I'm Lucas Zhang</h3>
             </div> */}
             <div className="homepage-home">
-                <img className="homepage-section" id="homepage-logo-horz" src={LogoHorz} alt="Hi, I'm Lucas Zhang"></img>
-                <img className="homepage-section" id="homepage-logo-vert" src={LogoVert} alt="Hi, I'm Lucas Zhang"></img>
+                <img className="lucas-section" id="homepage-logo-horz" src={LogoHorz} alt="Hi, I'm Lucas Zhang"></img>
+                <img className="lucas-section" id="homepage-logo-vert" src={LogoVert} alt="Hi, I'm Lucas Zhang"></img>
             </div>
             <HomePageIntro></HomePageIntro>
-            <hr className="homepage-divider" />
+            <hr className="lucas-divider" />
             <HomePageAbout></HomePageAbout>
-            <hr className="homepage-divider" />
+            <hr className="lucas-divider" />
             <HomePageContact></HomePageContact>
         </div>
     }

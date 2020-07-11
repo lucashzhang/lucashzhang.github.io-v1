@@ -23,7 +23,8 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  padding: 0
+  padding: 0;
+  padding-top: 3%;
 }
 
 .lucas-page .MuiCardContent-root:last-child {
@@ -31,15 +32,67 @@
 }
 
 .center-column {
-  width: 95.5%;
+  width: 95%;
 }
 
-.column-half {
-  width: 50%;
+.lucas-section-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 12vw;
+  text-align: center;
+  color: white;
+}
+
+.lucas-subtitle {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: xx-large;
+  text-align: center;
+  color: white;
+}
+
+.lucas-divider {
+  color: white;
+  width: 95%;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.lucas-content {
+  margin: 2%;
 }
 
 @media only screen and (min-width: 1240px) {
+
+  .lucas-page {
+    padding-top: 1%;
+  }
+  
   .center-column {
     width: 1170px;
-  } 
+  }
+
+  .column-half {
+    width: 50%;
+  }
+  
+  .column-golden-larger {
+    width: 62%;
+  }
+  
+  .column-golden-smaller {
+    width: 38%
+  }
+
+  .lucas-divider {
+    width: 1170px
+  }
+
+  .lucas-section-title {
+    font-size: 10vh;
+  }
+
+  .lucas-section {
+    width: 1170px;
+  }
 }

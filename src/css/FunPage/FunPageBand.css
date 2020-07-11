@@ -1,0 +1,31 @@
+.funpage-band .funpage-videos {
+    height: 200px;
+    width: 100%;
+}
+
+#funpage-marching-band {
+    display: flex;
+    flex-direction: column;
+}
+
+#funpage-indoor-percussion {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+@media only screen and (min-width: 1240px) {
+
+    .funpage-band .funpage-videos {
+        height: 400px;
+    }
+
+    #funpage-marching-band {
+        flex-direction: row;
+    }
+    
+    #funpage-indoor-percussion {
+        display: flex;
+        flex-direction: row;
+    }
+}

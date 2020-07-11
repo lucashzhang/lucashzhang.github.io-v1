@@ -2,3 +2,7 @@
     padding-top: 12px;
     width: 60px;
 }
+
+.MuiFormGroup-row {
+    justify-content: space-evenly;
+}

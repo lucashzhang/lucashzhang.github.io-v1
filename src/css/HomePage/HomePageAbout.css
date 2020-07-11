@@ -2,12 +2,17 @@
     border-radius: 0.25rem;
 }
 
+.lucas-content img {
+    width: 100%;
+    object-fit: cover;
+}
+
 @media only screen and (min-width: 1240px) {
     #about .homepage-section-body {
         display: flex;
     }
     
-    #about .homepage-section-body .homepage-content {
+    #about .homepage-section-body .lucas-content {
         margin-bottom: 0;
     }
     

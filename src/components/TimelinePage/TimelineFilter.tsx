@@ -66,7 +66,7 @@ class TimelineFilter extends Component<Prop, State> {
                 <CardContent>
                     <TextField fullWidth id="outlined-basic" label="Search" variant="outlined" onChange={this.onFieldChange} />
                     <FormControl fullWidth component="fieldset">
-                        {Object.keys(this.state.checkBox).length > 0 ? <Grid container alignItems="center" justify="center">
+                        {Object.keys(this.state.checkBox).length > 0 ? <Grid container alignItems="center" justify="space-evenly">
                             <FormGroup row>
                                 {this.props.langList.map((lang: string) => (
                                     <Grid item key={lang} >

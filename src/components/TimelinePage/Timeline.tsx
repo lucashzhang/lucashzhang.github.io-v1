@@ -23,7 +23,7 @@ class Timeline extends Component<Prop, State> {
         let repos = this.props.repos;
         return (
             repos.length > 0 ? <IconContext.Provider value={{ color: "white", className: "global-class-name" }}>
-                <VerticalTimeline layout={'1-column'}>
+                <VerticalTimeline layout={'1-column'} animate = {false}>
                     {this.props.repos.map((repo: RepoInfo) => {
 
                         const LangIcon: any = getDevIcon(repo.language, repo.description);

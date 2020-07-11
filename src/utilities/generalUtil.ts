@@ -96,3 +96,8 @@ function getFromDesc(repoList: RepoInfo[]) {
 
     return langList;
 }
+
+export function getDesigns() {
+
+    let designList: { [index: string]: string; } = {};
+}
