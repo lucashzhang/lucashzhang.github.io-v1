@@ -1,0 +1,9 @@
+.fun-design-tile img {
+    object-fit: contain;
+    object-position: center;
+}
+
+.fun-design-tile video {
+    object-fit: contain;
+    object-position: center;
+}
