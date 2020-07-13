@@ -7,8 +7,6 @@ export function assignColors(uniqLang: string[]) {
         colorDict[uniqLang[lang]] = selectColor(lang);
     }
 
-    console.log(colorDict);
-
     return colorDict;
 }
 

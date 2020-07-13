@@ -1,50 +1,68 @@
 import React, { Component } from 'react';
-import { Card, CardContent, GridList, GridListTile } from '@material-ui/core';
-import { Designs, DesignType, getDesigns, Orientation } from '../../utilities/handleDesigns';
+import { Card, CardContent } from '@material-ui/core';
 import '../../css/FunPage/FunPageDesign.css'
+
+import portfolio_app from '../../assets/designs/portfolio_app.mp4';
+import CADSXMEJO from '../../assets/designs/CADSXMEJO.png';
+import CDCPoster from '../../assets/designs/CDCPoster1.png';
 
 export interface Prop {
 }
 
 export interface State {
-    designList: Designs[]
 }
 
 class FunPageDesign extends Component<Prop, State> {
-
-    constructor(props: Prop) {
-        super(props);
-        this.state = {
-            designList: []
-        }
-    }
-
-    componentDidMount = () => {
-        const tempDesigns: Designs[] = getDesigns();
-        this.setState({
-            designList: tempDesigns
-        })
-    }
-
-    handleDesignContent = (design: Designs) => {
-        let numCols = design.orientation === Orientation.LANDSCAPE ? 3 : 2;
-        let numRows = design.orientation === Orientation.PORTRAIT ? 3 : 2;
-        if (design.type === DesignType.IMAGE) {
-            return <GridListTile className="fun-design-tile" cols={numCols} rows={numRows}><img src={design.file} alt={design.name} /></GridListTile>
-        } else {
-            return <GridListTile className="fun-design-tile" cols={numCols} rows={numRows}><video src={design.file} controls></video></GridListTile>
-        }
-    }
 
     render = () => {
         return <div className="lucas-section funpage-design">
             <h3 className="lucas-section-title">Design</h3>
             <div className="lucas-section" id="funpage-design-grid">
-                <GridList cols={5}>
-                    {this.state.designList.map((design) => (
-                        this.handleDesignContent(design)
-                    ))}
-                </GridList>
+                <div id="portfolio-app">
+                    <Card className="lucas-content">
+                        <CardContent>
+                            <video className="funpage-design-content" src={portfolio_app} controls></video>
+                        </CardContent>
+                    </Card>
+                    <Card className="lucas-content">
+                        <CardContent>
+                            <h3>Portfolio App Animation</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi rerum corrupti quo deleniti illum velit quaerat. Ea, rerum? Qui unde dolorem pariatur quidem nisi nam tenetur soluta libero doloribus doloremque!
+                            </p>
+                        </CardContent>
+                    </Card>
+                </div>
+                <div id="cdc-poster">
+                    <Card className="lucas-content">
+                        <CardContent>
+                            <img className="funpage-design-content" src={CDCPoster}></img>
+                        </CardContent>
+                    </Card>
+                    <Card className="lucas-content">
+                        <CardContent>
+                            <h3>Carolina Data Challenge 2019</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi rerum corrupti quo deleniti illum velit quaerat. Ea, rerum? Qui unde dolorem pariatur quidem nisi nam tenetur soluta libero doloribus doloremque!
+                            </p>
+                        </CardContent>
+                    </Card>
+                </div>
+                <div id="cads-poster">
+                    <Card className="lucas-content">
+                        <CardContent>
+                            <img className="funpage-design-content" src={CADSXMEJO}></img>
+                        </CardContent>
+                    </Card>
+                    <Card className="lucas-content">
+                        <CardContent>
+                            <h3>Carolina Analytics and Data Science</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi rerum corrupti quo deleniti illum velit quaerat. Ea, rerum? Qui unde dolorem pariatur quidem nisi nam tenetur soluta libero doloribus doloremque!
+                            </p>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
         </div>
     }

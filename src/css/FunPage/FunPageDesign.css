@@ -1,9 +1,5 @@
-.fun-design-tile img {
+.funpage-design-content {
+    max-height: 900px;
+    width: 100%;
     object-fit: contain;
-    object-position: center;
-}
-
-.fun-design-tile video {
-    object-fit: contain;
-    object-position: center;
 }
