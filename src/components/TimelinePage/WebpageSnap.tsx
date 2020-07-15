@@ -24,8 +24,8 @@ class WebpageSnap extends Component<Prop, State> {
 
     render() {
 
-        const apiURL: string = 'https://api.apiflash.com/v1/urltoimage?access_key=81b584f60fb2444db5beb297443320db&ttl=2592000&url=';
-        const userContent: string = "raw.githubusercontent.com/";
+        const apiURL: string = 'https://api.apiflash.com/v1/urltoimage?access_key=81b584f60fb2444db5beb297443320db&delay=1&ttl=2592000&url=';
+        const userContent: string = "githubusercontent.com/";
         const snapImgURL: string = apiURL + this.props.url;
 
         if (this.props.url != null && this.props.url.length > 0) {

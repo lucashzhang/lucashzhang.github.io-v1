@@ -1,5 +1,8 @@
 .timeline-visual {
     object-fit: contain;
     width: 100%;
+    height: auto;
+    max-height: 320px;
     border-radius: 0.25rem;
+    background-color: darkgray;
 }
