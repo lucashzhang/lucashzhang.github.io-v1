@@ -3,6 +3,7 @@ import { RepoInfo } from '../../utilities/handleAPI';
 import { getDevIcon } from '../../utilities/generalUtil';
 import { IconContext } from 'react-icons';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import { isBrowser } from 'react-device-detect';
 import WebpageSnap from './WebpageSnap'
 import TimelineButtons from './TimelineButtons'
 import 'react-vertical-timeline-component/style.min.css';
@@ -23,7 +24,7 @@ class Timeline extends Component<Prop, State> {
         let repos = this.props.repos;
         return (
             repos.length > 0 ? <IconContext.Provider value={{ color: "white", className: "global-class-name" }}>
-                <VerticalTimeline layout={'1-column'} animate = {false}>
+                <VerticalTimeline layout={'1-column'} animate = {isBrowser}>
                     {this.props.repos.map((repo: RepoInfo) => {
 
                         const LangIcon: any = getDevIcon(repo.language, repo.description);

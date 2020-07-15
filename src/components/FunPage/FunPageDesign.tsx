@@ -33,30 +33,30 @@ class FunPageDesign extends Component<Prop, State> {
                         </CardContent>
                     </Card>
                 </div>
-                <div id="cdc-poster">
+                <div id="cads-poster">
                     <Card className="lucas-content">
                         <CardContent>
-                            <img className="funpage-design-content" src={CDCPoster}></img>
+                            <img className="funpage-design-content" src={CADSXMEJO} alt="lmao"></img>
                         </CardContent>
                     </Card>
                     <Card className="lucas-content">
                         <CardContent>
-                            <h3>Carolina Data Challenge 2019</h3>
+                            <h3>Carolina Analytics and Data Science</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi rerum corrupti quo deleniti illum velit quaerat. Ea, rerum? Qui unde dolorem pariatur quidem nisi nam tenetur soluta libero doloribus doloremque!
                             </p>
                         </CardContent>
                     </Card>
                 </div>
-                <div id="cads-poster">
+                <div id="cdc-poster">
                     <Card className="lucas-content">
                         <CardContent>
-                            <img className="funpage-design-content" src={CADSXMEJO}></img>
+                            <img className="funpage-design-content" src={CDCPoster} alt="lmao"></img>
                         </CardContent>
                     </Card>
                     <Card className="lucas-content">
                         <CardContent>
-                            <h3>Carolina Analytics and Data Science</h3>
+                            <h3>Carolina Data Challenge 2019</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi rerum corrupti quo deleniti illum velit quaerat. Ea, rerum? Qui unde dolorem pariatur quidem nisi nam tenetur soluta libero doloribus doloremque!
                             </p>

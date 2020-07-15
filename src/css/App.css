@@ -59,7 +59,9 @@
 }
 
 .lucas-content {
-  margin: 2%;
+  margin: 3%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 @media only screen and (min-width: 1240px) {
@@ -94,5 +96,11 @@
 
   .lucas-section {
     width: 1170px;
+    animation: cd-bounce-2 .6s;
+
+  }
+
+  .lucas-content {
+    margin: 2%;
   }
 }
