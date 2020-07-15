@@ -1,30 +1,33 @@
 {
   "files": {
-    "main.css": "/static/css/main.9c72c2b3.chunk.css",
-    "main.js": "/static/js/main.c5b83c36.chunk.js",
-    "main.js.map": "/static/js/main.c5b83c36.chunk.js.map",
+    "main.css": "/static/css/main.9233291e.chunk.css",
+    "main.js": "/static/js/main.8787dae0.chunk.js",
+    "main.js.map": "/static/js/main.8787dae0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e2c3d7e5.js",
     "runtime-main.js.map": "/static/js/runtime-main.e2c3d7e5.js.map",
     "static/css/2.ac1ab58b.chunk.css": "/static/css/2.ac1ab58b.chunk.css",
-    "static/js/2.67fb450c.chunk.js": "/static/js/2.67fb450c.chunk.js",
-    "static/js/2.67fb450c.chunk.js.map": "/static/js/2.67fb450c.chunk.js.map",
+    "static/js/2.0958641a.chunk.js": "/static/js/2.0958641a.chunk.js",
+    "static/js/2.0958641a.chunk.js.map": "/static/js/2.0958641a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ca84ad7c69879d14b4125e7542c81997.js": "/precache-manifest.ca84ad7c69879d14b4125e7542c81997.js",
+    "precache-manifest.8ebbc12be54d2a290777aa15f6daa5a4.js": "/precache-manifest.8ebbc12be54d2a290777aa15f6daa5a4.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.ac1ab58b.chunk.css.map": "/static/css/2.ac1ab58b.chunk.css.map",
-    "static/css/main.9c72c2b3.chunk.css.map": "/static/css/main.9c72c2b3.chunk.css.map",
-    "static/js/2.67fb450c.chunk.js.LICENSE.txt": "/static/js/2.67fb450c.chunk.js.LICENSE.txt",
+    "static/css/main.9233291e.chunk.css.map": "/static/css/main.9233291e.chunk.css.map",
+    "static/js/2.0958641a.chunk.js.LICENSE.txt": "/static/js/2.0958641a.chunk.js.LICENSE.txt",
+    "static/media/CADSXMEJO.png": "/static/media/CADSXMEJO.b7c2d6e1.png",
+    "static/media/CDCPoster1.png": "/static/media/CDCPoster1.cd8278f5.png",
     "static/media/Code-Placeholder.png": "/static/media/Code-Placeholder.4069e7dc.png",
     "static/media/Headshot1.jpg": "/static/media/Headshot1.5d939f81.jpg",
     "static/media/Logo20.png": "/static/media/Logo20.14ced1d3.png",
     "static/media/Logo20_vert.png": "/static/media/Logo20_vert.8e892bbb.png",
+    "static/media/portfolio_app.mp4": "/static/media/portfolio_app.75ea017e.mp4",
     "static/media/App.css": "/static/media/starrynight.5d689918.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e2c3d7e5.js",
     "static/css/2.ac1ab58b.chunk.css",
-    "static/js/2.67fb450c.chunk.js",
-    "static/css/main.9c72c2b3.chunk.css",
-    "static/js/main.c5b83c36.chunk.js"
+    "static/js/2.0958641a.chunk.js",
+    "static/css/main.9233291e.chunk.css",
+    "static/js/main.8787dae0.chunk.js"
   ]
 }
