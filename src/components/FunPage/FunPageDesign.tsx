@@ -28,7 +28,9 @@ class FunPageDesign extends Component<Prop, State> {
                         <CardContent>
                             <h3>Portfolio App Animation</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi rerum corrupti quo deleniti illum velit quaerat. Ea, rerum? Qui unde dolorem pariatur quidem nisi nam tenetur soluta libero doloribus doloremque!
+                                For years, I've had an interest creating and designing things. 
+                                During my senior year of high school, I attended a class where I learned and became certified to use various Adobe Creative Cloud products.
+                                My chosen final project for the class was to create an app animation (shown above) that showcased all my designs up to that point.
                             </p>
                         </CardContent>
                     </Card>
@@ -36,14 +38,15 @@ class FunPageDesign extends Component<Prop, State> {
                 <div id="cads-poster">
                     <Card className="lucas-content">
                         <CardContent>
-                            <img className="funpage-design-content" src={CADSXMEJO} alt="lmao"></img>
+                            <img className="funpage-design-content" src={CADSXMEJO} alt="Digital Journalism publicity graphic"></img>
                         </CardContent>
                     </Card>
                     <Card className="lucas-content">
                         <CardContent>
                             <h3>Carolina Analytics and Data Science</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi rerum corrupti quo deleniti illum velit quaerat. Ea, rerum? Qui unde dolorem pariatur quidem nisi nam tenetur soluta libero doloribus doloremque!
+                                As the design chair on the Carolina Analytics and Data Science executive board, I help create visuals for the various ventures of the other board members.
+                                The design shown above was created to publicize the Data Journalism Mentorship program that the club created in partnership with UNC's Hussman School of Journalism and Media.
                             </p>
                         </CardContent>
                     </Card>
@@ -51,14 +54,15 @@ class FunPageDesign extends Component<Prop, State> {
                 <div id="cdc-poster">
                     <Card className="lucas-content">
                         <CardContent>
-                            <img className="funpage-design-content" src={CDCPoster} alt="lmao"></img>
+                            <img className="funpage-design-content" src={CDCPoster} alt="Carolina Data Challenge 2019 Poster"></img>
                         </CardContent>
                     </Card>
                     <Card className="lucas-content">
                         <CardContent>
-                            <h3>Carolina Data Challenge 2019</h3>
+                            <h3>Carolina Data Challenge</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi rerum corrupti quo deleniti illum velit quaerat. Ea, rerum? Qui unde dolorem pariatur quidem nisi nam tenetur soluta libero doloribus doloremque!
+                                One of my first assignments as the design chair of the Carolina Analytics and Data Science club was to serve as the interim designer of the 2019 Carolina Data Challenge.
+                                This year, I am offically director of design for the Data Challenge and am excited to see my works help the event come into fruition.
                             </p>
                         </CardContent>
                     </Card>
