@@ -76,6 +76,7 @@ function getFromDesc(repoList: RepoInfo[]) {
         'ReactJS',
         'Angular',
         'Java',
+        'Swing',
         'JavaScript',
         'TypeScript',
         'Python',
