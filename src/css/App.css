@@ -8,6 +8,14 @@
   z-index: 0;
 }
 
+h3 {
+  color: rgb(69, 69, 69);
+}
+
+p {
+  color: rgb(69, 69, 69);
+}
+
 .App {
   display: grid;
 }
