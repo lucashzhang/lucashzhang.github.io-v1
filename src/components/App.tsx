@@ -8,11 +8,9 @@ import FunPage from './FunPage/FunPage';
 import NavBar from './NavBar';
 
 interface Prop {
-
 }
 
 interface State {
-  tabNum: any
 }
 
 class App extends Component<Prop, State> {
