@@ -29,7 +29,7 @@ class FunPageBand extends Component<Prop, State> {
                         <h3>Marching Band</h3>
                         <p>
                             During all four years of high school, I spent a substantial amount of time rehearsing as the lead synthesizer player in the Panther Creek Marching Band.
-                            We would perform at school football games and compete in various local competitions, even having the chance to play at the Lucas Oil Stadium in Indianapolis. 
+                            We would perform at school football games and compete in various local competitions, even having the chance to compete in the Grand Nationals competition at the Lucas Oil Stadium in Indianapolis. 
                             By the end of my senior year, we were considered to be the best Marching Band in the state for that season.
                         </p>
                     </CardContent>
@@ -41,7 +41,7 @@ class FunPageBand extends Component<Prop, State> {
                         <h3>Indoor Percussion</h3>
                         <p>
                             After the Marching Band season ends, my section shifts it's attention to the indoor percussion season. 
-                            We would also compete many local and regional competitions, but as an indoor percussion group, we are often way more competitive than in marching band.
+                            We would also compete in many local AIA and regional WGI competitions, but as an indoor percussion group, we are often way more competitive than in marching band.
                             Throughout my high school years, we had placed first in our class four consecutive times.
                         </p>
                     </CardContent>
