@@ -27,7 +27,7 @@ class TimelineFilter extends Component<Prop, State> {
         let checkBoxes: { [index: string]: any; } = {};
         //Initializes all checkboxes to be checked
         this.props.langList.forEach((lang: string) => {
-            checkBoxes[lang] = true
+            checkBoxes[lang] = false;
         });
 
         this.setState({
@@ -35,6 +35,20 @@ class TimelineFilter extends Component<Prop, State> {
         })
 
     }
+
+    // componentDidMount = () => {
+
+    //     let checkBoxes: { [index: string]: any; } = {};
+    //     //Initializes all checkboxes to be checked
+    //     this.props.langList.forEach((lang: string) => {
+    //         checkBoxes[lang] = true
+    //     });
+
+    //     this.setState({
+    //         checkBox: checkBoxes
+    //     })
+
+    // }
 
     onCheckChange = (e: any) => {
 

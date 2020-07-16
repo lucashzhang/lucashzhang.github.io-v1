@@ -63,30 +63,34 @@ class TimelinePage extends Component<Prop, State> {
         l = length of resulting list from first for loop
         */
 
-        let tempRepos: any[] = [];
+        let filteredRepos: RepoInfo[] = this.state.repoList;
 
-        // For each language to remove, filter out the repos that don't the language
-        console.log(toInclude);
-        for (let lang of toInclude) {
-            tempRepos = tempRepos.concat(this.handleIncludeRepos(this.state.repoList, lang));
-        }
+        if (toInclude.length > 0) {
+            let tempRepos: any[] = [];
 
-        // Filter out any duplicates
-        let filteredRepos: RepoInfo[] = tempRepos.filter((v, i) => { return i === tempRepos.lastIndexOf(v); });
-
-        // Resort the list into the correct order
-        filteredRepos.sort((a, b) => {
-            if (a['created'] > b['created']) {
-                return -1;
-            } else {
-                return 1;
+            // For each language to remove, filter out the repos that don't the language
+            for (let lang of toInclude) {
+                tempRepos = tempRepos.concat(this.handleIncludeRepos(this.state.repoList, lang));
             }
-        });
+
+            // Filter out any duplicates
+            filteredRepos = tempRepos.filter((v, i) => { return i === tempRepos.lastIndexOf(v); });
+
+            // Resort the list into the correct order
+            filteredRepos.sort((a, b) => {
+                if (a['created'] > b['created']) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            });
+        }
 
         this.setState({
             includedRepo: filteredRepos
-        })
+        });
     }
+
 
     /*
      *@deprecated
