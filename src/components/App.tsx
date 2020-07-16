@@ -17,7 +17,6 @@ class App extends Component<Prop, State> {
 
   componentDidMount = () => {
     // Google Analytics
-    console.log('initializing')
     ReactGA.initialize('UA-172850727-1');
     ReactGA.pageview(window.location.pathname + window.location.search)
     // I hope y'all aren't using an adblock, but oh well, I can't really blame anyone for using one.

@@ -16,13 +16,13 @@ export async function getGenAPI() {
 
     if (sessionStorage.getItem('lucashzhangRepoGeneral')) {
         repoJson = JSON.parse(sessionStorage.lucashzhangRepoGeneral);
-        console.log('Session Storage')
+        // console.log('Session Storage')
     } else {
         try {
             response = await fetch('https://api.github.com/users/' + username + '/repos');
             repoJson = await response.json();
             sessionStorage.setItem('lucashzhangRepoGeneral', JSON.stringify(repoJson));
-            console.log('API Call');
+            // console.log('API Call');
         } catch (error) {
             console.log(error);
             // TODO-- incorporate getting data from local storage
