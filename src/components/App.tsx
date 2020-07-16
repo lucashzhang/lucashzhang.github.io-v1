@@ -17,10 +17,6 @@ interface State {
 
 class App extends Component<Prop, State> {
 
-  constructor(props: Prop) {
-    super(props);
-  }
-
   componentDidMount = () => {
     // Google Analytics
     console.log('initializing')
