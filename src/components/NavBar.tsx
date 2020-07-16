@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
+import ReactGA from 'react-ga';
 import { Tabs, Tab, AppBar } from '@material-ui/core';
 import { Link } from "react-router-dom";
 
@@ -16,6 +17,7 @@ class NavBar extends Component<Prop> {
         if (this.props.location !== prevProps.location) {
             window.scrollTo(0, 0)
         }
+        ReactGA.pageview(this.props.location.pathname);
     }
 
     render() {

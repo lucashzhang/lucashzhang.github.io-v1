@@ -4,7 +4,7 @@ import '../../css/FunPage/FunPageDesign.css'
 
 import portfolio_app from '../../assets/designs/portfolio_app.mp4';
 import CADSXMEJO from '../../assets/designs/CADSXMEJO.png';
-import CDCPoster from '../../assets/designs/CDCPoster1.png';
+import CDCPoster from '../../assets/designs/CDCPackets.png';
 
 export interface Prop {
 }
