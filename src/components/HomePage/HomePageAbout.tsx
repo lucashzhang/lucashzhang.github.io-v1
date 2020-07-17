@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardContent, Tooltip, Fab } from '@material-ui/core';
+import { Card, CardContent } from '@material-ui/core';
 // import { FaFile } from 'react-icons/fa';
 import PersonalPortrait from '../../assets/Headshot1.jpg';
 import '../../css/HomePage/HomePageAbout.css';
