@@ -1,33 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.50303188.chunk.css",
-    "main.js": "/static/js/main.cc492d83.chunk.js",
-    "main.js.map": "/static/js/main.cc492d83.chunk.js.map",
+    "main.css": "/static/css/main.c6bb798d.chunk.css",
+    "main.js": "/static/js/main.de4a256b.chunk.js",
+    "main.js.map": "/static/js/main.de4a256b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e2c3d7e5.js",
     "runtime-main.js.map": "/static/js/runtime-main.e2c3d7e5.js.map",
     "static/css/2.ac1ab58b.chunk.css": "/static/css/2.ac1ab58b.chunk.css",
-    "static/js/2.3bd1ac68.chunk.js": "/static/js/2.3bd1ac68.chunk.js",
-    "static/js/2.3bd1ac68.chunk.js.map": "/static/js/2.3bd1ac68.chunk.js.map",
+    "static/js/2.ae8408f0.chunk.js": "/static/js/2.ae8408f0.chunk.js",
+    "static/js/2.ae8408f0.chunk.js.map": "/static/js/2.ae8408f0.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.28455722ce69cfe0727c2644285cc7e1.js": "/precache-manifest.28455722ce69cfe0727c2644285cc7e1.js",
+    "precache-manifest.193cd3e3f73ecd82f8127c40baac4540.js": "/precache-manifest.193cd3e3f73ecd82f8127c40baac4540.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.ac1ab58b.chunk.css.map": "/static/css/2.ac1ab58b.chunk.css.map",
-    "static/css/main.50303188.chunk.css.map": "/static/css/main.50303188.chunk.css.map",
-    "static/js/2.3bd1ac68.chunk.js.LICENSE.txt": "/static/js/2.3bd1ac68.chunk.js.LICENSE.txt",
+    "static/css/main.c6bb798d.chunk.css.map": "/static/css/main.c6bb798d.chunk.css.map",
+    "static/js/2.ae8408f0.chunk.js.LICENSE.txt": "/static/js/2.ae8408f0.chunk.js.LICENSE.txt",
     "static/media/CADSXMEJO.png": "/static/media/CADSXMEJO.b7c2d6e1.png",
     "static/media/CDCPackets.png": "/static/media/CDCPackets.87707457.png",
     "static/media/Code-Placeholder.png": "/static/media/Code-Placeholder.4069e7dc.png",
     "static/media/Headshot1.jpg": "/static/media/Headshot1.5d939f81.jpg",
     "static/media/Logo20.png": "/static/media/Logo20.14ced1d3.png",
     "static/media/Logo20_vert.png": "/static/media/Logo20_vert.8e892bbb.png",
+    "static/media/Resume_Lucas.pdf": "/static/media/Resume_Lucas.5854d5bb.pdf",
     "static/media/portfolio_app.mp4": "/static/media/portfolio_app.75ea017e.mp4",
     "static/media/App.css": "/static/media/starrynight.5d689918.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e2c3d7e5.js",
     "static/css/2.ac1ab58b.chunk.css",
-    "static/js/2.3bd1ac68.chunk.js",
-    "static/css/main.50303188.chunk.css",
-    "static/js/main.cc492d83.chunk.js"
+    "static/js/2.ae8408f0.chunk.js",
+    "static/css/main.c6bb798d.chunk.css",
+    "static/js/main.de4a256b.chunk.js"
   ]
 }
