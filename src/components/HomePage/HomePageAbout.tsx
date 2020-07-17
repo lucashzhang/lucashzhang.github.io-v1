@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card, CardContent } from '@material-ui/core';
+import { Card, CardContent, Tooltip, Fab } from '@material-ui/core';
+// import { FaFile } from 'react-icons/fa';
 import PersonalPortrait from '../../assets/Headshot1.jpg';
 import '../../css/HomePage/HomePageAbout.css';
 
@@ -55,12 +56,20 @@ class HomePageAbout extends Component<Prop, State> {
                     </div>
                 </div>
             </div>
-            {/* <div className="homepage-section-body" id="about-resume">
-                <h3 className="homepage-content homepage-subtitle">My Resume</h3>
-                <Button variant="contained" color="secondary" href='../assets/Resume_Lucas.pdf'>
-                    See my resume
-                </Button>
-            </div> */}
+            {/* <Card className="lucas-content" id="about-resume">
+                <Tooltip title="To the Design Page">
+                    <Fab color="secondary">
+                        <FaFile></FaFile>
+                    </Fab>
+                </Tooltip>
+                <CardContent>
+                    <h3>Resume</h3>
+                    <p>
+                        I do a lot of things in my free time!
+                        This page includes many examples of the interesting and fun activities that I've done.
+                        </p>
+                </CardContent>
+            </Card> */}
         </div>
     }
 }

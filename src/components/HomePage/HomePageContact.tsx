@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Tooltip, Fab } from '@material-ui/core';
-import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope, FaFile } from 'react-icons/fa';
+import Resume_Lucas from '../../assets/Resume_Lucas.pdf';
 import '../../css/HomePage/HomePageContact.css';
 
 export interface Prop {
@@ -23,6 +24,11 @@ class HomepageContact extends Component<Prop, State> {
                 <Tooltip title="My Email">
                     <Fab color="primary" href="mailto:lhzhang@live.unc.edu">
                         <FaEnvelope></FaEnvelope>
+                    </Fab>
+                </Tooltip>
+                <Tooltip title="My Resume">
+                    <Fab color="primary" href={Resume_Lucas} target="_blank">
+                        <FaFile></FaFile>
                     </Fab>
                 </Tooltip>
             </div>
