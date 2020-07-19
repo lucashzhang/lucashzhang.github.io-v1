@@ -28,6 +28,7 @@ class Timeline extends Component<Prop, State> {
                     {this.props.repos.map((repo: RepoInfo) => {
 
                         const LangIcon: any = getDevIcon(repo.language, repo.description);
+                        console.log(this.props.langColors[repo.language] != null ? this.props.langColors[repo.language] : 'hsl(0,0%,50%)')
 
                         return <VerticalTimelineElement
                             className="vertical-timeline-element--work"
@@ -36,7 +37,7 @@ class Timeline extends Component<Prop, State> {
                             date={`Created: ${repo.created}`}
                             dateClassName="timeline-date"
                             icon={<LangIcon />}
-                            iconStyle={{ background: `${this.props.langColors[repo.language]}`, color: '#efefef' }}
+                            iconStyle={{ background: `${this.props.langColors[repo.language] != null ? this.props.langColors[repo.language] : 'hsl(0, 0%, 50%)'}`, color: '#efefef' }}
                             key={repo.id}
                         >
                             <div className="timeline-body">
@@ -50,7 +51,7 @@ class Timeline extends Component<Prop, State> {
                                         <p>{repo.description}</p>
                                     </div>
                                     <TimelineButtons
-                                        color={this.props.langColors[repo.language]}
+                                        color={this.props.langColors[repo.language] != null ? this.props.langColors[repo.language] : 'hsl(0, 0%, 50%)'}
                                         github={repo.url}
                                         website={repo.homepage}>                                        
                                     </TimelineButtons>

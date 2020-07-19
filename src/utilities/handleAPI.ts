@@ -32,13 +32,13 @@ export async function getGenAPI() {
 
     try {
         repoList = repoJson.map((item: any) => ({
-            name: item['name'],
+            name: item['name'] != null ? item['name'] : "",
             id: item['id'],
-            description: item['description'],
+            description: item['description'] != null ? item['description'] : "",
             created: new Date(item['created_at']),
-            language: item['language'],
-            url: item['html_url'],
-            homepage: item['homepage']
+            language: item['language'] != null ? item['language'] : "",
+            url: item['html_url'] != null ? item['html_url'] : "",
+            homepage: item['homepage'] != null ? item['homepage'] : ""
         }));
     } catch (error) {
         console.log(error);

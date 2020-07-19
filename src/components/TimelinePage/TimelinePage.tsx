@@ -46,6 +46,7 @@ class TimelinePage extends Component<Prop, State> {
                 langColors: newColors,
             });
         }
+        console.log(repoList);
     }
 
     handleFieldChange = (query: string) => {
@@ -132,11 +133,15 @@ class TimelinePage extends Component<Prop, State> {
 
     getFilteredRepos = (repoList: RepoInfo[], filterString: string) => {
         // Returns a list of repositories that include the string
-        return repoList.filter((repo: RepoInfo) => {
-            return (repo.language.toLowerCase().includes(filterString.toLowerCase())
-                || repo.name.toLowerCase().includes(filterString.toLowerCase())
-                || (repo.description != null && repo.description.toLowerCase().includes(filterString.toLowerCase())))
-        })
+        if (repoList != null) {
+            return repoList.filter((repo: RepoInfo) => {
+                return (repo.language.toLowerCase().includes(filterString.toLowerCase())
+                    || repo.name.toLowerCase().includes(filterString.toLowerCase())
+                    || (repo.description != null && repo.description.toLowerCase().includes(filterString.toLowerCase())))
+            })
+        } else {
+            return [];
+        }
     }
 
     handleIncludeRepos = (repoList: RepoInfo[], filterString: string) => {
