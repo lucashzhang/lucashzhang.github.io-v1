@@ -26,24 +26,30 @@ export async function getGenAPI() {
         } catch (error) {
             console.log(error);
             // TODO-- incorporate getting data from local storage
-            return null;
+            return [];
         }
     }
 
+    // List of repositories (usually forks) that I don't want on the website
+    let blackList: string[] = ['tech-team-tutorial'];
+
     try {
         repoList = repoJson.map((item: any) => ({
-            name: item['name'] != null ? item['name'] : "",
+            name: item['name'],
             id: item['id'],
             description: item['description'] != null ? item['description'] : "",
             created: new Date(item['created_at']),
-            language: item['language'] != null ? item['language'] : "",
-            url: item['html_url'] != null ? item['html_url'] : "",
-            homepage: item['homepage'] != null ? item['homepage'] : ""
+            language: item['language'],
+            url: item['html_url'],
+            homepage: item['homepage']
         }));
+        repoList = repoList.filter((repo: any) => {
+            return repo['name'] != null && repo['language'] && !(blackList.includes(repo['name']))
+        })
     } catch (error) {
         console.log(error);
         console.log("The list of repositories failed to build, \nthis was most likely caused by too many API calls")
-        return null;
+        return [];
     }
 
     repoList.sort((a, b) => {
