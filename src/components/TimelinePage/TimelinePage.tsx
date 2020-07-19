@@ -46,7 +46,6 @@ class TimelinePage extends Component<Prop, State> {
                 langColors: newColors,
             });
         }
-        console.log(repoList);
     }
 
     handleFieldChange = (query: string) => {

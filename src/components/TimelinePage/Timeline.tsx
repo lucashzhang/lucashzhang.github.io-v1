@@ -28,7 +28,6 @@ class Timeline extends Component<Prop, State> {
                     {this.props.repos.map((repo: RepoInfo) => {
 
                         const LangIcon: any = getDevIcon(repo.language, repo.description);
-                        console.log(this.props.langColors[repo.language] != null ? this.props.langColors[repo.language] : 'hsl(0,0%,50%)')
 
                         return <VerticalTimelineElement
                             className="vertical-timeline-element--work"
