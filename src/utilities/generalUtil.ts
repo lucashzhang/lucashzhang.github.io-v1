@@ -25,12 +25,14 @@ export function getDevIcon(name: string, desc: string) {
     let formatted = `Di${capitalFirst(name)}`
     formatted = correctLangName(formatted);
 
+    if (RegExp('\\breact\\b').test(desc.toLowerCase()) || RegExp('\\breactjs\\b').test(desc.toLowerCase())) {
+        formatted = 'DiReact';
+    } else if (RegExp('\\bangular\\b').test(desc.toLowerCase())) {
+        formatted = 'DiAngularSimple';
+    }
+
     if (formatted in devIcon) {
         LangIcon = devIcon[formatted as keyof typeof devIcon];
-    } else if (desc.toLowerCase().indexOf('react') >= 0) {
-        LangIcon = devIcon['DiReact'];
-    } else if (desc.toLowerCase().indexOf('angular') >= 0) {
-        LangIcon = devIcon['DiAngularSimple'];
     } else {
         LangIcon = devIcon['DiVisualstudio']
     }
