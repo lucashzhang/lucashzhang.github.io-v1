@@ -77,6 +77,7 @@ function getFromDesc(repoList: RepoInfo[]) {
     let known = [
         'C',
         'ReactJS',
+        'Redux',
         'Angular',
         'Java',
         'Swing',
