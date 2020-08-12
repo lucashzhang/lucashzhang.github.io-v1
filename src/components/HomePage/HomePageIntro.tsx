@@ -45,7 +45,7 @@ class HomePageIntro extends Component<Prop, State> {
                 </Card>
 
                 <Card className="lucas-content homepage-nav column-half">
-                    <Tooltip title="To the Design Page">
+                    <Tooltip title="To the Fun Page">
                         <Fab color="secondary" component={Link} to="/fun">
                             <FaSmileBeam></FaSmileBeam>
                         </Fab>
