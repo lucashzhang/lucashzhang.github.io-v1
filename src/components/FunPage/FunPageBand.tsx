@@ -41,8 +41,8 @@ class FunPageBand extends Component<Prop, State> {
                         <h3>Indoor Percussion</h3>
                         <p>
                             After the Marching Band season ends, my section shifts it's attention to the indoor percussion season. 
-                            We would also compete in many local AIA and regional WGI competitions, but as an indoor percussion group, we are often way more competitive than in marching band.
-                            Throughout my high school years, we had placed first in our class four consecutive times.
+                            We would also compete in multiple local AIA and regional WGI competitions.
+                            Throughout my high school years, we had placed first in finals four consecutive times.
                         </p>
                     </CardContent>
                 </Card>

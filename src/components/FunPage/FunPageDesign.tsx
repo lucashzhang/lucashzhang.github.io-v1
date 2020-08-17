@@ -45,7 +45,7 @@ class FunPageDesign extends Component<Prop, State> {
                         <CardContent>
                             <h3>Carolina Analytics and Data Science</h3>
                             <p>
-                                As the design chair on the Carolina Analytics and Data Science executive board, I help create visuals for the various ventures of the other board members.
+                                As the design chair on the Carolina Analytics and Data Science executive board, I helped to create visuals for the various ventures of the other board members.
                                 The design shown above was created to publicize the Data Journalism Mentorship program that the club created in partnership with UNC's Hussman School of Journalism and Media.
                             </p>
                         </CardContent>
