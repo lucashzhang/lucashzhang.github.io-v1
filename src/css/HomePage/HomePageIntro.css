@@ -2,10 +2,12 @@
     flex-direction: column;
 }
 
-.homepage-nav {
+.homepage-nav-link {
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-decoration: none;
 }
 
 .homepage-nav .MuiFab-root {

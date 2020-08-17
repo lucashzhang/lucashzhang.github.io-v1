@@ -30,33 +30,37 @@ class HomePageIntro extends Component<Prop, State> {
             <h3 className="luacs-content lucas-subtitle">Navigating my site</h3>
             <div className="homepage-nav-group">
                 <Card className="lucas-content homepage-nav column-half">
-                    <Tooltip title="To the Programming Page">
-                        <Fab color="primary" component={Link} to="/programming">
-                            <FaLaptopCode></FaLaptopCode>
-                        </Fab>
-                    </Tooltip>
-                    <CardContent>
-                        <h3>Programming</h3>
-                        <p>
-                            This is the page where you'll find most of my programming projects
-                            along with links to the repositories and project sites.
+                    <Link className="homepage-nav-link" to="/programming">
+                        <Tooltip title="To the Programming Page">
+                            <Fab color="primary" component={Link} to="/programming">
+                                <FaLaptopCode></FaLaptopCode>
+                            </Fab>
+                        </Tooltip>
+                        <CardContent>
+                            <h3>Programming</h3>
+                            <p>
+                                This is the page where you'll find most of my programming projects
+                                along with links to the repositories and project sites.
                         </p>
-                    </CardContent>
+                        </CardContent>
+                    </Link>
                 </Card>
 
                 <Card className="lucas-content homepage-nav column-half">
-                    <Tooltip title="To the Fun Page">
-                        <Fab color="secondary" component={Link} to="/fun">
-                            <FaSmileBeam></FaSmileBeam>
-                        </Fab>
-                    </Tooltip>
-                    <CardContent>
-                        <h3>Fun Stuff</h3>
-                        <p>
-                            I do a lot of things in my free time!
-                            This page includes many examples of the interesting and fun activities that I've done.
+                    <Link className="homepage-nav-link" to="/fun">
+                        <Tooltip title="To the Fun Page">
+                            <Fab color="secondary" component={Link} to="/fun">
+                                <FaSmileBeam></FaSmileBeam>
+                            </Fab>
+                        </Tooltip>
+                        <CardContent>
+                            <h3>Fun Stuff</h3>
+                            <p>
+                                I do a lot of things in my free time!
+                                This page includes many examples of the interesting and fun activities that I've done.
                         </p>
-                    </CardContent>
+                        </CardContent>
+                    </Link>
                 </Card>
             </div>
         </div>
