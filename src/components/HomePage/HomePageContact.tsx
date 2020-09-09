@@ -22,7 +22,7 @@ class HomepageContact extends Component<Prop, State> {
                     </Fab>
                 </Tooltip>
                 <Tooltip title="My Email">
-                    <Fab color="primary" href="mailto:lhzhang@live.unc.edu">
+                    <Fab color="primary" href="mailto:lucas_h_zhang@hotmail.com">
                         <FaEnvelope></FaEnvelope>
                     </Fab>
                 </Tooltip>
