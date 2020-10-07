@@ -3,7 +3,7 @@ import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
 import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import { FaHome, FaUser, FaCode, FaFile, FaAddressBook } from 'react-icons/fa';
+import { FaHome, FaUser, FaCode, FaFile, FaAddressBook, FaBars } from 'react-icons/fa';
 import { HashLink as Link } from 'react-router-hash-link';
 import clsx from 'clsx';
 
@@ -70,9 +70,14 @@ const WebsiteDrawer = props => {
                         [classes.drawerClose]: !open,
                     }),
                 }}
-                onMouseOver={handleDrawerOpen}
-                onMouseLeave={handleDrawerClose}
             >
+                <List>
+                    <ListItem button onClick={() => {if (open) handleDrawerClose(); else handleDrawerOpen() }}>
+                        <ListItemIcon><FaBars /></ListItemIcon>
+                        <ListItemText primary='Welcome!' />
+                    </ListItem>
+                </List>
+                <Divider />
                 <List>
                     <ListItem button component={Link} smooth to='/#home'>
                         <ListItemIcon className={clsx({

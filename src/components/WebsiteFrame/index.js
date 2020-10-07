@@ -4,7 +4,7 @@ import theme from '../../utilities/theme';
 
 import Drawer from '../Drawer';
 import { HashRouter, Switch, Route } from "react-router-dom";
-import Home from '../Home';
+import Main from '../Main';
 import Programming from '../Programming';
 
 const WebsiteFrame = _ => {
@@ -15,7 +15,7 @@ const WebsiteFrame = _ => {
                 <Route component={Drawer} />
                 <Switch>
                     <Route path="/programming" component={Programming} />
-                    <Route path="/" component={Home}/>
+                    <Route path="/" component={Main}/>
                 </Switch>
             </HashRouter>
         </ThemeProvider>

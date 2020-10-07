@@ -8,5 +8,8 @@ export default createMuiTheme({
         secondary: {
             main: '#FF1493'
         },
+        surfaceBackground: {
+            main: '#F5F5F5'
+        }
     }
 })

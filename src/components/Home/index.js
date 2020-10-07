@@ -1,27 +1,29 @@
 import React, { useState } from 'react';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
-import Main from '../Main';
-import About from '../About';
-import Contact from '../Contact';
-
-import VizSensor from 'react-visibility-sensor';
-import {Redirect} from 'react-router-dom';
-import { Divider } from '@material-ui/core';
+const useStyles = makeStyles((theme) => ({
+    surface: {
+        backgroundColor: theme.palette.surfaceBackground.main,
+        height: '100vh',
+        paddingLeft: 'calc((100% - 1170px) / 2)',
+        paddingRight: 'calc((100% - 1170px) / 2)',
+        [theme.breakpoints.down('sm')]: {
+            paddingLeft: 'calc(6rem + 2.5%)',
+            paddingRight: '2.5%',
+        },
+    }
+}))
 
 const Home = _ => {
 
-    const [visible, setVisible] = useState('/#home')
+    const classes = useStyles();
 
     return (
         <ThemeProvider theme={theme}>
-            <Redirect to={visible}/>
-            <VizSensor partialVisibility onChange={(isVisible) => {if (isVisible) setVisible('/#home')}}><Main/></VizSensor>
-            <Divider></Divider>
-            <VizSensor partialVisibility onChange={(isVisible) => {if (isVisible) setVisible('/#about')}}><About/></VizSensor>
-            <Divider></Divider>
-            <VizSensor partialVisibility onChange={(isVisible) => {if (isVisible) setVisible('/#contact')}}><Contact/></VizSensor>
+            <section className={classes.surface} id='home'>
+                <p>Home</p>
+            </section>
         </ThemeProvider>
     )
 }
