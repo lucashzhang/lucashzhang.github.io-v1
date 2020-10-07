@@ -12,7 +12,8 @@
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.1.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-visibility-sensor": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

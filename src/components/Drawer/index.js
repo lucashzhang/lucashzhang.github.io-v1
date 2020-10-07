@@ -4,7 +4,7 @@ import theme from '../../utilities/theme';
 
 import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import { FaHome, FaUser, FaCode, FaFile, FaAddressBook } from 'react-icons/fa';
-import { Link } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 import clsx from 'clsx';
 
 const drawerWidth = 240;
@@ -74,21 +74,21 @@ const WebsiteDrawer = props => {
                 onMouseLeave={handleDrawerClose}
             >
                 <List>
-                    <ListItem button component={Link} to='/'>
-                        <ListItemIcon viewing={true} className={clsx({
-                            [classes.viewing]: props.location.pathname == '/',
+                    <ListItem button component={Link} smooth to='/#home'>
+                        <ListItemIcon className={clsx({
+                            [classes.viewing]: props.location.pathname == '/' && (props.location.hash == '#home' || props.location.hash == ''),
                         })}><FaHome /></ListItemIcon>
                         <ListItemText primary='Home' />
                     </ListItem>
-                    <ListItem button component={Link} to='/about'>
-                        <ListItemIcon viewing={true} className={clsx({
-                            [classes.viewing]: props.location.pathname == '/about',
+                    <ListItem button component={Link} smooth to='/#about'>
+                        <ListItemIcon className={clsx({
+                            [classes.viewing]: props.location.pathname == '/' && props.location.hash == '#about',
                         })}><FaUser /></ListItemIcon>
                         <ListItemText primary='About Me' />
                     </ListItem>
-                    <ListItem button component={Link} to='/contact'>
-                        <ListItemIcon viewing={true} className={clsx({
-                            [classes.viewing]: props.location.pathname == '/contact',
+                    <ListItem button component={Link} smooth to='/#contact'>
+                        <ListItemIcon className={clsx({
+                            [classes.viewing]: props.location.pathname == '/' && props.location.hash == '#contact',
                         })}><FaAddressBook /></ListItemIcon>
                         <ListItemText primary='Contact Me' />
                     </ListItem>

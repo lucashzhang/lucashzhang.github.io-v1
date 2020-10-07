@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
-const Home = _ => {
 
+const Home = _ => {
     return (
         <ThemeProvider theme={theme}>
-            <section style={{height: '100vh', backgroundColor: 'hotpink'}}>
+            <section style={{ height: '150vh', backgroundColor: 'red' }} id='about'>
 
             </section>
         </ThemeProvider>
