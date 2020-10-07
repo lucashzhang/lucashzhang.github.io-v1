@@ -5,6 +5,7 @@ import theme from '../../utilities/theme';
 import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import { FaHome, FaUser, FaCode, FaFile, FaAddressBook, FaBars } from 'react-icons/fa';
 import { HashLink as Link } from 'react-router-hash-link';
+import onClickOutside from 'react-onclickoutside';
 import clsx from 'clsx';
 
 const drawerWidth = 240;
@@ -43,18 +44,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const WebsiteDrawer = props => {
+function WebsiteDrawer(props) {
 
     const classes = useStyles();
     const [open, setOpen] = useState(false);
 
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
+    const toggleDrawer = () => {
+        setOpen((pastProps) => !pastProps)
+    }
 
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
+    WebsiteDrawer.handleClickOutside = e => {
+        if (!open) setOpen(false);
+    }
 
     return (
         <ThemeProvider theme={theme}>
@@ -72,7 +73,7 @@ const WebsiteDrawer = props => {
                 }}
             >
                 <List>
-                    <ListItem button onClick={() => {if (open) handleDrawerClose(); else handleDrawerOpen() }}>
+                    <ListItem button onClick={toggleDrawer}>
                         <ListItemIcon><FaBars /></ListItemIcon>
                         <ListItemText primary='Welcome!' />
                     </ListItem>
@@ -117,5 +118,9 @@ const WebsiteDrawer = props => {
     )
 }
 
+const clickOutsideConfig = {
+    handleClickOutside: () => WebsiteDrawer.handleClickOutside
+};
 
-export default WebsiteDrawer;
+
+export default onClickOutside(WebsiteDrawer, clickOutsideConfig);
