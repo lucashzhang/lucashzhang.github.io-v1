@@ -8,6 +8,7 @@ import Contact from '../Contact';
 
 import VizSensor from 'react-visibility-sensor';
 import {Redirect} from 'react-router-dom';
+import { Divider } from '@material-ui/core';
 
 const Home = _ => {
 
@@ -17,7 +18,9 @@ const Home = _ => {
         <ThemeProvider theme={theme}>
             <Redirect to={visible}/>
             <VizSensor partialVisibility onChange={(isVisible) => {if (isVisible) setVisible('/#home')}}><Main/></VizSensor>
+            <Divider></Divider>
             <VizSensor partialVisibility onChange={(isVisible) => {if (isVisible) setVisible('/#about')}}><About/></VizSensor>
+            <Divider></Divider>
             <VizSensor partialVisibility onChange={(isVisible) => {if (isVisible) setVisible('/#contact')}}><Contact/></VizSensor>
         </ThemeProvider>
     )

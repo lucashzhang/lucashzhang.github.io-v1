@@ -6,7 +6,7 @@ import theme from '../../utilities/theme';
 const Home = _ => {
     return (
         <ThemeProvider theme={theme}>
-            <section style={{ height: '150vh', backgroundColor: 'blueviolet' }} id='home'>
+            <section style={{ height: '100vh', backgroundColor: 'blueviolet' }} id='home'>
 
             </section>
         </ThemeProvider>
