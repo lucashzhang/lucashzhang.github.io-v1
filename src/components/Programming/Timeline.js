@@ -4,7 +4,7 @@ import theme from '../../utilities/theme';
 
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { Grid, Fab } from '@material-ui/core';
+import { Grid, Fab, Tooltip } from '@material-ui/core';
 import WebpageSnap from './WebpageSnap';
 import { FaGithub, FaLink } from 'react-icons/fa';
 
@@ -16,11 +16,13 @@ const useStyles = makeStyles((theme) => ({
     buttonContainer: {
         display: 'flex',
         justifyContent: 'center',
-        paddingBottom: '1rem'
     },
     timelineContent: {
-        height: 'calc(100% - 56px)',
-        marginBottom: '1rem'
+        height: 'calc(100% - 1rem)',
+        marginBottom: '1rem',
+        [theme.breakpoints.down('sm')]: {
+            height: 'calc(100% - 58px)',
+        },
     },
     timelineBody: {
         marginBottom: '1rem'
@@ -34,11 +36,16 @@ const Timeline = props => {
     return (
         <ThemeProvider theme={theme}>
             <VerticalTimeline layout={'1-column'}>
-                {props.repoList.map(repo => (
-                    <VerticalTimelineElement
+                {props.repoList.map(repo => {
+
+                    let isWebsite = false;
+                    if (repo.homepage != null && !repo.homepage.includes('githubusercontent.com')) {
+                        isWebsite = true;
+                    }
+
+                    return <VerticalTimelineElement
                         contentStyle={{ background: '#fffff', color: '#757575' }}
                         date={`Created: ${repo.created}`}
-                        dateClassName="timeline-date"
                         key={repo.id}
                     >
                         <Grid container spacing={3} className={classes.timelineBody}>
@@ -52,13 +59,17 @@ const Timeline = props => {
                                     <p>{repo.description}</p>
                                 </div>
                                 <Grid container>
-                                    <Grid item xs={6} className={classes.buttonContainer}><Fab className={classes.buttons} color="secondary"><FaLink /></Fab></Grid>
-                                    <Grid item xs={6} className={classes.buttonContainer}><Fab className={classes.buttons} color="secondary"><FaGithub /></Fab></Grid>
+                                    <Grid item xs={isWebsite ? 6 : 12} className={classes.buttonContainer}>
+                                        <Tooltip title="Github Repository"><Fab className={classes.buttons} color="secondary" href={repo.url} target={repo.url}><FaGithub /></Fab></Tooltip>
+                                    </Grid>
+                                    {isWebsite ? <Grid item xs={6} className={classes.buttonContainer}>
+                                        <Tooltip title="Project Site"><Fab className={classes.buttons} color="secondary" href={repo.homepage} target={repo.homepage}><FaLink /></Fab></Tooltip>
+                                    </Grid> : null}
                                 </Grid>
                             </Grid>
                         </Grid>
                     </VerticalTimelineElement>
-                ))}
+                })}
             </VerticalTimeline>
         </ThemeProvider>
     )
