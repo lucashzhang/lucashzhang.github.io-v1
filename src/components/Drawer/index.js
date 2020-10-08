@@ -3,7 +3,7 @@ import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
 import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText, Tooltip } from '@material-ui/core';
-import { FaHome, FaUser, FaCode, FaFile, FaAddressBook, FaBars } from 'react-icons/fa';
+import { FaHome, FaUser, FaCode, FaFile, FaAddressBook, FaBars, FaChevronLeft } from 'react-icons/fa';
 import { HashLink as Link } from 'react-router-hash-link';
 import onClickOutside from 'react-onclickoutside';
 import clsx from 'clsx';
@@ -74,7 +74,7 @@ function WebsiteDrawer(props) {
             >
                 <List>
                     <ListItem button onClick={toggleDrawer}>
-                        <Tooltip title={open ? '' : 'Expand Menu'}><ListItemIcon className={classes.menu}><FaBars /></ListItemIcon></Tooltip>
+                        <Tooltip title={open ? '' : 'Expand Menu'}><ListItemIcon className={classes.menu}>{open ? <FaChevronLeft /> : <FaBars />}</ListItemIcon></Tooltip>
                         <ListItemText primary='Welcome!' />
                     </ListItem>
                 </List>
@@ -87,7 +87,7 @@ function WebsiteDrawer(props) {
                         <ListItemText primary='Home' />
                     </ListItem>
                     <ListItem button component={Link} smooth to='/#about'>
-                        <Tooltip  title={open ? '' : 'About Me'}><ListItemIcon className={clsx({
+                        <Tooltip title={open ? '' : 'About Me'}><ListItemIcon className={clsx({
                             [classes.viewing]: props.location.pathname === '/' && props.location.hash === '#about',
                         })}><FaUser /></ListItemIcon></Tooltip>
                         <ListItemText primary='About Me' />
