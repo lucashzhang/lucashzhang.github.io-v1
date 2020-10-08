@@ -14,16 +14,17 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: 'None'
     },
     buttonContainer: {
-        position: 'absolute',
-        bottom: 0
-    },
-    buttonsGridItem: {
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingBottom: '1rem'
+    },
+    timelineContent: {
+        height: 'calc(100% - 56px)',
+        marginBottom: '1rem'
     },
     timelineBody: {
-        position: 'relative'
-    },
+        marginBottom: '1rem'
+    }
 }))
 
 const Timeline = props => {
@@ -40,17 +41,19 @@ const Timeline = props => {
                         dateClassName="timeline-date"
                         key={repo.id}
                     >
-                        <Grid container spacing={3}>
+                        <Grid container spacing={3} className={classes.timelineBody}>
                             <Grid item md={6}>
                                 <WebpageSnap url={repo.homepage}></WebpageSnap>
                             </Grid>
-                            <Grid item md={6} className={classes.timelineBody} >
-                                <h3>{repo.name}</h3>
-                                <h4>Primary Language: {repo.language}</h4>
-                                <p>{repo.description}</p>
-                                <Grid container className={classes.buttonContainer}>
-                                    <Grid item xs={6} className={classes.buttonsGridItem}><Fab className={classes.buttons} color="secondary"><FaLink /></Fab></Grid>
-                                    <Grid item xs={6} className={classes.buttonsGridItem}><Fab className={classes.buttons} color="secondary"><FaGithub /></Fab></Grid>
+                            <Grid item md={6} >
+                                <div className={classes.timelineContent}>
+                                    <h3>{repo.name}</h3>
+                                    <h4>Primary Language: {repo.language}</h4>
+                                    <p>{repo.description}</p>
+                                </div>
+                                <Grid container>
+                                    <Grid item xs={6} className={classes.buttonContainer}><Fab className={classes.buttons} color="secondary"><FaLink /></Fab></Grid>
+                                    <Grid item xs={6} className={classes.buttonContainer}><Fab className={classes.buttons} color="secondary"><FaGithub /></Fab></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
