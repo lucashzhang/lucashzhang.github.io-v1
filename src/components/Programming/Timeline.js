@@ -18,14 +18,16 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
     },
     timelineContent: {
-        height: 'calc(100% - 1rem)',
+        height: 'calc(100% - 2.5rem)',
         marginBottom: '1rem',
         [theme.breakpoints.down('sm')]: {
             height: 'calc(100% - 58px)',
         },
     },
     timelineBody: {
-        marginBottom: '1rem'
+        [theme.breakpoints.down('sm')]: {
+            marginBottom: '1rem'
+        },
     }
 }))
 
