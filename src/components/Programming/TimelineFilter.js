@@ -19,7 +19,10 @@ const useStyles = makeStyles((theme) => ({
     checks: {
         marginTop: '1rem',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'space-evenly'
+    },
+    checkLabels: {
+        width: '60px'
     }
 
 }))
@@ -63,7 +66,7 @@ const TimelineFilter = props => {
                         <Grid container alignItems="center" justify="space-evenly" className={classes.checks}>
                             {props.langList.map((lang) => {
                                 return <Grid item key={lang} >
-                                    <FormControlLabel labelPlacement="top" control={
+                                    <FormControlLabel labelPlacement="top" className={classes.checkLabels} control={
                                         <Checkbox
                                             style={{
                                                 color: props.langColors[lang],

@@ -12,7 +12,8 @@ import { getDevIcon } from './TimelineUtil';
 const useStyles = makeStyles((theme) => ({
     buttons: {
         fontSize: '1.5rem',
-        boxShadow: 'None'
+        boxShadow: 'None',
+        color: '#FFFFFF'
     },
     buttonContainer: {
         display: 'flex',
