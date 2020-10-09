@@ -101,9 +101,9 @@ function WebsiteDrawer(props) {
                 </List>
                 <Divider />
                 <List>
-                    <ListItem button component={Link} to='/programming'>
+                    <ListItem button component={Link} to='/programming/#timeline'>
                         <Tooltip title={open ? '' : 'My Programming'}><ListItemIcon className={clsx({
-                            [classes.viewing]: props.location.pathname === '/programming',
+                            [classes.viewing]: props.location.pathname === '/programming/',
                         })}><FaCode /></ListItemIcon></Tooltip>
                         <ListItemText primary='My Programming' />
                     </ListItem>

@@ -15,7 +15,10 @@ const useStyles = makeStyles((theme) => ({
     },
     header: {
         color: theme.palette.primary.contrastText,
-        fontSize: '5rem'
+        fontSize: '5rem',
+        [theme.breakpoints.down('md')]: {
+            fontSize: '3rem'
+        },
     }
 }))
 

@@ -7,10 +7,11 @@ import 'react-vertical-timeline-component/style.min.css';
 import { Grid, Fab, Tooltip } from '@material-ui/core';
 import WebpageSnap from './WebpageSnap';
 import { FaGithub, FaLink } from 'react-icons/fa';
+import { getDevIcon } from './TimelineUtil';
 
 const useStyles = makeStyles((theme) => ({
     buttons: {
-        fontSize: '2rem',
+        fontSize: '1.5rem',
         boxShadow: 'None'
     },
     buttonContainer: {
@@ -18,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
     },
     timelineContent: {
-        height: 'calc(100% - 2.5rem)',
+        height: 'calc(100% - 2rem)',
         marginBottom: '1rem',
         [theme.breakpoints.down('sm')]: {
-            height: 'calc(100% - 58px)',
+            height: 'calc(100% - 3rem)',
         },
     },
     timelineBody: {
@@ -45,10 +46,14 @@ const Timeline = props => {
                         isWebsite = true;
                     }
 
+                    const LangIcon = getDevIcon(repo.language, repo.description);
+
                     return <VerticalTimelineElement
                         contentStyle={{ background: '#fffff', color: '#757575' }}
                         date={`Created: ${repo.created}`}
                         key={repo.id}
+                        icon={<LangIcon/>}
+                        iconStyle={{ background: `${props.langColors[repo.language] != null ? props.langColors[repo.language] : 'hsl(0, 0%, 50%)'}`, color: '#efefef' }}
                     >
                         <Grid container spacing={3} className={classes.timelineBody}>
                             <Grid item md={6}>
@@ -62,10 +67,10 @@ const Timeline = props => {
                                 </div>
                                 <Grid container>
                                     <Grid item xs={isWebsite ? 6 : 12} className={classes.buttonContainer}>
-                                        <Tooltip title="Github Repository"><Fab className={classes.buttons} color="secondary" href={repo.url} target={repo.url}><FaGithub /></Fab></Tooltip>
+                                        <Tooltip title="Github Repository"><Fab className={classes.buttons} color="secondary" href={repo.url} target={repo.url} size='medium'><FaGithub /></Fab></Tooltip>
                                     </Grid>
                                     {isWebsite ? <Grid item xs={6} className={classes.buttonContainer}>
-                                        <Tooltip title="Project Site"><Fab className={classes.buttons} color="secondary" href={repo.homepage} target={repo.homepage}><FaLink /></Fab></Tooltip>
+                                        <Tooltip title="Project Site"><Fab className={classes.buttons} color="secondary" href={repo.homepage} target={repo.homepage}  size='medium'><FaLink /></Fab></Tooltip>
                                     </Grid> : null}
                                 </Grid>
                             </Grid>
