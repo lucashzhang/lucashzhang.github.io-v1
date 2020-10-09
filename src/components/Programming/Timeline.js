@@ -42,7 +42,7 @@ const Timeline = props => {
                 {props.repoList.map(repo => {
 
                     let isWebsite = false;
-                    if (repo.homepage != null && !repo.homepage.includes('githubusercontent.com')) {
+                    if (repo.homepage != null && repo.homepage.length > 0 && !repo.homepage.includes('githubusercontent.com')) {
                         isWebsite = true;
                     }
 
