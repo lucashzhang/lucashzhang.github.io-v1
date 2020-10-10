@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '1rem'
     },
     link: {
-        color: theme.palette.secondary.main
+        color: theme.palette.secondary.dark
     }
 }))
 
