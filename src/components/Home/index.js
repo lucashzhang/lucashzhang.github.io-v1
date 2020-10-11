@@ -7,7 +7,6 @@ import logo from '../../assets/Logo20.png';
 
 const useStyles = makeStyles((theme) => ({
     surface: {
-        backgroundColor: theme.palette.surfaceBackground.main,
         height: '100vh',
         paddingLeft: 'calc((100% - 1170px) / 2)',
         paddingRight: 'calc((100% - 1170px) / 2)',
@@ -33,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
         width: '90%',
         padding: '1.5rem',
         margin: 'auto',
-
     },
 }))
 
