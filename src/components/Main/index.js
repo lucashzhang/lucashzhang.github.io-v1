@@ -8,8 +8,6 @@ import Contact from '../Contact';
 
 import VizSensor from 'react-visibility-sensor';
 import {Redirect} from 'react-router-dom';
-import { Divider } from '@material-ui/core';
-import Background from '../../assets/starrynight.jpg';
 
 const useStyles = makeStyles((theme) => ({
     divider: {

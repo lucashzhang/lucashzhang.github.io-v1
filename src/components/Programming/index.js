@@ -52,7 +52,11 @@ const Programming = _ => {
     const [searchValue, setSearchValue] = useState('');
     const [repoInclude, setRepoInclude] = useState([]);
 
-    useEffect(() => {
+    const handleSearch = e => {
+        setSearchValue(e.target.value.toLowerCase())
+    }
+
+    const initLists = _ => {
         if (repoList.length === 0) {
             getGenAPI().then(repos => {
                 setRepoList(repos);
@@ -63,10 +67,6 @@ const Programming = _ => {
                 setLangColors(colorDict);
             })
         }
-    }, []);
-
-    const handleSearch = e => {
-        setSearchValue(e.target.value.toLowerCase())
     }
 
     const changeFilter = toInclude => {
@@ -82,7 +82,7 @@ const Programming = _ => {
             filteredRepos = filteredRepos.concat(handleIncludeRepos(lang));
         }
 
-        filteredRepos = [... new Set(filteredRepos)]
+        filteredRepos = [...new Set(filteredRepos)]
 
         filteredRepos.sort((a, b) => (b['created'] - a['created']));
 
@@ -111,6 +111,8 @@ const Programming = _ => {
             return [];
         }
     }
+
+    useEffect(initLists, []);
 
     let filteredRepos = getFilteredRepos()
 

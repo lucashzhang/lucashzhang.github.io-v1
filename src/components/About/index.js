@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
@@ -74,7 +74,7 @@ const About = _ => {
                 <Grid container margin={6}>
                     <Grid item sm={6}>
                         <Paper className={classes.imgContainer}>
-                            <img src={Headshot} className={classes.headshot}></img>
+                            <img src={Headshot} alt="A portrait of me" className={classes.headshot}></img>
                         </Paper>
                     </Grid>
                     <Grid item sm={6} className={classes.aboutContent}>

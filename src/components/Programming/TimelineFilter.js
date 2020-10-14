@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
-import { Paper, TextField, Checkbox, Grid, FormGroup, FormControl, FormControlLabel } from '@material-ui/core'
+import { Paper, TextField, Checkbox, Grid, FormControl, FormControlLabel } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
     surface: {
@@ -49,13 +49,15 @@ const TimelineFilter = props => {
         props.handleFilter(toInclude)
     }
 
-    useEffect(() => {
+    const initCheckBoxes = _ => {
         if (Object.keys(checkBoxes).length === 0) {
             let initBoxes = {};
             props.langList.forEach(lang => initBoxes[lang] = false);
             setCheckBoxes(initBoxes);
         }
-    }, [])
+    }
+
+    useEffect(initCheckBoxes, [])
 
     return (
         <ThemeProvider theme={theme}>
