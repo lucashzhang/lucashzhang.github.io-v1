@@ -2,6 +2,9 @@ import React from 'react';
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
+import { Fab, Tooltip } from '@material-ui/core';
+import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
+
 const useStyles = makeStyles((theme) => ({
     surface: {
         height: '100vh',
@@ -22,6 +25,20 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '3rem',
         },
     },
+    buttonContainer: {
+        display: 'flex',
+        width: '100%',
+        height: '50%',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+    },
+    button: {
+        width: '7rem',
+        height: '7rem',
+        fontSize: '4rem',
+        boxShadow: 'None',
+    }
 }))
 
 const Home = _ => {
@@ -32,7 +49,11 @@ const Home = _ => {
         <ThemeProvider theme={theme}>
             <section className={classes.surface} id="contact">
                 <h1 className={classes.header}>Contact Me</h1>
-
+                <div className={classes.buttonContainer}>
+                    <Tooltip title="Email me"><Fab className={classes.button} href="mailto:lucas_h_zhang@hotmail.com" target="_blank"><FaEnvelope /></Fab></Tooltip>
+                    <Tooltip title="Visit my Linkedin"><Fab className={classes.button} href="https://www.linkedin.com/in/lucashzhang" target="_blank"><FaLinkedin /></Fab></Tooltip>
+                    <Tooltip title="Visit my Github"><Fab className={classes.button} href="https://github.com/lucashzhang" target="_blank"><FaGithub /></Fab></Tooltip>
+                </div>
             </section>
         </ThemeProvider>
     )

@@ -68,10 +68,10 @@ const Timeline = props => {
                                 </div>
                                 <Grid container>
                                     <Grid item xs={isWebsite ? 6 : 12} className={classes.buttonContainer}>
-                                        <Tooltip title="Github Repository"><Fab className={classes.buttons} color="secondary" href={repo.url} target={repo.url} size='medium'><FaGithub /></Fab></Tooltip>
+                                        <Tooltip title="Github Repository"><Fab className={classes.buttons} color="secondary" href={repo.url} target='_blank' size='medium'><FaGithub /></Fab></Tooltip>
                                     </Grid>
                                     {isWebsite ? <Grid item xs={6} className={classes.buttonContainer}>
-                                        <Tooltip title="Project Site"><Fab className={classes.buttons} color="secondary" href={repo.homepage} target={repo.homepage}  size='medium'><FaLink /></Fab></Tooltip>
+                                        <Tooltip title="Project Site"><Fab className={classes.buttons} color="secondary" href={repo.homepage} target='_blank'  size='medium'><FaLink /></Fab></Tooltip>
                                     </Grid> : null}
                                 </Grid>
                             </Grid>

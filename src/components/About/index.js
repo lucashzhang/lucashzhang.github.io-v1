@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
     headshot: {
         width: '100%',
+        borderRadius: '0.25rem',
     },
     aboutContent: {
         display: 'flex',

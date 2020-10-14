@@ -127,7 +127,7 @@ const Programming = _ => {
                     </div>
                 }
                 <Paper elevation={0} className={classes.paper}>
-                    For more information, you can check my full Github account <a href="https://github.com/lucashzhang" target='github' className={classes.link}>here</a>
+                    For more information, you can check my full Github account <a href="https://github.com/lucashzhang" target='_blank' className={classes.link}>here</a>
                 </Paper>
             </section>
         </ThemeProvider>
