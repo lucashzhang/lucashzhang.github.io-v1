@@ -3,7 +3,8 @@ import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
 import { Paper } from '@material-ui/core'
-import logo from '../../assets/Logo20.png';
+import logoHorz from '../../assets/Logo20.png';
+import logoVert from '../../assets/Logo20_vert.png';
 
 const useStyles = makeStyles((theme) => ({
     surface: {
@@ -23,10 +24,19 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'space-evenly'
     },
-    logo: {
+    logoHorz: {
         objectFit: 'fit',
         width: '100%',
-        backgroundImage: '../../assets/Logo20.png'
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
+        }
+    },
+    logoVert: {
+        objectFit: 'fit',
+        display: 'none',
+        [theme.breakpoints.down('sm')]: {
+            display: 'block'
+        }
     },
     welcome: {
         width: '90%',
@@ -43,7 +53,8 @@ const Home = _ => {
         <ThemeProvider theme={theme}>
             <section className={classes.surface} id='home'>
                 <div className={classes.center}>
-                    <img className={classes.logo} src={logo} alt='' />
+                    <img className={classes.logoHorz} src={logoHorz} alt='' />
+                    <img className={classes.logoVert} src={logoVert} alt='' />
                     <Paper elevation={0} className={classes.welcome}>
                         <p>Welcome to my website! Think of this webpage as a portfolio of sorts. You can find all sorts of things about me here. Additionally, it should be all up to date thanks to the Github API!</p>
                     </Paper>
