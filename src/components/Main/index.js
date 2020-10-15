@@ -25,11 +25,11 @@ const Main = _ => {
     return (
         <ThemeProvider theme={theme}>
             <Redirect to={visible}/>
-            <VizSensor partialVisibility onChange={(isVisible) => {if (isVisible) setVisible('/#home')}}><Home/></VizSensor>
+            <VizSensor partialVisibility offset={{top: window.innerHeight / 3, bottom: window.innerHeight / 3}} onChange={(isVisible) => {if (isVisible) setVisible('/#home')}}><Home/></VizSensor>
             <section className={classes.divider}></section>
-            <VizSensor partialVisibility onChange={(isVisible) => {if (isVisible) setVisible('/#about')}}><About/></VizSensor>
+            <VizSensor partialVisibility offset={{top: window.innerHeight / 3, bottom: window.innerHeight / 3}} onChange={(isVisible) => {if (isVisible) setVisible('/#about')}}><About/></VizSensor>
             <section className={classes.divider}></section>
-            <VizSensor partialVisibility onChange={(isVisible) => {if (isVisible) setVisible('/#contact')}}><Contact/></VizSensor>
+            <VizSensor partialVisibility offset={{top: window.innerHeight / 3, bottom: window.innerHeight / 3}} onChange={(isVisible) => {if (isVisible) setVisible('/#contact')}}><Contact/></VizSensor>
         </ThemeProvider>
     )
 }
