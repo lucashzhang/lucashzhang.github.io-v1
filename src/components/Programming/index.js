@@ -12,9 +12,6 @@ import { Paper } from '@material-ui/core'
 const useStyles = makeStyles((theme) => ({
     surface: {
         backgroundColor: theme.palette.primary.dark,
-        [theme.breakpoints.down('md')]: {
-            paddingLeft: '58px',
-        },
         minHeight: 'calc(100vh - 12rem)',
         paddingBottom: '6rem',
         paddingTop: '6rem'
@@ -127,7 +124,7 @@ const Programming = _ => {
                     </div>
                 }
                 <Paper elevation={0} className={classes.paper}>
-                    For more information, you can check my full Github account <a href="https://github.com/lucashzhang" target='_blank' className={classes.link}>here</a>
+                    For more information, you can check my full Github account <a href="https://github.com/lucashzhang" target="_blank" rel="noopener noreferrer" className={classes.link}>here</a>
                 </Paper>
             </section>
         </ThemeProvider>

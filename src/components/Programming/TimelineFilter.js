@@ -9,8 +9,8 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: 'calc((100% - 1170px) / 2)',
         paddingRight: 'calc((100% - 1170px) / 2)',
         [theme.breakpoints.down('md')]: {
-            paddingLeft: 'calc(2.5%)',
-            paddingRight: 'calc(2.5%)',
+            paddingLeft: '2.5%',
+            paddingRight: '2.5%',
         },
     },
     paper: {

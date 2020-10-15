@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: 'calc((100% - 1170px) / 2)',
         paddingBottom: '3rem',
         [theme.breakpoints.down('md')]: {
-            paddingLeft: 'calc(58px + 2.5%)',
-            paddingRight: 'calc(2.5%)',
+            paddingLeft: '2.5%',
+            paddingRight: '2.5%',
         },
     },
     header: {
@@ -32,12 +32,16 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-around',
         alignItems: 'center',
         flexWrap: 'wrap',
+        [theme.breakpoints.down('md')]: {
+            height: '70%',
+        },
     },
     button: {
         width: '7rem',
         height: '7rem',
         fontSize: '4rem',
         boxShadow: 'None',
+        margin: '1rem'
     }
 }))
 

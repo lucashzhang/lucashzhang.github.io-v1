@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: 'calc((100% - 1170px) / 2)',
         paddingBottom: '3rem',
         [theme.breakpoints.down('md')]: {
-            paddingLeft: 'calc(58px + 2.5%)',
-            paddingRight: 'calc(2.5%)',
+            paddingLeft: '2.5%',
+            paddingRight: '2.5%',
         },
     },
     header: {
@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '1rem',
         [theme.breakpoints.down('md')]: {
             fontSize: '3rem',
+            paddingTop: 56,
         },
     },
     runDown: {
