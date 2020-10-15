@@ -39,7 +39,7 @@ const Timeline = props => {
 
     return (
         <ThemeProvider theme={theme}>
-            <VerticalTimeline layout={'1-column'}>
+            <VerticalTimeline layout={'1-column'} animate={false}>
                 {props.repoList.map(repo => {
 
                     let isWebsite = false;

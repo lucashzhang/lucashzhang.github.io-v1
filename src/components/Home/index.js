@@ -22,18 +22,23 @@ const useStyles = makeStyles((theme) => ({
         height: '90%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        [theme.breakpoints.down('md')]: {
+            marginTop: 56,
+        },
     },
     logoHorz: {
-        objectFit: 'fit',
+        objectFit: 'contain',
         width: '100%',
         [theme.breakpoints.down('sm')]: {
             display: 'none'
         }
     },
     logoVert: {
-        objectFit: 'fit',
+        objectFit: 'contain',
         display: 'none',
+        width: '100%',
+        maxHeight: '70%',
         [theme.breakpoints.down('sm')]: {
             display: 'block'
         }

@@ -6,7 +6,6 @@ import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText, Tooltip } 
 import { FaHome, FaUser, FaCode, FaFile, FaAddressBook, FaBars, FaChevronLeft } from 'react-icons/fa';
 import { HashLink as Link } from 'react-router-hash-link';
 import onClickOutside from 'react-onclickoutside';
-import MobileDrawer from './MobileDrawer.js';
 import clsx from 'clsx';
 
 const drawerWidth = 240;

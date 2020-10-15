@@ -74,12 +74,12 @@ const About = _ => {
                     </p>
                 </div>
                 <Grid container margin={6}>
-                    <Grid item sm={6}>
+                    <Grid item md={6}>
                         <Paper className={classes.imgContainer}>
                             <img src={Headshot} alt="A portrait of me" className={classes.headshot}></img>
                         </Paper>
                     </Grid>
-                    <Grid item sm={6} className={classes.aboutContent}>
+                    <Grid item md={6} className={classes.aboutContent}>
                         <List className={classes.aboutList}>
                             <Divider className={classes.aboutDivider}></Divider>
                             <ListItem>
