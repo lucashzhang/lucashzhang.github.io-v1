@@ -61,7 +61,7 @@ const Home = _ => {
                     <img className={classes.logoHorz} src={logoHorz} alt='' />
                     <img className={classes.logoVert} src={logoVert} alt='' />
                     <Paper elevation={0} className={classes.welcome}>
-                        <p>Welcome to my website! Think of this webpage as a portfolio of sorts. You can find all sorts of things about me here. Additionally, it should be all up to date thanks to the Github API!</p>
+                        <p>Welcome to my website! Think of this webpage as a portfolio of sorts. You can find all sorts of things about me here. Additionally, it should all be up to date thanks to the Github API!</p>
                     </Paper>
                 </div>
             </section>
