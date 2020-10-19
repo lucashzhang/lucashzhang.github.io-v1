@@ -9,7 +9,7 @@ export function capitalFirst(text) {
 
 export function getDevIcon(name, desc) {
     let LangIcon;
-    let formatted = `Di${capitalFirst(name)}`
+    let formatted = `Di${capitalFirst(name[0])}`
     formatted = correctLangName(formatted);
 
     if (RegExp('\\breact\\b').test(desc.toLowerCase()) || RegExp('\\breactjs\\b').test(desc.toLowerCase())) {
@@ -48,46 +48,16 @@ function correctLangName(name) {
 }
 
 export function getUniqLang(repoList) {
-    let langList = repoList.map((repo) => (`${repo.language}`));
-    langList = langList.concat(getFromDesc(repoList))
+    let langList = []
+    for (let repo of repoList) {
+        langList = langList.concat(repo.language)
+    }
     let uniqLang = langList.filter((v, i) => { return i === langList.lastIndexOf(v); });
     uniqLang = uniqLang.filter((v) => { return v.length > 0 });
 
     uniqLang.sort();
     
     return uniqLang;
-}
-
-function getFromDesc(repoList) {
-    // These are all of the languages and frameworks that I currently know
-    // Unfortunately, these will have to be manually updated over time
-    let known = [
-        'C',
-        'ReactJS',
-        'Redux',
-        'Angular',
-        'Java',
-        'Swing',
-        'JavaScript',
-        'TypeScript',
-        'Python',
-        'Flutter',
-        'Dart',
-        'HTML',
-        'CSS',
-    ]
-
-    let langList = []; 
-    for (let lang of known) {
-        for (let repo of repoList) {
-            if (repo.description != null && RegExp('\\b'+ lang.toLowerCase() +'\\b').test(repo.description.toLowerCase())) {
-                langList.push(`${lang}`);
-                break;
-            }
-        }
-    }
-
-    return langList;
 }
 
 export function assignColors(uniqLang) {
@@ -109,4 +79,17 @@ function selectColor(number) {
     var value = number % 2 === 0 ? "40%" : "60%";
     value = number % 4 === 0 ? "50%" : value;
     return `hsl(${hue},${saturation},${value})`;
+}
+
+
+export function parseLangList(list) {
+    let res = list[0]
+
+    if (res === '') return res;
+
+    for (let i = 1; i < list.length; i++) {
+        res += `, ${list[i]}`
+    }
+
+    return res;
 }

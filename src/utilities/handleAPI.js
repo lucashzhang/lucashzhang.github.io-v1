@@ -29,7 +29,7 @@ export async function getGenAPI() {
             id: item['id'],
             description: item['description'] != null ? item['description'] : "",
             created: new Date(item['created_at']),
-            language: item['language'],
+            language: getLanguages(item['language'], item['description']),
             url: item['html_url'],
             homepage: item['homepage']
         }));
@@ -52,4 +52,37 @@ export async function getGenAPI() {
 
     return repoList;
 
+}
+
+function getLanguages(language, description) {
+    let known = [
+        'C',
+        'ReactJS',
+        'Redux',
+        'Angular',
+        'Java',
+        'Swing',
+        'JavaScript',
+        'TypeScript',
+        'Python',
+        'Flutter',
+        'Dart',
+        'HTML',
+        'CSS',
+    ]
+
+    if (language == null) language = "";
+    if (description == null) description = "";
+
+    let knownLangs = [language];
+
+    for (let lang of known) {
+        if (description != null && lang !== language && RegExp('\\b'+ lang.toLowerCase() +'\\b').test(description.toLowerCase())) {
+            knownLangs.push(lang);
+        }
+    }
+
+    if (knownLangs.length === 0) knownLangs = 'undefined'
+
+    return knownLangs
 }

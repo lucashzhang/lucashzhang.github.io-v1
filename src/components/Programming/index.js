@@ -90,7 +90,7 @@ const Programming = _ => {
     const handleIncludeRepos = query => {
         // Returns a list of repositories that include the string
         return repoList.filter((repo) => {
-            return (RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.language.toLowerCase())
+            return (RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.language.toString().toLowerCase())
                 || RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.name.toLowerCase())
                 || (repo.description != null && RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.description.toLowerCase())));
         })
@@ -100,7 +100,7 @@ const Programming = _ => {
         // Returns a list of repositories that include the string
         if (repoInclude != null && repoInclude.length > 0) {
             return repoInclude.filter((repo) => {
-                return (repo.language.toLowerCase().includes(searchValue.toLowerCase())
+                return (repo.language.toString().toLowerCase().includes(searchValue.toLowerCase())
                     || repo.name.toLowerCase().includes(searchValue.toLowerCase())
                     || (repo.description != null && repo.description.toLowerCase().includes(searchValue.toLowerCase())))
             })

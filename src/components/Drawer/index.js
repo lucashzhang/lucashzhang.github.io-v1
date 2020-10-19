@@ -66,7 +66,7 @@ function WebsiteDrawer(props) {
     return (
         <div>
             <div className={classes.desktop}>
-                <ThemeProvider theme={theme} className={props.className}>
+                <ThemeProvider theme={theme}>
                     <Drawer
                         variant="permanent"
                         className={clsx(classes.drawer, {

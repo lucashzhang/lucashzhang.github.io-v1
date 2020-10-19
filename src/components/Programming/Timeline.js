@@ -7,7 +7,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import { Grid, Fab, Tooltip } from '@material-ui/core';
 import WebpageSnap from './WebpageSnap';
 import { FaGithub, FaLink } from 'react-icons/fa';
-import { getDevIcon } from './TimelineUtil';
+import { getDevIcon, parseLangList } from './TimelineUtil';
 
 const useStyles = makeStyles((theme) => ({
     buttons: {
@@ -53,8 +53,8 @@ const Timeline = props => {
                         contentStyle={{ background: '#fffff', color: '#757575' }}
                         date={`Created: ${repo.created}`}
                         key={repo.id}
-                        icon={<LangIcon/>}
-                        iconStyle={{ background: `${props.langColors[repo.language] != null ? props.langColors[repo.language] : 'hsl(0, 0%, 50%)'}`, color: '#efefef' }}
+                        icon={<LangIcon />}
+                        iconStyle={{ background: `${props.langColors[repo.language[0]] != null ? props.langColors[repo.language[0]] : 'hsl(0, 0%, 50%)'}`, color: '#efefef' }}
                     >
                         <Grid container spacing={3} className={classes.timelineBody}>
                             <Grid item md={6}>
@@ -63,7 +63,7 @@ const Timeline = props => {
                             <Grid item md={6} >
                                 <div className={classes.timelineContent}>
                                     <h3>{repo.name}</h3>
-                                    <h4>Primary Language: {repo.language}</h4>
+                                    <h4>Technologies Used: {parseLangList(repo.language)}</h4>
                                     <p>{repo.description}</p>
                                 </div>
                                 <Grid container>
@@ -71,7 +71,7 @@ const Timeline = props => {
                                         <Tooltip title="Github Repository"><Fab className={classes.buttons} color="secondary" href={repo.url} target='_blank' size='medium'><FaGithub /></Fab></Tooltip>
                                     </Grid>
                                     {isWebsite ? <Grid item xs={6} className={classes.buttonContainer}>
-                                        <Tooltip title="Project Site"><Fab className={classes.buttons} color="secondary" href={repo.homepage} target='_blank'  size='medium'><FaLink /></Fab></Tooltip>
+                                        <Tooltip title="Project Site"><Fab className={classes.buttons} color="secondary" href={repo.homepage} target='_blank' size='medium'><FaLink /></Fab></Tooltip>
                                     </Grid> : null}
                                 </Grid>
                             </Grid>
