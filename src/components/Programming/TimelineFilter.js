@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     checks: {
         marginTop: '1rem',
         display: 'flex',
-        justifyContent: 'space-evenly'
+        justifyContent: 'center'
     },
     checkLabels: {
         width: '60px'
