@@ -91,8 +91,8 @@ const Programming = _ => {
         // Returns a list of repositories that include the string
         return repoList.filter((repo) => {
             return (RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.language.toString().toLowerCase())
-                || RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.name.toLowerCase())
-                || (repo.description != null && RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.description.toLowerCase())));
+                || RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.name.toLowerCase()));
+                // || (repo.description != null && RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.description.toLowerCase())));
         })
     }
 

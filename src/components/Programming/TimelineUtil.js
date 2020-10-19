@@ -1,3 +1,4 @@
+import { isCompositeComponent } from 'react-dom/test-utils';
 import * as devIcon from 'react-icons/di';
 
 export function capitalFirst(text) {
@@ -7,16 +8,10 @@ export function capitalFirst(text) {
     return capitalized;
 }
 
-export function getDevIcon(name, desc) {
+export function getDevIcon(lang) {
     let LangIcon;
-    let formatted = `Di${capitalFirst(name[0])}`
-    formatted = correctLangName(formatted);
 
-    if (RegExp('\\breact\\b').test(desc.toLowerCase()) || RegExp('\\breactjs\\b').test(desc.toLowerCase())) {
-        formatted = 'DiReact';
-    } else if (RegExp('\\bangular\\b').test(desc.toLowerCase())) {
-        formatted = 'DiAngularSimple';
-    }
+    let formatted = `Di${correctLangName(capitalFirst(lang))}`;
 
     if (formatted in devIcon) {
         LangIcon = devIcon[formatted];
@@ -24,18 +19,28 @@ export function getDevIcon(name, desc) {
         LangIcon = devIcon['DiVisualstudio']
     }
 
+    console.log(formatted)
+
     return LangIcon;
 }
 
 function correctLangName(name) {
     let newName;
     switch (name) {
-        case 'DiJavascript': {
-            newName = 'DiJavascript1'
+        case 'Javascript': {
+            newName = 'Javascript1'
             break;
         }
-        case 'DiHtml': {
-            newName = 'DiHtml5'
+        case 'Html': {
+            newName = 'Html5'
+            break;
+        }
+        case 'Reactjs': {
+            newName = 'React';
+            break;
+        }
+        case 'Angular': {
+            newName = 'AngularSimple';
             break;
         }
         default: {
@@ -45,6 +50,17 @@ function correctLangName(name) {
     }
 
     return newName;
+}
+
+export function getMainLang(langs) {
+
+    let mainLang;
+    if (langs.includes('ReactJS')) mainLang = 'ReactJS';
+    else if (langs.includes('Angular')) mainLang = 'Angular';
+    // else if (langs.includes('Flutter')) mainLang = 'Flutter';
+    else mainLang = langs[0];
+
+    return mainLang;
 }
 
 export function getUniqLang(repoList) {

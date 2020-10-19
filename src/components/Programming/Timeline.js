@@ -7,7 +7,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import { Grid, Fab, Tooltip } from '@material-ui/core';
 import WebpageSnap from './WebpageSnap';
 import { FaGithub, FaLink } from 'react-icons/fa';
-import { getDevIcon, parseLangList } from './TimelineUtil';
+import { getDevIcon, parseLangList, getMainLang } from './TimelineUtil';
 
 const useStyles = makeStyles((theme) => ({
     buttons: {
@@ -47,14 +47,16 @@ const Timeline = props => {
                         isWebsite = true;
                     }
 
-                    const LangIcon = getDevIcon(repo.language, repo.description);
+                    const mainLang = getMainLang(repo.language);
+
+                    const LangIcon = getDevIcon(mainLang);
 
                     return <VerticalTimelineElement
                         contentStyle={{ background: '#fffff', color: '#757575' }}
                         date={`Created: ${repo.created}`}
                         key={repo.id}
                         icon={<LangIcon />}
-                        iconStyle={{ background: `${props.langColors[repo.language[0]] != null ? props.langColors[repo.language[0]] : 'hsl(0, 0%, 50%)'}`, color: '#efefef' }}
+                        iconStyle={{ background: `${props.langColors[mainLang] != null ? props.langColors[mainLang] : 'hsl(0, 0%, 50%)'}`, color: '#efefef' }}
                     >
                         <Grid container spacing={3} className={classes.timelineBody}>
                             <Grid item md={6}>
