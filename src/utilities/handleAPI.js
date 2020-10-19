@@ -61,17 +61,17 @@ function getLanguages(language, description) {
         'Angular',
         'Flutter',
 
-        'JQuery',
         'Java',
         'Swing',
         'JavaScript',
+        'JQuery',
         'TypeScript',
         'Python',
         'Dart',
         'C',
         'HTML',
         'CSS',
-        
+
         'Firebase',
         
     ]
