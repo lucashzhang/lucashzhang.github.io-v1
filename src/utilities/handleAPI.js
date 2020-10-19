@@ -69,20 +69,22 @@ function getLanguages(language, description) {
         'Dart',
         'HTML',
         'CSS',
+        'Firebase',
+        'JQuery',
     ]
 
     if (language == null) language = "";
     if (description == null) description = "";
 
-    let knownLangs = [language];
+    let knownLangs = language === "" ? [] : [language];
 
     for (let lang of known) {
-        if (description != null && lang !== language && RegExp('\\b'+ lang.toLowerCase() +'\\b').test(description.toLowerCase())) {
+        if (lang !== language && RegExp('\\b'+ lang.toLowerCase() +'\\b').test(description.toLowerCase())) {
             knownLangs.push(lang);
         }
     }
 
-    if (knownLangs.length === 0) knownLangs = 'undefined'
+    if (knownLangs.length === 0) knownLangs = ['N/A']
 
     return knownLangs
 }
