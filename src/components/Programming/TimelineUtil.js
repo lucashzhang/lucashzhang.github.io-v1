@@ -1,4 +1,3 @@
-import { isCompositeComponent } from 'react-dom/test-utils';
 import * as devIcon from 'react-icons/di';
 
 export function capitalFirst(text) {
