@@ -56,30 +56,33 @@ export async function getGenAPI() {
 
 function getLanguages(language, description) {
     let known = [
-        'C',
         'ReactJS',
         'Redux',
         'Angular',
+        'Flutter',
+
+        'JQuery',
         'Java',
         'Swing',
         'JavaScript',
         'TypeScript',
         'Python',
-        'Flutter',
         'Dart',
+        'C',
         'HTML',
         'CSS',
+        
         'Firebase',
-        'JQuery',
+        
     ]
 
     if (language == null) language = "";
     if (description == null) description = "";
 
-    let knownLangs = language === "" ? [] : [language];
+    let knownLangs = [];
 
     for (let lang of known) {
-        if (lang !== language && RegExp('\\b'+ lang.toLowerCase() +'\\b').test(description.toLowerCase())) {
+        if (lang === language || RegExp('\\b'+ lang.toLowerCase() +'\\b').test(description.toLowerCase())) {
             knownLangs.push(lang);
         }
     }
