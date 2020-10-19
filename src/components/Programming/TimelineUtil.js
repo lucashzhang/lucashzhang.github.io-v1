@@ -26,6 +26,7 @@ export function getDevIcon(lang) {
 function correctLangName(name) {
     let newName;
     switch (name) {
+        case 'Jquery':
         case 'Javascript': {
             newName = 'Javascript1'
             break;
