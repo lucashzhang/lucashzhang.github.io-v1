@@ -69,8 +69,7 @@ const About = _ => {
                 <h1 className={classes.header}>About Me</h1>
                 <div className={classes.runDown}>
                     <p>
-                        Hello! My name is Lucas Zhang, and thank you for coming to my website!
-                        I'm a Computer Science Major with a Minor in Statistics who also happens to love making things look pretty.
+                        Hello! My name is Lucas Zhang. I'm a creative and analytical software developer who also happens to love making things look pretty.
                     </p>
                 </div>
                 <Grid container margin={6}>
@@ -86,7 +85,7 @@ const About = _ => {
                                 <div>
                                     <h3 className={classes.aboutHeader}>College</h3>
                                     <p>
-                                        Currently, I'm going to school at the University of North Carolina at Chapel Hill.
+                                        I'm a Computer Science Major with a Minor in Statistics at the University of North Carolina at Chapel Hill.
                                     </p>
                                 </div>
                             </ListItem>
