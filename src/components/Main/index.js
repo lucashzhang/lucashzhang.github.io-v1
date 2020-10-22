@@ -5,6 +5,7 @@ import theme from '../../utilities/theme';
 import Home from '../Home';
 import About from '../About';
 import Contact from '../Contact';
+import Programming from '../Programming';
 
 import VizSensor from 'react-visibility-sensor';
 import {Redirect} from 'react-router-dom';
@@ -28,6 +29,8 @@ const Main = _ => {
             <VizSensor partialVisibility offset={{top: window.innerHeight / 3, bottom: window.innerHeight / 3}} onChange={(isVisible) => {if (isVisible) setVisible('/#home')}}><Home/></VizSensor>
             <section className={classes.divider}></section>
             <VizSensor partialVisibility offset={{top: window.innerHeight / 3, bottom: window.innerHeight / 3}} onChange={(isVisible) => {if (isVisible) setVisible('/#about')}}><About/></VizSensor>
+            <section className={classes.divider}></section>
+            <VizSensor partialVisibility offset={{top: window.innerHeight / 3, bottom: window.innerHeight / 3}} onChange={(isVisible) => {if (isVisible) setVisible('/#programmming')}}><Programming/></VizSensor>
             <section className={classes.divider}></section>
             <VizSensor partialVisibility offset={{top: window.innerHeight / 3, bottom: window.innerHeight / 3}} onChange={(isVisible) => {if (isVisible) setVisible('/#contact')}}><Contact/></VizSensor>
         </ThemeProvider>

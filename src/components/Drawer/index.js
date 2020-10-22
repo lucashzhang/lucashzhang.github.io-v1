@@ -100,20 +100,17 @@ function WebsiteDrawer(props) {
                                 })}><FaUser /></ListItemIcon></Tooltip>
                                 <ListItemText primary='About Me' />
                             </ListItem>
+                            <ListItem button component={Link} smooth to='/#programming'>
+                                <Tooltip title={open ? '' : 'My Programming'}><ListItemIcon className={clsx({
+                                    [classes.viewing]: props.location.pathname === '/' && props.location.hash === '#programmming',
+                                })}><FaCode /></ListItemIcon></Tooltip>
+                                <ListItemText primary='My Programming' />
+                            </ListItem>
                             <ListItem button component={Link} smooth to='/#contact'>
                                 <Tooltip title={open ? '' : 'Contact Me'}><ListItemIcon className={clsx({
                                     [classes.viewing]: props.location.pathname === '/' && props.location.hash === '#contact',
                                 })}><FaAddressBook /></ListItemIcon></Tooltip>
                                 <ListItemText primary='Contact Me' />
-                            </ListItem>
-                        </List>
-                        <Divider />
-                        <List>
-                            <ListItem button component={Link} to='/programming/#timeline'>
-                                <Tooltip title={open ? '' : 'My Programming'}><ListItemIcon className={clsx({
-                                    [classes.viewing]: props.location.pathname === '/programming/',
-                                })}><FaCode /></ListItemIcon></Tooltip>
-                                <ListItemText primary='My Programming' />
                             </ListItem>
                         </List>
                         <Divider />

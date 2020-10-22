@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
-import { Paper } from '@material-ui/core'
+import { Paper } from '@material-ui/core';
 import logoHorz from '../../assets/Logo20.png';
 import logoVert from '../../assets/Logo20_vert.png';
 

@@ -115,8 +115,8 @@ const Programming = _ => {
 
     return (
         <ThemeProvider theme={theme}>
-            <section className={classes.surface} id="timeline">
-                <h1 className={classes.header}>My Programming Timeline</h1>
+            <section className={classes.surface} id="programming">
+                <h1 className={classes.header}>My Projects</h1>
                 {uniqLang.length === 0 || repoList.length === 0 ? null :
                     <div>
                         <TimelineFilter langList={uniqLang} langColors={langColors} searchValue={searchValue} handleSearch={handleSearch} handleFilter={changeFilter} />
