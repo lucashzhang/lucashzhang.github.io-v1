@@ -6,7 +6,7 @@ import Drawer from '../Drawer';
 import MobileDrawer from '../Drawer/MobileDrawer.js';
 import { HashRouter, Switch, Route } from "react-router-dom";
 import Main from '../Main';
-import Programming from '../Programming';
+// import Programming from '../Programming';
 
 const useStyles = makeStyles((theme) => ({
     desktop: {
@@ -32,7 +32,7 @@ const WebsiteFrame = _ => {
                 <Route className={classes.desktop} component={Drawer} />
                 <Route className={classes.mobile} component={MobileDrawer} />
                 <Switch>
-                    <Route path="/programming" component={Programming} />
+                    {/* <Route path="/programming" component={Programming} /> */}
                     <Route path="/" component={Main}/>
                 </Switch>
             </HashRouter>

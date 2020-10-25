@@ -70,6 +70,12 @@ function WebsiteDrawer(props) {
                             })}><FaUser /></ListItemIcon></Tooltip>
                             <ListItemText primary='About Me' />
                         </ListItem>
+                        <ListItem button component={Link} smooth to='/#programming'>
+                                <Tooltip title={open ? '' : 'My Programming'}><ListItemIcon className={clsx({
+                                    [classes.viewing]: props.location.pathname === '/' && props.location.hash === '#programmming',
+                                })}><FaCode /></ListItemIcon></Tooltip>
+                                <ListItemText primary='My Projects' />
+                            </ListItem>
                         <ListItem button component={Link} smooth to='/#contact'>
                             <Tooltip title={open ? '' : 'Contact Me'}><ListItemIcon className={clsx({
                                 [classes.viewing]: props.location.pathname === '/' && props.location.hash === '#contact',
@@ -77,7 +83,7 @@ function WebsiteDrawer(props) {
                             <ListItemText primary='Contact Me' />
                         </ListItem>
                     </List>
-                    <Divider />
+                    {/* <Divider />
                     <List>
                         <ListItem button component={Link} to='/programming/#timeline'>
                             <Tooltip title={open ? '' : 'My Programming'}><ListItemIcon className={clsx({
@@ -85,7 +91,7 @@ function WebsiteDrawer(props) {
                             })}><FaCode /></ListItemIcon></Tooltip>
                             <ListItemText primary='My Programming' />
                         </ListItem>
-                    </List>
+                    </List> */}
                     <Divider />
                     <List>
                         <ListItem button component="a" href="https://drive.google.com/file/d/1hQGB-3WnhvWq-9YGBw5qBOTUkdB6IARd/view?usp=sharing" target="_blank">

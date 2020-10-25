@@ -104,7 +104,7 @@ function WebsiteDrawer(props) {
                                 <Tooltip title={open ? '' : 'My Programming'}><ListItemIcon className={clsx({
                                     [classes.viewing]: props.location.pathname === '/' && props.location.hash === '#programmming',
                                 })}><FaCode /></ListItemIcon></Tooltip>
-                                <ListItemText primary='My Programming' />
+                                <ListItemText primary='My Projects' />
                             </ListItem>
                             <ListItem button component={Link} smooth to='/#contact'>
                                 <Tooltip title={open ? '' : 'Contact Me'}><ListItemIcon className={clsx({
