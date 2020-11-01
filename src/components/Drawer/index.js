@@ -101,7 +101,7 @@ function WebsiteDrawer(props) {
                                 <ListItemText primary='About Me' />
                             </ListItem>
                             <ListItem button component={Link} smooth to='/#programming'>
-                                <Tooltip title={open ? '' : 'My Programming'}><ListItemIcon className={clsx({
+                                <Tooltip title={open ? '' : 'My Projects'}><ListItemIcon className={clsx({
                                     [classes.viewing]: props.location.pathname === '/' && props.location.hash === '#programmming',
                                 })}><FaCode /></ListItemIcon></Tooltip>
                                 <ListItemText primary='My Projects' />
