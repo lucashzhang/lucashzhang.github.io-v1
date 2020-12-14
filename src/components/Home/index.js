@@ -3,8 +3,8 @@ import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
 import { Paper } from '@material-ui/core';
-import logoHorz from '../../assets/Logo20.png';
-import logoVert from '../../assets/Logo20_vert.png';
+import Icon from '../../assets/Logo20_icon.png'
+import './circles.css'
 
 const useStyles = makeStyles((theme) => ({
     surface: {
@@ -22,33 +22,79 @@ const useStyles = makeStyles((theme) => ({
         height: '90%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-around',
         [theme.breakpoints.down('md')]: {
             marginTop: 56,
         },
     },
-    logoHorz: {
-        objectFit: 'contain',
+    logo: {
+        position: 'relative',
         width: '100%',
-        [theme.breakpoints.down('sm')]: {
-            display: 'none'
-        }
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        [theme.breakpoints.down('md')]: {
+            flexDirection: 'column',
+        },
     },
-    logoVert: {
-        objectFit: 'contain',
-        display: 'none',
-        width: '100%',
-        maxHeight: '70%',
-        [theme.breakpoints.down('sm')]: {
-            display: 'block'
-        }
+    name: {
+        marginLeft: '50px',
+        textAlign: 'center',
+        [theme.breakpoints.down('md')]: {
+            marginLeft: '0',
+            // marginTop: '20vh'
+        },
+    },
+    english: {
+        color: 'white',
+        fontSize: '13vh',
+        fontWeight: '100',
+        [theme.breakpoints.down('md')]: {
+            fontSize: '3rem'
+        },
+    },
+    chinese: {
+        color: 'white',
+        fontSize: '5vh',
+        fontWeight: '100',
+        marginBottom: '6vh',
+        [theme.breakpoints.down('md')]: {
+            fontSize: '2rem'
+        },
     },
     welcome: {
         width: '80%',
         padding: '1.5rem',
-        margin: 'auto',
+        marginRight: 'auto',
+        marginLeft: 'auto'
     },
-}))
+}));
+
+const Circles = _ => {
+
+    return (
+        <div class="circles" id="circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <img className='circle-icon' src={Icon} alt='' />
+        </div>
+    )
+}
+
+const Name = _ => {
+
+    const classes = useStyles();
+
+    return (
+        <div className={classes.name}>
+            <h1 className={classes.english}>Lucas Zhang</h1>
+            <h2 className={classes.chinese}>{'<张光华/>'}</h2>
+        </div>
+    )
+}
 
 const Home = _ => {
 
@@ -58,8 +104,11 @@ const Home = _ => {
         <ThemeProvider theme={theme}>
             <section className={classes.surface} id='home'>
                 <div className={classes.center}>
-                    <img className={classes.logoHorz} src={logoHorz} alt='' />
-                    <img className={classes.logoVert} src={logoVert} alt='' />
+                    <div className={classes.logo}>
+                        <Circles></Circles>
+                        <Name></Name>
+                    </div>
+                    {/* <img className={classes.logoVert} src={logoVert} alt='' /> */}
                     <Paper elevation={0} className={classes.welcome}>
                         <p>Welcome to my website! Think of this webpage as a portfolio of sorts. You can find all sorts of things about me here. Additionally, it should all be up to date thanks to the Github API!</p>
                     </Paper>
