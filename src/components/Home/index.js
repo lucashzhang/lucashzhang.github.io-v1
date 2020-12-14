@@ -3,7 +3,7 @@ import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
 import { Paper } from '@material-ui/core';
-import Icon from '../../assets/Logo20_icon.png'
+import Icon from '../../assets/NeonLogo.png'
 import './circles.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
     english: {
         color: 'white',
         fontSize: '13vh',
-        fontWeight: '100',
         [theme.breakpoints.down('md')]: {
             fontSize: '3rem'
         },
@@ -69,6 +68,12 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 'auto',
         marginLeft: 'auto'
     },
+    pink: {
+        color: '#FF00FF'
+    },
+    cyan: {
+        color: '#00FFFF'
+    }
 }));
 
 const Circles = _ => {
@@ -91,8 +96,20 @@ const Name = _ => {
     return (
         <div className={classes.name}>
             <h1 className={classes.english}>Lucas Zhang</h1>
-            <h2 className={classes.chinese}>{'<张光华/>'}</h2>
+            <h2 className={`${classes.chinese} ${classes.cyan}`}>
+                <span className={classes.pink}>{'<'}</span>
+                张光华
+                <span className={classes.pink}>{'/>'}</span>
+            </h2>
         </div>
+    //     <div className={classes.name}>
+    //     <h1 className={classes.english}>Lucas Zhang</h1>
+    //     <h2 className={`${classes.chinese}`}>
+    //         <span>{'<'}</span>
+    //         张光华
+    //         <span>{'/>'}</span>
+    //     </h2>
+    // </div>
     )
 }
 

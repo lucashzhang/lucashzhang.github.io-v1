@@ -12,9 +12,10 @@ h2 {
 }
 
 .App {
-  background-image: url('../../assets/starrynight.jpg');
+  background: #333333;
+  /* background-image: url('../../assets/starrynight.jpg');
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
 }
 
 /* h3 {
