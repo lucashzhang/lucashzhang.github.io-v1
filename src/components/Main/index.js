@@ -13,7 +13,7 @@ import {Redirect} from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
     divider: {
         height: '6rem',
-        backgroundColor: theme.palette.primary.dark
+        backgroundColor: theme.palette.surfaceBackground.main,
     },
 
 }))

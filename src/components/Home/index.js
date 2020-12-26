@@ -3,7 +3,7 @@ import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
 import { Paper } from '@material-ui/core';
-import Icon from '../../assets/NeonLogo.png'
+import Icon from '../../assets/NeonLogo.svg'
 import './circles.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -96,10 +96,10 @@ const Name = _ => {
     return (
         <div className={classes.name}>
             <h1 className={classes.english}>Lucas Zhang</h1>
-            <h2 className={`${classes.chinese} ${classes.cyan}`}>
-                <span className={classes.pink}>{'<'}</span>
+            <h2 className={`${classes.chinese}`}>
+                <span>{'<'}</span>
                 张光华
-                <span className={classes.pink}>{'/>'}</span>
+                <span>{'/>'}</span>
             </h2>
         </div>
     //     <div className={classes.name}>

@@ -11,7 +11,7 @@ import { Paper } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
     surface: {
-        backgroundColor: theme.palette.primary.dark,
+        backgroundColor: theme.palette.surfaceBackground.main,
         minHeight: 'calc(100vh - 12rem)',
         paddingBottom: '6rem',
         paddingTop: '6rem'

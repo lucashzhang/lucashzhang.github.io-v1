@@ -7,7 +7,7 @@ import Headshot from '../../assets/Headshot.jpg';
 
 const useStyles = makeStyles((theme) => ({
     surface: {
-        backgroundColor: theme.palette.primary.dark,
+        backgroundColor: theme.palette.surfaceBackground.main,
         paddingLeft: 'calc((100% - 1170px) / 2)',
         paddingRight: 'calc((100% - 1170px) / 2)',
         paddingBottom: '3rem',

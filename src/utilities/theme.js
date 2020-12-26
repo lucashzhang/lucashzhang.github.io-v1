@@ -6,10 +6,10 @@ export default createMuiTheme({
             main: '#5A5E86'
         },
         secondary: {
-            main: '#00EEEE',
+            main: '#AFB1FF',
         },
         surfaceBackground: {
-            main: '#D5D5D5'
+            main: '#444444'
         }
     }
 })

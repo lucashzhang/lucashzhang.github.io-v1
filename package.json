@@ -13,7 +13,7 @@
     "react-onclickoutside": "^6.9.0",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.1.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.4",
     "react-vertical-timeline-component": "^3.0.2",
     "react-visibility-sensor": "^5.1.1"
   },
