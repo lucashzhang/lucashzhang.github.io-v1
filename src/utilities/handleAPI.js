@@ -29,6 +29,7 @@ export async function getGenAPI() {
             id: item['id'],
             description: item['description'] != null ? item['description'] : "",
             created: new Date(item['created_at']),
+            pushed: new Date(item['pushed_at']),
             language: getLanguages(item['language'], item['description']),
             url: item['html_url'],
             homepage: item['homepage']
@@ -41,14 +42,6 @@ export async function getGenAPI() {
         console.log("The list of repositories failed to build, \nthis was most likely caused by too many API calls")
         return [];
     }
-
-    repoList.sort((a, b) => {
-        if (a['created'] > b['created']) {
-            return -1;
-        } else {
-            return 1;
-        }
-    })
 
     return repoList;
 

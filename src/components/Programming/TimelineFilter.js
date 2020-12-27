@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
-import { Paper, TextField, Checkbox, Grid, FormControl, FormControlLabel } from '@material-ui/core'
+import { Paper, TextField, Checkbox, Grid, FormControl, FormControlLabel, Select, MenuItem, InputLabel } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
     surface: {
@@ -63,7 +63,21 @@ const TimelineFilter = props => {
         <ThemeProvider theme={theme}>
             <section className={classes.surface} id="about">
                 <Paper elevation={0} className={classes.paper}>
-                    <TextField fullWidth variant='outlined' label='Search' className={classes.input} value={props.searchValue} onChange={props.handleSearch}></TextField>
+                    <Grid container spacing={2}>
+                        <Grid item xs={6} md={9}>
+                            <TextField fullWidth variant='outlined' label='Search' value={props.searchValue} onChange={props.handleSearch}></TextField>
+                        </Grid>
+                        <Grid item xs={6} md={3}>
+                            <FormControl fullWidth variant="outlined" >
+                                <InputLabel id="sort-label">Sort By</InputLabel>
+                                <Select value={props.sortValue} onChange={props.handleSort} labelId="sort-label" label="Sort By">
+                                    <MenuItem value="pushed">Updated Date</MenuItem>
+                                    <MenuItem value="created">Creation Date</MenuItem>
+                                </Select>
+                            </FormControl>
+
+                        </Grid>
+                    </Grid>
                     <FormControl fullWidth component="fieldset">
                         <Grid container alignItems="center" justify="space-evenly" className={classes.checks}>
                             {props.langList.map((lang) => {
@@ -73,7 +87,7 @@ const TimelineFilter = props => {
                                             style={{
                                                 color: props.langColors[lang],
                                             }}
-                                            checked={checkBoxes[lang] == null ? false: checkBoxes[lang]}
+                                            checked={checkBoxes[lang] == null ? false : checkBoxes[lang]}
                                             color="default"
                                             name={lang}
                                             onChange={onCheckChange}

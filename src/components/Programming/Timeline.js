@@ -53,7 +53,7 @@ const Timeline = props => {
 
                     return <VerticalTimelineElement
                         contentStyle={{ background: '#fffff', color: 'rgba(0, 0, 0, 0.87)' }}
-                        date={`Created: ${repo.created}`}
+                        date={<h5>Created On: {repo.created.toDateString()}; Last Update: {repo.pushed.toDateString()}</h5>}
                         key={repo.id}
                         icon={<LangIcon />}
                         iconStyle={{ background: `${props.langColors[mainLang] != null ? props.langColors[mainLang] : 'hsl(0, 0%, 50%)'}`, color: '#efefef' }}

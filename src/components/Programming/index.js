@@ -48,6 +48,7 @@ const Programming = _ => {
     const [langColors, setLangColors] = useState({});
     const [searchValue, setSearchValue] = useState('');
     const [repoInclude, setRepoInclude] = useState([]);
+    const [repoSort, setRepoSort] = useState('pushed')
 
     const handleSearch = e => {
         setSearchValue(e.target.value.toLowerCase())
@@ -87,6 +88,10 @@ const Programming = _ => {
 
     }
 
+    const changeSort = e => {
+        setRepoSort(e.target.value)
+    }
+
     const handleIncludeRepos = query => {
         // Returns a list of repositories that include the string
         return repoList.filter((repo) => {
@@ -103,7 +108,7 @@ const Programming = _ => {
                 return (repo.language.toString().toLowerCase().includes(searchValue.toLowerCase())
                     || repo.name.toLowerCase().includes(searchValue.toLowerCase())
                     || (repo.description != null && repo.description.toLowerCase().includes(searchValue.toLowerCase())))
-            })
+            }).sort((a, b) => b[repoSort] - a[repoSort])
         } else {
             return [];
         }
@@ -119,7 +124,7 @@ const Programming = _ => {
                 <h1 className={classes.header}>My Projects</h1>
                 {uniqLang.length === 0 || repoList.length === 0 ? null :
                     <div>
-                        <TimelineFilter langList={uniqLang} langColors={langColors} searchValue={searchValue} handleSearch={handleSearch} handleFilter={changeFilter} />
+                        <TimelineFilter langList={uniqLang} langColors={langColors} searchValue={searchValue} handleSearch={handleSearch} handleFilter={changeFilter} sortValue={repoSort} handleSort={changeSort} />
                         <Timeline repoList={filteredRepos} langColors={langColors} />
                     </div>
                 }
