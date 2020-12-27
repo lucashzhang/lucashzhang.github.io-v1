@@ -5,7 +5,7 @@
     width: 30rem;
     position: relative;
     display: flex;
-    top: 50%;
+    top: 14rem;
     left: 15rem;
     transform: translate3D(-50%, -50%, 0);
 }
@@ -56,21 +56,39 @@
     animation: spin4 5.5s linear infinite;
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 960px) {
     .circles {
-        height: 70vw;
-        width: 70vw;
-        top: 30%;
-        left: 35vw;
+        height: 24rem;
+        width: 24rem;
+        top: 11rem;
+        left: 12rem;
     }
 
     .circle-icon {
-        width: 50vw;
-        height: 50vw;
+        width: 18rem;
+        height: 18rem;
     }
 
     .circle {
-        border: 2vw solid transparent;
+        border: 10px solid transparent;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .circles {
+        height: 20rem;
+        width: 20rem;
+        top: 9rem;
+        left: 10rem;
+    }
+
+    .circle-icon {
+        width: 16rem;
+        height: 16rem;
+    }
+
+    .circle {
+        border: 10px solid transparent;
     }
 }
 

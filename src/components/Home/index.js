@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
             paddingLeft: '2.5%',
             paddingRight: '2.5%',
+            height: '48rem'
+        },
+        [theme.breakpoints.down('xs')]: {
+            height: '100vh'
         },
     },
     center: {
@@ -24,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'space-around',
         [theme.breakpoints.down('md')]: {
-            marginTop: 56,
+            marginTop: '56px',
         },
     },
     logo: {
@@ -33,14 +37,14 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             flexDirection: 'column',
         },
     },
     name: {
         width: 'calc(100% - 30rem)',
         textAlign: 'center',
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             marginLeft: '0',
             width: '100%'
             // marginTop: '20vh'
@@ -50,7 +54,11 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
         fontSize: '6rem',
         [theme.breakpoints.down('md')]: {
+            fontSize: '4.5rem'
+        },
+        [theme.breakpoints.down('sm')]: {
             fontSize: '3rem'
+            // marginTop: '20vh'
         },
     },
     chinese: {
