@@ -52,7 +52,7 @@ const Timeline = props => {
                     const LangIcon = getDevIcon(mainLang);
 
                     return <VerticalTimelineElement
-                        contentStyle={{ background: '#fffff', color: '#757575' }}
+                        contentStyle={{ background: '#fffff', color: 'rgba(0, 0, 0, 0.87)' }}
                         date={`Created: ${repo.created}`}
                         key={repo.id}
                         icon={<LangIcon />}
