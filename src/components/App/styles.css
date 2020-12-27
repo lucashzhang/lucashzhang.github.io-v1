@@ -17,7 +17,7 @@ h2 {
 }
 
 @media only screen and (min-width: 1280px) {
-  body {
+  #root {
     background: linear-gradient(-45deg, #ff44ff, #44ffff, #ff44ff, #44ffff);
     background-size: 600vw 600vw;
     animation: gradient 20s ease infinite;
