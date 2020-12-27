@@ -59,7 +59,6 @@ function getLanguages(language, description) {
         'ReactJS',
         'Redux',
         'Angular',
-        'Flutter',
 
         'Java',
         'Swing',
@@ -73,7 +72,7 @@ function getLanguages(language, description) {
         'CSS',
 
         'Firebase',
-        
+        'Flutter',
     ]
 
     if (language == null) language = "";
