@@ -25,7 +25,6 @@
     border: 1rem solid transparent;
     border-radius: 115% 140% 145% 110%/125% 140% 110% 125%;
     /* mix-blend-mode: screen; */
-    opacity: 80%;
     z-index: 100;
 }
 
@@ -34,6 +33,7 @@
     /* border-color: #00FFFF; */
     transform-origin: 50% 50%;
     animation: spin1 5.5s linear infinite;
+    opacity: 80%;
 }
 
 .circle:nth-child(2) {
@@ -41,6 +41,7 @@
     /* border-color: #00FFFF; */
     transform-origin: 50% 50%;
     animation: spin2 5.5s linear infinite;
+    opacity: 80%;
 }
 
 .circle:nth-child(3) {
@@ -48,6 +49,7 @@
     /* border-color: #FF00FF; */
     transform-origin: 50% 50%;
     animation: spin3 5.5s linear infinite;
+    opacity: 80%;
 }
 
 .circle:nth-child(4) {
@@ -55,6 +57,7 @@
     /* border-color: #FF00FF; */
     transform-origin: 50% 50%;
     animation: spin4 5.5s linear infinite;
+    opacity: 80%;
 }
 
 @media only screen and (max-width: 960px) {
