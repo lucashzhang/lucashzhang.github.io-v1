@@ -18,8 +18,6 @@ export function getDevIcon(lang) {
         LangIcon = devIcon['DiVisualstudio']
     }
 
-    console.log(formatted)
-
     return LangIcon;
 }
 
@@ -90,8 +88,8 @@ export function assignColors(uniqLang) {
 
 function selectColor(number) {
     const hue = (number * 137.508) % 360; // use golden angle approximation
-    var saturation = number % 2 === 0 ? "60%" : "40%";
-    saturation = number % 3 === 0 ? "50%" : saturation;
+    var saturation = number % 2 === 0 ? "80%" : "60%";
+    saturation = number % 3 === 0 ? "70%" : saturation;
     var value = number % 2 === 0 ? "40%" : "60%";
     value = number % 4 === 0 ? "50%" : value;
     return `hsl(${hue},${saturation},${value})`;

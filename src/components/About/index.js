@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     header: {
-        color: theme.palette.primary.contrastText,
+        color: theme.palette.surfaceBackground.contrastText,
         fontSize: '5rem',
         marginBottom: '1rem',
         [theme.breakpoints.down('md')]: {
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     runDown: {
-        color: theme.palette.primary.contrastText,
+        color: theme.palette.surfaceBackground.contrastText,
         marginBottom: '3rem'
     },
     imgContainer: {
@@ -41,13 +41,13 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center'
     },
     aboutList: {
-        color: theme.palette.primary.contrastText,
+        color: theme.palette.surfaceBackground.contrastText,
         [theme.breakpoints.up('md')]: {
             paddingLeft: '4rem'
         },
     },
     aboutDivider: {
-        backgroundColor: theme.palette.primary.contrastText,
+        backgroundColor: theme.palette.surfaceBackground.contrastText,
         marginTop: '0.5rem',
         marginBottom: '0.5rem'
     },
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '1rem'
     },
     emphasis: {
-        color: theme.palette.secondary.main
+        color: theme.palette.primary.main
     }
 }))
 

@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '6rem'
     },
     header: {
-        color: theme.palette.primary.contrastText,
+        color: theme.palette.surfaceBackground.contrastText,
         fontSize: '5rem',
         paddingLeft: 'calc((100% - 1170px) / 2)',
         [theme.breakpoints.down('md')]: {
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '1rem'
     },
     link: {
-        color: theme.palette.secondary.dark
+        color: theme.palette.primary.dark
     }
 }))
 

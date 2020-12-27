@@ -11,29 +11,38 @@ h2 {
   font-family: 'Noto Sans SC', sans-serif;
 }
 
-body {
-	background: linear-gradient(-45deg, #ff44ff, #44ffff, #ff44ff, #44ffff);
-	background-size: 500vw 500vw;
-	animation: gradient 20s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
 .App {
-  /* background: #333333; */
-  background-image: url('../../assets/WebsiteBackground-01.svg');
-  background-attachment: fixed;
-  background-size: cover;
+  background: #333333;
+  overflow-x: hidden;
+}
+
+@media only screen and (min-width: 1280px) {
+  body {
+    background: linear-gradient(-45deg, #ff44ff, #44ffff, #ff44ff, #44ffff);
+    background-size: 500vw 500vw;
+    animation: gradient 20s ease infinite;
+  }
+
+  .App {
+    background: transparent;
+    background-image: url('../../assets/WebsiteBackground-01.svg');
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 
 /* h3 {

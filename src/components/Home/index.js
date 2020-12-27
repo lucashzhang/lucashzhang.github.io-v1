@@ -33,29 +33,29 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
         [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
         },
     },
     name: {
-        marginLeft: '50px',
+        width: 'calc(100% - 30rem)',
         textAlign: 'center',
         [theme.breakpoints.down('md')]: {
             marginLeft: '0',
+            width: '100%'
             // marginTop: '20vh'
         },
     },
     english: {
         color: 'white',
-        fontSize: '13vh',
+        fontSize: '6rem',
         [theme.breakpoints.down('md')]: {
             fontSize: '3rem'
         },
     },
     chinese: {
         color: 'white',
-        fontSize: '5vh',
+        fontSize: '4rem',
         fontWeight: '100',
         marginBottom: '6vh',
         [theme.breakpoints.down('md')]: {
@@ -79,11 +79,11 @@ const useStyles = makeStyles((theme) => ({
 const Circles = _ => {
 
     return (
-        <div class="circles" id="circles">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
+        <div className="circles" id="circles">
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="circle"></div>
             <img className='circle-icon' src={Icon} alt='' />
         </div>
     )
