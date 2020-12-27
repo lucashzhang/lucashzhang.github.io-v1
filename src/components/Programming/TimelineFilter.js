@@ -71,7 +71,7 @@ const TimelineFilter = props => {
                             <FormControl fullWidth variant="outlined" >
                                 <InputLabel id="sort-label">Sort By</InputLabel>
                                 <Select value={props.sortValue} onChange={props.handleSort} labelId="sort-label" label="Sort By">
-                                    <MenuItem value="pushed">Updated Date</MenuItem>
+                                    <MenuItem value="pushed">Last Update</MenuItem>
                                     <MenuItem value="created">Creation Date</MenuItem>
                                 </Select>
                             </FormControl>
