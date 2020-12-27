@@ -14,20 +14,23 @@ const useStyles = makeStyles((theme) => ({
         whiteSpace: 'nowrap',
     },
     drawerButton: {
-        color: theme.palette.surfaceBackground.main
+        color: theme.palette.surfaceBackground.contrastText
     },
     viewing: {
         color: theme.palette.secondary.main,
     },
     menu: {
-        color: theme.palette.primary.main,
+        color: theme.palette.surfaceBackground.main,
+    },
+    toolbar: {
+        backgroundColor: theme.palette.surfaceBackground.main,
     },
     mobile: {
         display: 'none',
         [theme.breakpoints.down('md')]: {
             display: 'block'
         },
-    }
+    },
 }));
 
 
@@ -44,7 +47,7 @@ function WebsiteDrawer(props) {
         <div className={classes.mobile}>
             <ThemeProvider theme={theme}>
                 <AppBar postion='fixed'>
-                    <Toolbar>{open ? null : <IconButton className={classes.drawerButton} onClick={toggleDrawer}><FaBars></FaBars></IconButton>}</Toolbar>
+                    <Toolbar className={classes.toolbar}>{open ? null : <IconButton className={classes.drawerButton} onClick={toggleDrawer}><FaBars></FaBars></IconButton>}</Toolbar>
                 </AppBar>
                 <Drawer
                     open={open}

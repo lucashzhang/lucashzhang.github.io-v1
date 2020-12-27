@@ -3,7 +3,7 @@ import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import theme from '../../utilities/theme';
 
 import { Fab, Tooltip } from '@material-ui/core';
-import { FaEnvelope, FaLinkedin, FaGithub, FaFile } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub, FaFile, FaDev } from 'react-icons/fa';
 
 const useStyles = makeStyles((theme) => ({
     surface: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     header: {
-        color: theme.palette.primary.contrastText,
+        color: theme.palette.surfaceBackground.contrastText,
         fontSize: '5rem',
         marginBottom: '1rem',
         paddingTop: '6rem',
@@ -57,6 +57,7 @@ const Home = _ => {
                     <Tooltip title="Email me"><Fab className={classes.button} href="mailto:lucas_h_zhang@hotmail.com" target="_blank"><FaEnvelope /></Fab></Tooltip>
                     <Tooltip title="Visit my Linkedin"><Fab className={classes.button} href="https://www.linkedin.com/in/lucashzhang" target="_blank"><FaLinkedin /></Fab></Tooltip>
                     <Tooltip title="Visit my Github"><Fab className={classes.button} href="https://github.com/lucashzhang" target="_blank"><FaGithub /></Fab></Tooltip>
+                    <Tooltip title="Look at my Devposts"><Fab className={classes.button} href="https://devpost.com/lucashzhang?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank"><FaDev /></Fab></Tooltip>
                     <Tooltip title="See my Resume"><Fab className={classes.button} href="https://drive.google.com/file/d/1hQGB-3WnhvWq-9YGBw5qBOTUkdB6IARd/view?usp=sharing" target="_blank"><FaFile /></Fab></Tooltip>
                 </div>
             </section>
