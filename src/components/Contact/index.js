@@ -1,6 +1,5 @@
 import React from 'react';
-import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import theme from '../../utilities/theme';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { Fab, Tooltip } from '@material-ui/core';
 import { FaEnvelope, FaLinkedin, FaGithub, FaFile, FaDev } from 'react-icons/fa';
@@ -50,18 +49,16 @@ const Home = _ => {
     const classes = useStyles()
 
     return (
-        <ThemeProvider theme={theme}>
-            <section className={classes.surface} id="contact">
-                <h1 className={classes.header}>Contact Me</h1>
-                <div className={classes.buttonContainer}>
-                    <Tooltip title="Email me"><Fab className={classes.button} href="mailto:lucas_h_zhang@hotmail.com" target="_blank"><FaEnvelope /></Fab></Tooltip>
-                    <Tooltip title="Visit my Linkedin"><Fab className={classes.button} href="https://www.linkedin.com/in/lucashzhang" target="_blank"><FaLinkedin /></Fab></Tooltip>
-                    <Tooltip title="Visit my Github"><Fab className={classes.button} href="https://github.com/lucashzhang" target="_blank"><FaGithub /></Fab></Tooltip>
-                    <Tooltip title="Look at my Devposts"><Fab className={classes.button} href="https://devpost.com/lucashzhang?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank"><FaDev /></Fab></Tooltip>
-                    <Tooltip title="See my Resume"><Fab className={classes.button} href="https://drive.google.com/file/d/1hQGB-3WnhvWq-9YGBw5qBOTUkdB6IARd/view?usp=sharing" target="_blank"><FaFile /></Fab></Tooltip>
-                </div>
-            </section>
-        </ThemeProvider>
+        <section className={classes.surface} id="contact">
+            <h1 className={classes.header}>Contact Me</h1>
+            <div className={classes.buttonContainer}>
+                <Tooltip title="Email me"><Fab className={classes.button} href="mailto:lucas_h_zhang@hotmail.com" target="_blank"><FaEnvelope /></Fab></Tooltip>
+                <Tooltip title="Visit my Linkedin"><Fab className={classes.button} href="https://www.linkedin.com/in/lucashzhang" target="_blank"><FaLinkedin /></Fab></Tooltip>
+                <Tooltip title="Visit my Github"><Fab className={classes.button} href="https://github.com/lucashzhang" target="_blank"><FaGithub /></Fab></Tooltip>
+                <Tooltip title="Look at my Devposts"><Fab className={classes.button} href="https://devpost.com/lucashzhang?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank"><FaDev /></Fab></Tooltip>
+                <Tooltip title="See my Resume"><Fab className={classes.button} href="https://drive.google.com/file/d/1kYoxdLcPnO5h7ehvS6RkL8_2aIfyihdu/view?usp=sharing" target="_blank"><FaFile /></Fab></Tooltip>
+            </div>
+        </section>
     )
 }
 

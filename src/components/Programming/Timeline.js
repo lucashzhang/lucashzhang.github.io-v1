@@ -1,6 +1,5 @@
 import React from 'react';
-import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import theme from '../../utilities/theme';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -38,50 +37,48 @@ const Timeline = props => {
     const classes = useStyles()
 
     return (
-        <ThemeProvider theme={theme}>
-            <VerticalTimeline layout={'1-column'} animate={false}>
-                {props.repoList.map(repo => {
+        <VerticalTimeline layout={'1-column'} animate={false}>
+            {props.repoList.map(repo => {
 
-                    let isWebsite = false;
-                    if (repo.homepage != null && repo.homepage.length > 0 && !repo.homepage.includes('githubusercontent.com')) {
-                        isWebsite = true;
-                    }
+                let isWebsite = false;
+                if (repo.homepage != null && repo.homepage.length > 0 && !repo.homepage.includes('githubusercontent.com')) {
+                    isWebsite = true;
+                }
 
-                    const mainLang = getMainLang(repo.language);
+                const mainLang = getMainLang(repo.language);
 
-                    const LangIcon = getDevIcon(mainLang);
+                const LangIcon = getDevIcon(mainLang);
 
-                    return <VerticalTimelineElement
-                        contentStyle={{ background: '#fffff', color: 'rgba(0, 0, 0, 0.87)' }}
-                        date={<h5>Date Created: {repo.created.toDateString()}; Date Updated: {repo.pushed.toDateString()}</h5>}
-                        key={repo.id}
-                        icon={<LangIcon />}
-                        iconStyle={{ background: `${props.langColors[mainLang] != null ? props.langColors[mainLang] : 'hsl(0, 0%, 50%)'}`, color: '#efefef' }}
-                    >
-                        <Grid container spacing={3} className={classes.timelineBody}>
-                            <Grid item md={6}>
-                                <WebpageSnap url={repo.homepage}></WebpageSnap>
-                            </Grid>
-                            <Grid item md={6} >
-                                <div className={classes.timelineContent}>
-                                    <h3>{repo.name}</h3>
-                                    <h4>Technologies Used: {parseLangList(repo.language)}</h4>
-                                    <p>{repo.description}</p>
-                                </div>
-                                <Grid container>
-                                    <Grid item xs={isWebsite ? 6 : 12} className={classes.buttonContainer}>
-                                        <Tooltip title="Github Repository"><Fab className={classes.buttons} color="secondary" href={repo.url} target='_blank' size='medium'><FaGithub /></Fab></Tooltip>
-                                    </Grid>
-                                    {isWebsite ? <Grid item xs={6} className={classes.buttonContainer}>
-                                        <Tooltip title="Project Site"><Fab className={classes.buttons} color="secondary" href={repo.homepage} target='_blank' size='medium'><FaLink /></Fab></Tooltip>
-                                    </Grid> : null}
+                return <VerticalTimelineElement
+                    contentStyle={{ background: '#fffff', color: 'rgba(0, 0, 0, 0.87)' }}
+                    date={<h5>Date Created: {repo.created.toDateString()}; Date Updated: {repo.pushed.toDateString()}</h5>}
+                    key={repo.id}
+                    icon={<LangIcon />}
+                    iconStyle={{ background: `${props.langColors[mainLang] != null ? props.langColors[mainLang] : 'hsl(0, 0%, 50%)'}`, color: '#efefef' }}
+                >
+                    <Grid container spacing={3} className={classes.timelineBody}>
+                        <Grid item md={6}>
+                            <WebpageSnap url={repo.homepage}></WebpageSnap>
+                        </Grid>
+                        <Grid item md={6} >
+                            <div className={classes.timelineContent}>
+                                <h3>{repo.name}</h3>
+                                <h4>Technologies Used: {parseLangList(repo.language)}</h4>
+                                <p>{repo.description}</p>
+                            </div>
+                            <Grid container>
+                                <Grid item xs={isWebsite ? 6 : 12} className={classes.buttonContainer}>
+                                    <Tooltip title="Github Repository"><Fab className={classes.buttons} color="primary" href={repo.url} target='_blank' size='medium'><FaGithub /></Fab></Tooltip>
                                 </Grid>
+                                {isWebsite ? <Grid item xs={6} className={classes.buttonContainer}>
+                                    <Tooltip title="Project Site"><Fab className={classes.buttons} color="primary" href={repo.homepage} target='_blank' size='medium'><FaLink /></Fab></Tooltip>
+                                </Grid> : null}
                             </Grid>
                         </Grid>
-                    </VerticalTimelineElement>
-                })}
-            </VerticalTimeline>
-        </ThemeProvider>
+                    </Grid>
+                </VerticalTimelineElement>
+            })}
+        </VerticalTimeline>
     )
 }
 

@@ -89,9 +89,6 @@ const Circles = _ => {
     return (
         <div className="circles" id="circles">
             <div className="circle"></div>
-            <div className="circle"></div>
-            <div className="circle"></div>
-            <div className="circle"></div>
             <img className='circle-icon' src={Icon} alt='' />
         </div>
     )
@@ -110,14 +107,6 @@ const Name = _ => {
                 <span>{'/>'}</span>
             </h2>
         </div>
-    //     <div className={classes.name}>
-    //     <h1 className={classes.english}>Lucas Zhang</h1>
-    //     <h2 className={`${classes.chinese}`}>
-    //         <span>{'<'}</span>
-    //         张光华
-    //         <span>{'/>'}</span>
-    //     </h2>
-    // </div>
     )
 }
 
@@ -126,20 +115,18 @@ const Home = _ => {
     const classes = useStyles();
 
     return (
-        <ThemeProvider theme={theme}>
-            <section className={classes.surface} id='home'>
-                <div className={classes.center}>
-                    <div className={classes.logo}>
-                        <Circles></Circles>
-                        <Name></Name>
-                    </div>
-                    {/* <img className={classes.logoVert} src={logoVert} alt='' /> */}
-                    <Paper elevation={0} className={classes.welcome}>
-                        <p>Welcome to my website! Think of this webpage as a portfolio of sorts. You can find all sorts of things about me here. Additionally, it should all be up to date thanks to the Github API!</p>
-                    </Paper>
+        <section className={classes.surface} id='home'>
+            <div className={classes.center}>
+                <div className={classes.logo}>
+                    <Circles></Circles>
+                    <Name></Name>
                 </div>
-            </section>
-        </ThemeProvider>
+                {/* <img className={classes.logoVert} src={logoVert} alt='' /> */}
+                <Paper elevation={0} className={classes.welcome}>
+                    <p>Welcome to my website! Think of this webpage as a portfolio of sorts. You can find all sorts of things about me here. Additionally, it should all be up to date thanks to the Github API!</p>
+                </Paper>
+            </div>
+        </section>
     )
 }
 

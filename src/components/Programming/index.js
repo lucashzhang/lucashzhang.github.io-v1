@@ -97,7 +97,7 @@ const Programming = _ => {
         return repoList.filter((repo) => {
             return (RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.language.toString().toLowerCase())
                 || RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.name.toLowerCase()));
-                // || (repo.description != null && RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.description.toLowerCase())));
+            // || (repo.description != null && RegExp('\\b' + query.toLowerCase() + '\\b').test(repo.description.toLowerCase())));
         })
     }
 
@@ -119,20 +119,18 @@ const Programming = _ => {
     let filteredRepos = getFilteredRepos()
 
     return (
-        <ThemeProvider theme={theme}>
-            <section className={classes.surface} id="programming">
-                <h1 className={classes.header}>My Projects</h1>
-                {uniqLang.length === 0 || repoList.length === 0 ? null :
-                    <div>
-                        <TimelineFilter langList={uniqLang} langColors={langColors} searchValue={searchValue} handleSearch={handleSearch} handleFilter={changeFilter} sortValue={repoSort} handleSort={changeSort} />
-                        <Timeline repoList={filteredRepos} langColors={langColors} />
-                    </div>
-                }
-                <Paper elevation={0} className={classes.paper}>
-                    For more information, you can check my full Github account <a href="https://github.com/lucashzhang" target="_blank" rel="noopener noreferrer" className={classes.link}>here</a>
-                </Paper>
-            </section>
-        </ThemeProvider>
+        <section className={classes.surface} id="programming">
+            <h1 className={classes.header}>My Projects</h1>
+            {uniqLang.length === 0 || repoList.length === 0 ? null :
+                <div>
+                    <TimelineFilter langList={uniqLang} langColors={langColors} searchValue={searchValue} handleSearch={handleSearch} handleFilter={changeFilter} sortValue={repoSort} handleSort={changeSort} />
+                    <Timeline repoList={filteredRepos} langColors={langColors} />
+                </div>
+            }
+            <Paper elevation={0} className={classes.paper}>
+                For more information, you can check my full Github account <a href="https://github.com/lucashzhang" target="_blank" rel="noopener noreferrer" className={classes.link}>here</a>
+            </Paper>
+        </section>
     )
 }
 

@@ -60,46 +60,44 @@ const TimelineFilter = props => {
     useEffect(initCheckBoxes, [])
 
     return (
-        <ThemeProvider theme={theme}>
-            <section className={classes.surface} id="about">
-                <Paper elevation={0} className={classes.paper}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={6} md={9}>
-                            <TextField fullWidth variant='outlined' label='Search' value={props.searchValue} onChange={props.handleSearch}></TextField>
-                        </Grid>
-                        <Grid item xs={6} md={3}>
-                            <FormControl fullWidth variant="outlined" >
-                                <InputLabel id="sort-label">Sort By</InputLabel>
-                                <Select value={props.sortValue} onChange={props.handleSort} labelId="sort-label" label="Sort By">
-                                    <MenuItem value="pushed">Date Updated</MenuItem>
-                                    <MenuItem value="created">Date Created</MenuItem>
-                                </Select>
-                            </FormControl>
-
-                        </Grid>
+        <section className={classes.surface} id="about">
+            <Paper elevation={0} className={classes.paper}>
+                <Grid container spacing={2}>
+                    <Grid item xs={6} md={9}>
+                        <TextField fullWidth variant='outlined' label='Search' value={props.searchValue} onChange={props.handleSearch}></TextField>
                     </Grid>
-                    <FormControl fullWidth component="fieldset">
-                        <Grid container alignItems="center" justify="space-evenly" className={classes.checks}>
-                            {props.langList.map((lang) => {
-                                return <Grid item key={lang} >
-                                    <FormControlLabel labelPlacement="top" className={classes.checkLabels} control={
-                                        <Checkbox
-                                            style={{
-                                                color: props.langColors[lang],
-                                            }}
-                                            checked={checkBoxes[lang] == null ? false : checkBoxes[lang]}
-                                            color="default"
-                                            name={lang}
-                                            onChange={onCheckChange}
-                                        />
-                                    } label={lang} />
-                                </Grid>
-                            })}
-                        </Grid>
-                    </FormControl>
-                </Paper>
-            </section>
-        </ThemeProvider>
+                    <Grid item xs={6} md={3}>
+                        <FormControl fullWidth variant="outlined" >
+                            <InputLabel id="sort-label">Sort By</InputLabel>
+                            <Select value={props.sortValue} onChange={props.handleSort} labelId="sort-label" label="Sort By">
+                                <MenuItem value="pushed">Date Updated</MenuItem>
+                                <MenuItem value="created">Date Created</MenuItem>
+                            </Select>
+                        </FormControl>
+
+                    </Grid>
+                </Grid>
+                <FormControl fullWidth component="fieldset">
+                    <Grid container alignItems="center" justify="space-evenly" className={classes.checks}>
+                        {props.langList.map((lang) => {
+                            return <Grid item key={lang} >
+                                <FormControlLabel labelPlacement="top" className={classes.checkLabels} control={
+                                    <Checkbox
+                                        style={{
+                                            color: props.langColors[lang],
+                                        }}
+                                        checked={checkBoxes[lang] == null ? false : checkBoxes[lang]}
+                                        color="default"
+                                        name={lang}
+                                        onChange={onCheckChange}
+                                    />
+                                } label={lang} />
+                            </Grid>
+                        })}
+                    </Grid>
+                </FormControl>
+            </Paper>
+        </section>
     )
 }
 
