@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import theme from '../../utilities/theme';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { getGenAPI } from '../../utilities/handleAPI';
 import TimelineFilter from './TimelineFilter';

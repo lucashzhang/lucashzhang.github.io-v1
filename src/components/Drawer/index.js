@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import theme from '../../utilities/theme';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText, Tooltip } from '@material-ui/core';
 import { FaHome, FaUser, FaCode, FaFile, FaAddressBook, FaBars, FaChevronLeft } from 'react-icons/fa';
